@@ -1,49 +1,42 @@
-@extends('master')
+@extends('master-home')
 
 @section('content')
-    <section class="d-md-none">
-        <div class="ah-container">
-            <div class="search-form-mobile">
-                @include('partials.search', ['id_suffix' => '_mobile'])
+    <div class="px-md-15">
+        <section class="banner-section bdr-radius position-relative">
+            <div class="container-fluid">
+                <span class="bg-img-cover bdr-radius only-m">
+                    <img src="{{ asset('dallaslimo-bl-design/img/black-car-service-dallas-banner.webp') }}" alt="Hero Banner Image" class="img-fluid">
+                </span>
+                <span class="bg-img-cover bdr-radius only-d">
+                    <img src="{{ asset('dallaslimo-bl-design/assets/banner-01.webp') }}" alt="Hero Banner Image" class="img-fluid">
+                </span>
             </div>
-        </div>
-    </section>
-
-    <section class="home-banner-section">
-        <div id="hero-banner-container" class="py-60 ah-container position-relative py-sm-70 py-md-80 py-lg-100"
-             style="z-index: 2; background-image: url('https://dallaslimoandblackcars.com/img/dallas-limo-and-black-cars-banner.webp');">
-            <div id="map" class="position-absolute w-100 h-100" style="top:0; left:0; z-index: 1; display:none;"></div>
-
-            <div class="row" style="pointer-events: none;">
-                <div id="home-text-content" class="col-12 col-md-6 d-flex flex-column justify-content-center" style="pointer-events: auto; position: relative; z-index: 0;">
-                    <h1 class="text-white h1 fw-bold mb-15">Black Car Service Dallas</h1>
-                    <div class="d-none d-md-block">
-                        <p class="text-white font-lg fw-medium mb-30">Lorem Ipsum is simply dummy text of the printing
-                            and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
-                            the 1500s, when an unknown printer tooks,</p>
-                        <span class="text-white font-base">24/7 Service Available – <strong class="font-lg fw-semibold">Click to Call Now</strong></span>
-                        <p class="text-white font-base d-flex align-items-center mb-30 mb-md-0">
-                            Call: <a href="tel:+12148978056" class="mx-2 fw-bold font-lg theme-color">+1 214-897-8056</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="d-none col-12 col-md-6 d-md-block" style="pointer-events: auto; position: relative; z-index: 2;">
-                    <div class="search-form-wrapper-desktop">
-                        @include('partials.search')
-                    </div>
-                </div>
-            </div>
-        </div>
-        @include('partials.hero_banner_styles')
-    </section>
-            <section class="bg-gray py-50 py-sm-60 py-md-70 py-lg-80">
-            <div class="ah-container">
+            <div class="container py-30 pb-md-50">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-lg-11 col-xl-10 text-center mb-20 mb-md-30 mb-lg-40">
-                        <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30">Get A Quote</h2>
-                        <p class="font-base">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                            unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <div class="col-12 col-lg-11 col-xl-10">
+                        <header class="mb-md-15 text-center">
+                            <h1 class="h1 fw-semibold text-center">Get A Quote</h1>
+                            <p class="font-md">Request a customized quote for Black Car Service Dallas. Enter your trip details below and receive accurate pricing without delay.</p>
+                            <div class="text-center">
+                                <a href="#quote-form" class="btn btn-primary text-capitalize">Request Quote</a>
+                                <a href="tel:+12148978056" class="btn btn-outline-light ms-2 text-capitalize">Call: +1 214-897-8056</a>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="p-15" id="quote-form">
+            <section class="bg-gray-light py-40 bdr-radius">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-11 col-xl-10">
+                        <header class="mb-35 mb-sm-40 text-center mb-md-50">
+                            <h2 class="h2 fw-semibold text-center">Get A Quote</h2>
+                            <p>Request a customized quote for Black Car Service Dallas. Enter your trip details below and receive accurate pricing without delay.</p>
+                        </header>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -158,7 +151,7 @@
             </div>
         </section>
         <section class="detail-content-section py-50 py-sm-60 py-md-70 py-lg-80">
-            <div class="ah-container">
+            <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-11 col-xl-10 text-center mb-20 mb-md-30 mb-lg-40">
                         <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30">Plan Ahead. Quote Instantly. Ride in Comfort</h2>
@@ -196,14 +189,14 @@
                     </div>
                     <div class="col-12 col-md-6 h-100">
                         <div class="img-holder ms-md-auto">
-                            <img src="{{ asset('new_assets/assets/image-01.png') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('dallaslimo-bl-design/assets/areas-we-serve.webp') }}" class="img-fluid" alt="Areas we serve">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="fleet-section py-50 py-sm-60 py-md-70 py-lg-80">
-            <div class="ah-container">
+            <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-10 text-center">
                         <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30">Our Premium Fleet – Ride in Comfort and Style
@@ -261,17 +254,17 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="img-holder">
-                            <img src="{{ asset('new_assets/assets/fleet-img.webp') }}" alt="Fleet Image" class="img-fluid">
+                            <img src="{{ asset('dallaslimo-bl-design/assets/fleet-img.webp') }}" alt="Fleet Image" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-12 text-center pt-15">
-                        <a href="#" class="btn btn-primary">Quick Quote </a>
+                        <a href="#quote-form" class="btn btn-primary">Quick Quote</a>
                     </div>
                 </div>
             </div>
         </section>
         <section class="bg-gray pt-50 pb-25 pt-sm-60 pb-sm-35 pt-md-70 pb-md-40">
-            <div class="ah-container">
+            <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-6 col-md-4 mb-25 mb-md-30 d-flex ">
                         <article class="custom-card d-flex flex-column w-100 bg-white">

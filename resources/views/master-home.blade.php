@@ -109,12 +109,12 @@
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <h5 class="h5 fw-bold mb-10 mb-md-3 text-white">City-to-City Rides</h5>
                                     <ul class="footer-nav-list-item list-unstyled mb-30 mb-lg-0">
-                                        <li><a href="/services/dallas-to-austin-car-service">Dallas - Austin</a></li>
-                                        <li><a href="/services/dallas-to-houston-car-service">Dallas - Houston</a></li>
-                                        <li><a href="/services/dallas-to-college-station-car-service">Dallas - College Station</a></li>
-                                        <li><a href="/services/dallas-to-oklahoma-city-ok">Dallas - OKC</a></li>
-                                        <li><a href="/services/dallas-to-tyler-car-service">Dallas - Tyler</a></li>
-                                        <li><a href="/services/dfw-to-waco-car-service">DFW - Waco</a></li>
+                                        <li><a href="/dallas-to-austin-car-service">Dallas - Austin</a></li>
+                                        <li><a href="/dallas-to-houston-car-service">Dallas - Houston</a></li>
+                                        <li><a href="/city-to-city-ride/dallas-to-college-station/">Dallas - College Station</a></li>
+                                        <li><a href="/dallas-to-oklahoma-city-ok">Dallas - OKC</a></li>
+                                        <li><a href="/dallas-to-tyler-car-service">Dallas - Tyler</a></li>
+                                        <li><a href="/dfw-to-waco-car-service">DFW - Waco</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
@@ -124,8 +124,8 @@
                                         <li><a href="/services/chauffeur-service-dallas/">Chauffeur Service</a></li>
                                         <li><a href="/services/private-car-service-in-dallas/">Private car service</a></li>
                                         <li><a href="/services/luxury-van-rental-dallas/">Luxury van rental</a></li>
-                                        <li><a href="/services/city-to-city-rides/">City-to-city-rides</a></li>
-                                        <li><a href="/services/limousine-service-dallas/">Limousine service</a></li>
+                                        <li><a href="/city-to-city-rides/">City-to-city-rides</a></li>
+                                        <li><a href="/limousine-service-dallas/">Limousine service</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
@@ -167,9 +167,9 @@
                                     <svg width="19" height="19" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.75 6.375L7.95652 7.67955C9.2429 8.44012 9.7571 8.44012 11.0435 7.67955L13.25 6.375" stroke="#b1b8c3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2.01183 10.1067C2.06086 12.4059 2.08537 13.5554 2.93372 14.4071C3.78206 15.2586 4.96275 15.2882 7.32412 15.3476C8.77948 15.3842 10.2205 15.3842 11.6759 15.3476C14.0373 15.2882 15.2179 15.2586 16.0663 14.4071C16.9147 13.5554 16.9392 12.4059 16.9881 10.1067C17.004 9.36743 17.004 8.63258 16.9881 7.8933C16.9392 5.59415 16.9147 4.44457 16.0663 3.593C15.2179 2.74142 14.0373 2.71176 11.6759 2.65243C10.2205 2.61586 8.77947 2.61586 7.32411 2.65242C4.96275 2.71175 3.78206 2.74141 2.93371 3.59299C2.08537 4.44456 2.06085 5.59414 2.01182 7.8933C1.99605 8.63258 1.99606 9.36743 2.01183 10.1067Z" stroke="#b1b8c3" stroke-width="1.5" stroke-linejoin="round"></path></svg>
                                     <a class="single-line-ellipses" href="mailto:info@dallaslimosandblackcarservice.com">info@dallaslimosandblackcarservice.com</a>
                                 </li>
-                                <li><a href="/services/cancellation-policy">Cancellation Policy</a></li>
-                                <li><a href="/services/terms-and-conditions">Terms & Conditions</a></li>
-                                <li><a href="/services/privacy-policy">Privacy Policy</a></li>
+                                <li><a href="/cancellation-policy">Cancellation Policy</a></li>
+                                <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+                                <li><a href="/privacy-policy">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>

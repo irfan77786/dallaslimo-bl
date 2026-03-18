@@ -1,103 +1,340 @@
-@extends('master')
+@extends('master-home')
 
 @section('content')
-      
-      <section class="d-md-none">
-    <div class="ah-container">
-        <div class="search-form-mobile">
-            @include('partials.search', ['id_suffix' => '_mobile'])
-        </div>
-    </div>
-</section>
-
-{{-- Banner: text (and desktop form) --}}
-<section class="home-banner-section">
-    <div id="hero-banner-container" class="py-60 ah-container position-relative py-sm-70 py-md-80 py-lg-100"
-         style="z-index: 2; background-image: url('https://dallaslimoandblackcars.com/img/dallas-limo-and-black-cars-banner.webp');">
-        <div id="map" class="position-absolute w-100 h-100" style="top:0; left:0; z-index: 1; display:none;"></div>
-
-        <div class="row" style="pointer-events: none;">
-            <div id="home-text-content" class="col-12 col-md-6 d-flex flex-column justify-content-center" style="pointer-events: auto; position: relative; z-index: 0;">
-                <h1 class="text-white h2 fw-bold mb-15">Executive Shuttle Service</h1>
-                <div class="d-none d-md-block">
-                    <p class="text-white font-lg fw-medium mb-30">Enjoy reliable executive shuttle service in Dallas with our professional black car chauffeurs. We provide punctual and comfortable transportation for corporate travel, airport shuttle service, business events, and executive group transfers, ensuring a smooth, stress-free ride experience every time.</p>
- 
-                    <p class="text-white font-base d-flex align-items-center mb-30 mb-md-0">
-                        Call: <a href="tel:+12148978056" class="mx-2 fw-bold font-lg theme-color">+1 214-897-8056</a>
-                    </p>
-                </div>
-            </div>
-            <div class="d-none col-12 col-md-6 d-md-block" style="pointer-events: auto; position: relative; z-index: 2;">
-                <div class="search-form-wrapper-desktop">
-                    @include('partials.search', ['id_suffix' => '_form'])
-                </div>
-            </div>
-        </div>
-    </div>
-    @include('partials.hero_banner_styles')
-</section>
-
-
-     <section class="fleet-section py-40 py-sm-50 py-md-50 py-lg-50">
-        <div class="ah-container">
-            <div class="row justify-content-center">
-                <div class="text-center col-12 col-xl-10">
-                    <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30 seciononeheading">Our Luxury Fleet –  <span class="theme-color fw-bold">Executive Shuttle Travel with Comfort and Class</span></h2>
-                </div>
-                <div class="col-12">
-                    <p class="font-base justify-mobile">At Dallas Limo and Black Cars, we offer a premium fleet of luxury vehicles designed to deliver comfort, reliability, and style for every executive shuttle journey. Whether you need corporate shuttle transportation, <a href="/services/airport-transfers-dallas/"><strong>airport shuttle service</strong></a>, executive group transfers, or business event transportation, our professionally maintained vehicles ensure a smooth and stress-free ride. Our fleet includes luxury sedans, black SUVs, and spacious minibuses, all driven by professional chauffeurs dedicated to providing <a href="/book-now/"><strong>first-class executive shuttle service in Dallas</strong></a>.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <ul class="list-unstyled">
-                        <li>
-                            
-                            <p class="font-base justify-mobile"><strong class="font-lg gray-700 fw-bold">Luxury Sedans:</strong> Our executive sedans provide a quiet and comfortable ride, ideal for business travelers or individuals needing executive shuttle service for meetings, hotels, or airport transportation in Dallas. Vehicles such as the Mercedes-Benz S-Class, Cadillac CT6, and Volvo S90 deliver premium comfort and privacy.</p>
-                        </li>
-                        <li>
-                            
-                            <p class="justify-mobile font-base"><strong class="font-lg gray-700 fw-bold ">Black SUVs:</strong>  For executives and travelers needing extra space or luggage capacity, our luxury SUVs including the Cadillac Escalade, GMC Yukon XL, and Chevrolet Suburban provide spacious interiors and smooth rides for reliable executive shuttle transportation.
-                            </p>
-                        </li>
-                        <li>
-                         
-                            <p class="justify-mobile font-base"><strong class="font-lg gray-700 fw-bold ">Executive Sprinter Vans:</strong> Perfect for group executive shuttle service, our Mercedes-Benz Sprinter Vans offer spacious seating and modern interiors, making them ideal for corporate teams, airport shuttle service, and event travel.</p>
-                        </li>
-                        <li>
-                            
-                            <p class="justify-mobile font-base"><strong class="font-lg gray-700 fw-bold ">Mini Bus Luxury Bus (23-27
-                                Passengers):</strong> Our luxury minibuses are ideal for medium-sized groups traveling to meetings, conferences, or airports, offering comfortable seating and convenient executive shuttle transportation.</p>
-                        </li>
-                        <li>
-                         
-                            <p class="justify-mobile font-base">   <strong class="font-lg gray-700 fw-bold">Mini Bus (31-38
-                                Passengers):</strong> For larger groups, our spacious minibuses provide dependable executive shuttle service with professional chauffeur service and comfortable interiors.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="img-holder">
-                        <img src="{{ asset('new_assets/assets/fleet-img.webp') }}" alt="luxury executive shuttle service Dallas Texas corporate transportation" class="img-fluid">
+    <div class="px-md-15">
+        <section class="banner-section bdr-radius position-relative">
+            <div id="map" class="position-absolute w-100 h-100" style="top:0; left:0; z-index: 1; display:none; border-radius: inherit;"></div>
+            <div class="container-fluid">
+                <span class="bg-img-cover bdr-radius only-m">
+                    <img src="{{ asset('dallaslimo-bl-design/img/black-car-service-dallas-banner.webp') }}" alt="Hero Banner Image" class="img-fluid">
+                </span>
+                <span class="bg-img-cover bdr-radius only-d">
+                    <img src="{{ asset('dallaslimo-bl-design/assets/banner-01.webp') }}" alt="Hero Banner Image" class="img-fluid">
+                </span>
+                <div class="px-20">
+                    <div class="distance-form-holder d-md-none">
+                        @include('partials.search', ['id_suffix' => '_mobile'])
                     </div>
                 </div>
-                <div class="text-center col-12 pt-15">
-                    <a href="/booking/" class="btn btn-primary fifa-btn">Book Your Executive Shuttle Service Now </a>
+            </div>
+            <div class="container py-30 pb-md-50">
+                <div class="row justify-content-center">
+                    <div id="home-text-content" class="col-12 col-lg-11 col-xl-10">
+                        <header class="mb-md-15 text-center">
+                            <h1 class="h1 fw-semibold text-center">Executive Shuttle Services Dallas</h1>
+                            <p class="font-md">Professional executive shuttle services in Dallas providing reliable group transportation for corporate travel, events, airport transfers, and business operations with experienced chauffeurs.</p>
+                            <div class="text-center">
+                                <a href="tel:+12148978056" class="btn btn-primary text-capitalize">Call Now: +1 214-897-8056</a>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6"></div>
+                    <div class="col-12 col-md-6 d-none d-md-block pr-md-30">
+                        <div class="distance-form-holder">
+                            @include('partials.search', ['id_suffix' => '_form'])
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+    <style>
+        .banner-section .distance-form-holder { position: relative; z-index: 10; }
+    </style>
+
+    <section class="py-40">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-11 col-xl-10">
+                        <header class="mb-15 text-center">
+                            <h2 class="h2 fw-semibold text-center">Executive Fleet for Black Car Service in Dallas</h2>
+                            <p class="m-justift">Our executive fleet supports Premier Black Car Service in Dallas for airport transfers, corporate travel, VIP transportation, and group movement. The fleet includes luxury sedans, executive sedans, premier SUVs, business-class SUVs, Mercedes-Benz Sprinter vans, mini buses, and motor coaches, all selected for comfort, privacy, and performance. Every vehicle is professionally chauffeured, commercially insured, and maintained to executive standards, ensuring quiet rides, clean interiors, and reliable service for business, airport, and group transportation.</p>
+                        </header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="swiper fleet-swiper custom-swiper-01">
+                            <div class="d-flex justify-content-end gap-3 swiper-arrows-holder mb-10">
+                                <div class="swiper-button-prev">
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path
+                                            d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"
+                                            fill="#fff" />
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path
+                                            d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"
+                                            fill="#fff" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <article class="luxury-cars-item">
+                                        <div class="img-holder mb-15">
+                                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/assets/Sedan.webp') }}"
+                                                alt="Black car service Dallas luxury sedan" class="img-fluid"
+                                                width="750" height="410">
+                                        </div>
+                                        <h3 class="fw-medium h5 mb-2">Premier Sadan</h3>
+                                        <p class="mb-15">Mercedes S550, BMW 750 or similar</p>
+                                        <ul class="list-unstyled pl-0 mb-0 d-flex detail-info-list gap-2">
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    {!! '<?xml version="1.0" encoding="utf-8"?>' !!}<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.1992 12C12.9606 12 15.1992 9.76142 15.1992 7C15.1992 4.23858 12.9606 2 10.1992 2C7.43779 2 5.19922 4.23858 5.19922 7C5.19922 9.76142 7.43779 12 10.1992 12Z"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M1 22C1.57038 20.0332 2.74795 18.2971 4.36438 17.0399C5.98081 15.7827 7.95335 15.0687 10 15C14.12 15 17.63 17.91 19 22"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.8205 4.44006C18.5822 4.83059 19.1986 5.45518 19.579 6.22205C19.9594 6.98891 20.0838 7.85753 19.9338 8.70032C19.7838 9.5431 19.3674 10.3155 18.7458 10.9041C18.1243 11.4926 17.3302 11.8662 16.4805 11.97"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.3203 14.5701C18.6543 14.91 19.8779 15.5883 20.8729 16.5396C21.868 17.4908 22.6007 18.6827 23.0003 20"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 3
+                                            </li>
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none"
+                                                        style="margin: -5px;" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M4 12V9C4 8.44771 4.44772 8 5 8H9M4 12V17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17V12M4 12L11 13H13L20 12M20 12V9C20 8.44771 19.5523 8 19 8H15M9 8V7C9 6.44772 9.44772 6 10 6H14C14.5523 6 15 6.44772 15 7V8M9 8H15M11 14.5H13"
+                                                            stroke="#464455" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 3
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="luxury-cars-item">
+                                        <div class="img-holder mb-15">
+                                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/assets/suv.webp') }}"
+                                                alt="Black car service Dallas luxury sedan" class="img-fluid"
+                                                width="750" height="410">
+                                        </div>
+                                        <h3 class="fw-medium h5 mb-10">Premier SUV</h3>
+                                        <p class="mb-15">Chevrolet Suburban or similar</p>
+                                        <ul class="list-unstyled pl-0 mb-0 d-flex detail-info-list gap-2">
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    {!! '<?xml version="1.0" encoding="utf-8"?>' !!}<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.1992 12C12.9606 12 15.1992 9.76142 15.1992 7C15.1992 4.23858 12.9606 2 10.1992 2C7.43779 2 5.19922 4.23858 5.19922 7C5.19922 9.76142 7.43779 12 10.1992 12Z"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M1 22C1.57038 20.0332 2.74795 18.2971 4.36438 17.0399C5.98081 15.7827 7.95335 15.0687 10 15C14.12 15 17.63 17.91 19 22"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.8205 4.44006C18.5822 4.83059 19.1986 5.45518 19.579 6.22205C19.9594 6.98891 20.0838 7.85753 19.9338 8.70032C19.7838 9.5431 19.3674 10.3155 18.7458 10.9041C18.1243 11.4926 17.3302 11.8662 16.4805 11.97"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.3203 14.5701C18.6543 14.91 19.8779 15.5883 20.8729 16.5396C21.868 17.4908 22.6007 18.6827 23.0003 20"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 6
+                                            </li>
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none"
+                                                        style="margin: -5px;" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M4 12V9C4 8.44771 4.44772 8 5 8H9M4 12V17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17V12M4 12L11 13H13L20 12M20 12V9C20 8.44771 19.5523 8 19 8H15M9 8V7C9 6.44772 9.44772 6 10 6H14C14.5523 6 15 6.44772 15 7V8M9 8H15M11 14.5H13"
+                                                            stroke="#464455" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 6
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="luxury-cars-item">
+                                        <div class="img-holder mb-15">
+                                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/assets/luxury-suv.webp') }}"
+                                                alt="Black car service Dallas luxury sedan" class="img-fluid"
+                                                width="750" height="410">
+                                        </div>
+                                        <h3 class="fw-medium h5 mb-10">Luxury SUV</h3>
+                                        <p class="mb-15">Cadillac Escalade ESV, Lincoln Navigator or similar</p>
+                                        <ul class="list-unstyled pl-0 mb-0 d-flex detail-info-list gap-2">
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    {!! '<?xml version="1.0" encoding="utf-8"?>' !!}<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.1992 12C12.9606 12 15.1992 9.76142 15.1992 7C15.1992 4.23858 12.9606 2 10.1992 2C7.43779 2 5.19922 4.23858 5.19922 7C5.19922 9.76142 7.43779 12 10.1992 12Z"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M1 22C1.57038 20.0332 2.74795 18.2971 4.36438 17.0399C5.98081 15.7827 7.95335 15.0687 10 15C14.12 15 17.63 17.91 19 22"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.8205 4.44006C18.5822 4.83059 19.1986 5.45518 19.579 6.22205C19.9594 6.98891 20.0838 7.85753 19.9338 8.70032C19.7838 9.5431 19.3674 10.3155 18.7458 10.9041C18.1243 11.4926 17.3302 11.8662 16.4805 11.97"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.3203 14.5701C18.6543 14.91 19.8779 15.5883 20.8729 16.5396C21.868 17.4908 22.6007 18.6827 23.0003 20"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 6
+                                            </li>
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none"
+                                                        style="margin: -5px;" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M4 12V9C4 8.44771 4.44772 8 5 8H9M4 12V17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17V12M4 12L11 13H13L20 12M20 12V9C20 8.44771 19.5523 8 19 8H15M9 8V7C9 6.44772 9.44772 6 10 6H14C14.5523 6 15 6.44772 15 7V8M9 8H15M11 14.5H13"
+                                                            stroke="#464455" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 6
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="luxury-cars-item">
+                                        <div class="img-holder mb-15">
+                                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/assets/sprinter.webp') }}"
+                                                alt="Black car service Dallas luxury sedan" class="img-fluid"
+                                                width="750" height="410">
+                                        </div>
+                                        <h3 class="fw-medium h5 mb-10">Busniess Sprinter</h3>
+                                        <p class="mb-15">Mercedes benz Sprinter Van or similar</p>
+                                        <ul class="list-unstyled pl-0 mb-0 d-flex detail-info-list gap-2">
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    {!! '<?xml version="1.0" encoding="utf-8"?>' !!}<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.1992 12C12.9606 12 15.1992 9.76142 15.1992 7C15.1992 4.23858 12.9606 2 10.1992 2C7.43779 2 5.19922 4.23858 5.19922 7C5.19922 9.76142 7.43779 12 10.1992 12Z"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M1 22C1.57038 20.0332 2.74795 18.2971 4.36438 17.0399C5.98081 15.7827 7.95335 15.0687 10 15C14.12 15 17.63 17.91 19 22"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.8205 4.44006C18.5822 4.83059 19.1986 5.45518 19.579 6.22205C19.9594 6.98891 20.0838 7.85753 19.9338 8.70032C19.7838 9.5431 19.3674 10.3155 18.7458 10.9041C18.1243 11.4926 17.3302 11.8662 16.4805 11.97"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.3203 14.5701C18.6543 14.91 19.8779 15.5883 20.8729 16.5396C21.868 17.4908 22.6007 18.6827 23.0003 20"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 12
+                                            </li>
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none"
+                                                        style="margin: -5px;" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M4 12V9C4 8.44771 4.44772 8 5 8H9M4 12V17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17V12M4 12L11 13H13L20 12M20 12V9C20 8.44771 19.5523 8 19 8H15M9 8V7C9 6.44772 9.44772 6 10 6H14C14.5523 6 15 6.44772 15 7V8M9 8H15M11 14.5H13"
+                                                            stroke="#464455" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 30
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="luxury-cars-item">
+                                        <div class="img-holder mb-15">
+                                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/assets/mini-bus.webp') }}"
+                                                alt="Black car service Dallas luxury sedan" class="img-fluid"
+                                                width="750" height="410">
+                                        </div>
+                                        <h3 class="fw-medium h5 mb-10">Mini Bus</h3>
+                                        <p class="mb-15">24-Seater Mini Bus</p>
+                                        <ul class="list-unstyled pl-0 mb-0 d-flex detail-info-list gap-2">
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    {!! '<?xml version="1.0" encoding="utf-8"?>' !!}<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.1992 12C12.9606 12 15.1992 9.76142 15.1992 7C15.1992 4.23858 12.9606 2 10.1992 2C7.43779 2 5.19922 4.23858 5.19922 7C5.19922 9.76142 7.43779 12 10.1992 12Z"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M1 22C1.57038 20.0332 2.74795 18.2971 4.36438 17.0399C5.98081 15.7827 7.95335 15.0687 10 15C14.12 15 17.63 17.91 19 22"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.8205 4.44006C18.5822 4.83059 19.1986 5.45518 19.579 6.22205C19.9594 6.98891 20.0838 7.85753 19.9338 8.70032C19.7838 9.5431 19.3674 10.3155 18.7458 10.9041C18.1243 11.4926 17.3302 11.8662 16.4805 11.97"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path
+                                                            d="M17.3203 14.5701C18.6543 14.91 19.8779 15.5883 20.8729 16.5396C21.868 17.4908 22.6007 18.6827 23.0003 20"
+                                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 24
+                                            </li>
+                                            <li class="d-flex gap-2 align-items-center">
+                                                <span class="d-inline-flex" style="width: 20px;height: 20px;">
+                                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none"
+                                                        style="margin: -5px;" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M4 12V9C4 8.44771 4.44772 8 5 8H9M4 12V17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17V12M4 12L11 13H13L20 12M20 12V9C20 8.44771 19.5523 8 19 8H15M9 8V7C9 6.44772 9.44772 6 10 6H14C14.5523 6 15 6.44772 15 7V8M9 8H15M11 14.5H13"
+                                                            stroke="#464455" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span> 30
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <!-- Optional -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
    
-   
-<section class="fifa-main-banner only-m" style="
-    background: url(/img/black-car-service-for-fifa-world-cup-2026-mobile.webp) center top;
+   <section class="fifa-main-banner only-d" style="
+    background: url(../../img/dallas-fifa-world-cup-black-car-service.webp) center center no-repeat;
 ">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-               <div class="fifa-btns">
+              <a href="/fifa-world-cup-2026-car-service-dallas/"> </a>
+              <div class="fifa-btns">
                  
                  
                 </div>
@@ -107,13 +344,14 @@
        
     </div>
 </section>
-<section class="fifa-main-banner only-d" style="
-    background: url(/img/black-car-service-for-fifa-world-cup-2026.webp) center top;
+   <section class="fifa-main-banner only-m" style="
+    background: url(../../img/dallas-fifa-world-cup-black-car-service-mobile.webp) center top;
 ">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-               <div class="fifa-btns">
+              <a href="/fifa-world-cup-2026-car-service-dallas/"> </a>
+              <div class="fifa-btns">
                  
                  
                 </div>
@@ -123,574 +361,596 @@
        
     </div>
 </section>
-   
-   <div class="container text-center here-fifa">
+   <div class="container">
  <div class="row">
          <div class="col-md-12">
               <div class="fifa-btnss">  
                     
                    
-            <a href="/fifa-world-cup-2026-car-service-dallas/" class="btn btn-primary fifa-btn">Visit FIFA World Cup 2026 Page</a>
+            <a href="/fifa-world-cup-2026-car-service-dallas/">Visit FIFA World Cup 2026 Page</a>
             </div>
             </div>
             </div>
             
     </div>
     
-        <section class="detail-content-section bg-gray py-40 py-sm-40 py-md-40 py-lg-50">
-            <div class="ah-container">
-                <div class="row justify-content-center">
-                    <div class="mb-20 text-center col-12 col-lg-11 col-xl-10 mb-md-30 mb-lg-40">
-                        <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30 seciononeheading">Why Choose Our <span class="theme-color"> Executive
-                                Shuttle Service?</span></h2>
-                        <p class="font-base">Our Dallas executive shuttle service provides reliable and luxury transportation for airport pickups, corporate travel, hotel transfers, and business events, offering professional chauffeur service and comfortable travel across the Dallas–Fort Worth metroplex, including Downtown Dallas, Plano, Frisco, Arlington, and Irving.</p>
-                    </div>
-                </div>
-                <div class="py-20 row align-items-center">
-                    <div class="col-12 col-md-6 pr-xl-50">
-                        <h3 class="h5 fw-semibold">Dallas Executive Shuttle Service & Airport Shuttle Transportation</h3>
-                        <p class="font-base text-justify">Looking for a reliable executive shuttle service in Dallas? At Dallas Limo and Black Cars, we provide <a href="/services/luxury-van-rental-dallas/"><strong>professional shuttle transportation for business travelers</strong></a>, airport transfers, conferences, and executive group travel, ensuring every passenger enjoys a smooth, punctual, and stress-free ride. Our premium Dallas executive shuttle service is trusted by companies, corporate teams, families, and visitors who need dependable transportation throughout the Dallas–Fort Worth metroplex.
-
-We proudly serve Downtown Dallas, Plano, Frisco, Arlington, Irving, Las Colinas, and nearby DFW cities, providing efficient routes and on-time pickups so you never have to worry about delays, missed flights, or important meetings.</p>
+    <section class="detail-content-section py-20">
+            <div class="container">
+                
+                <div class="row py-20">
                     
-                
-<ul>
-<li>Real-time schedule coordination and trip monitoring.</li>
-<li>On-time pickups and drop-offs for airports and events.</li>
-<li>Convenient door-to-door executive shuttle transportation.</li>
-<li>Experienced and professional chauffeur service.</li>
-<li>Luxury black car fleet with premium comfort.</li>
-</ul>    
+                    <div class="col-12 col-md-5 h-100 only-m">
+                        <div class="img-holder ms-md-auto">
+                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/img/premier-black-car-service-dallas-corporate-clients-mobile.webp') }}" width="407" height="210" class="img-fluid" alt="Luxury black car service in Dallas TX with professional chauffeur">
+                        </div>
+                    </div>
                     
-                     </div>
-                    <div class="col-12 col-md-6 h-100">
-                        <div class="why-imgs">
-                            <img src="/img/dallas-black-car-service-dfw-love-field-airport.webp" class="img-fluid" alt="Dallas executive shuttle service with professional chauffeur">
-                        </div>
-                    </div>
+                    <div class="col-12 col-md-7">
+                        <h3 class="h4 fw-semibold">Professional Executive Shuttle Services Dallas for Corporate Groups</h3>
+                        <p class="font-md all-justify">
+Executive Shuttle Services Dallas are built for organizations that require structured, dependable, and professionally coordinated group transportation. This service supports corporate teams, conferences, airport transfers, and scheduled business travel with strict attention to timing and organization. Each shuttle route is planned to ensure smooth pickups, efficient routing, and punctual arrivals at offices, hotels, venues, and airports. Professional chauffeurs manage group movement with courtesy, discretion, and schedule awareness. Businesses rely on Executive Shuttle Services Dallas to reduce transportation challenges while maintaining a polished image for employees and guests. Whether coordinating daily employee shuttles or managing transportation for large corporate events, this service delivers comfort, efficiency, and consistent reliability across Dallas business districts.
+
+                        </p>
+                      <div class="btom-btn sec-btn-2">
+                    <a href="/booking/">Book DFW Airport Black Car Service</a>
                 </div>
                 
+                    </div>
+                    
+                    <div class="col-12 col-md-5 h-100 only-d">
+                        <div class="img-holder ms-md-auto">
+                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/img/premier-black-car-service-dallas-corporate-clients.webp') }}" width="407" height="210" class="img-fluid" alt="Premier Black Car Service in Dallas for airport and executive transportation">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="row flex-row-reverse py-20 d-md-flex">
+                    
+                        <div class="col-12 col-md-5 h-100 only-m">
+                        <div class="img-holder ms-md-auto">
+                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/img/dallas-black-car-service-hotel-pickup-mobile.webp') }}" width="407" height="210" class="img-fluid" alt="Black car service at DFW Airport for business travelers in Dallas">
+                        </div>
+                    </div>
+                    
+             <div class="col-12 col-md-7">
+                        <h3 class="h4 fw-semibold">Reliable Group Transportation Solutions for Dallas Businesses</h3>
+                        <p class="font-md all-justify">
+Executive Shuttle Services Dallas provide dependable group transportation solutions tailored to modern business operations. This service supports recurring shuttle routes, employee transportation programs, corporate meetings, and group airport transfers with flexible scheduling and professional oversight. Each trip is managed to ensure passenger comfort, timely service, and smooth coordination between multiple locations. Chauffeurs follow structured protocols to maintain safety, efficiency, and consistency. Companies choose Executive Shuttle Services Dallas to streamline logistics, improve productivity, and ensure reliable movement between offices, hotels, and airports. These shuttle solutions help businesses remain organized while delivering professional transportation aligned with corporate expectations throughout Dallas.
+                           </p>
+                          <div class="btom-btn sec-btn-2">
+                    <a href="/get-a-quote/">Get Instant Black Car Service Quote</a>
+                </div>
+                    </div>
+                    
+                   
+                   
+                  <div class="col-12 col-md-5 h-100 only-d">
+                        <div class="img-holder ms-md-auto">
+                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/img/dallas-black-car-service-hotel-pickup.webp') }}" width="407" height="210" class="img-fluid" alt="Dallas black car service providing corporate transportation solutions">
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
             </div>
+             
         </section>
-        <section class="where-we-serve-section bg-gray pt-40 pb-25 pt-sm-40 pb-sm-35 pt-md-40 pb-md-40 pt-lg-40 pb-lg-40">
-            <div class="ah-container">
-                <div class="row justify-content-center">
-                    <div class="text-center col-12 col-lg-11 col-xl-10 mb-25 mb-md-30 mb-lg-40">
-                        <h2 class="h2 fw-bold mb-15 mb-lg-20 seciononeheading">Where we serve</h2>
-                        <p class="font-base">Our Dallas executive shuttle service provides professional chauffeur transportation across the Dallas–Fort Worth metroplex, connecting travelers to airports, hotels, offices, business districts, and major event venues.</p>
+        
+        <div class="px-15">
+            <section class="bg-gray-light pt-40 pb-20 bdr-radius">
+                <div class="container position-relative">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-11 col-xl-10">
+                            <header class="mb-35 mb-sm-40 text-center mb-md-50">
+                                <h2 class="h2 fw-semibold text-center m-justift">Reliable Black Car Solutions for Corporate Travel
+                                </h2>
+                                <p class="m-justift">Our black car service Dallas is built for executives and corporate teams who require punctual pickups, transparent pricing, and zero uncertainty. Every ride is professionally chauffeured, dispatch-monitored, and planned for business-critical travel to DFW Airport, Dallas Love Field, and key business districts across Dallas, Plano, Frisco, and Allen.</p>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="row card-with-icon-list">
+                        <div class="col-12 col-sm-6 col-lg-4 card-with-icon-list-item">
+                            <article class="card-with-icon">
+                                <span class="icon-holder d-flex align-items-center justify-content-center mb-15">
+                                    <svg fill="#fff" width="50px" height="50px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                        <g data-name="27. Return" id="_27._Return">
+                                            <path d="M16,0A16,16,0,0,0,4.08,26.66a13,13,0,0,0,1,1.06c.22.21.45.42.69.62s.59.46.88.66H6a1,1,0,0,0,0,2H9a1,1,0,0,0,1-1V27a1,1,0,0,0-2,0v.47c-.3-.21-.61-.43-.93-.68s-.39-.34-.57-.52-.63-.61-.93-.94A14,14,0,1,1,16,30a13.57,13.57,0,0,1-2.8-.28,1,1,0,1,0-.4,2A16,16,0,1,0,16,0Z"></path>
+                                            <path d="M26,16A10,10,0,1,0,16,26,10,10,0,0,0,26,16ZM8,16a8,8,0,1,1,8,8A8,8,0,0,1,8,16Z"></path>
+                                            <path d="M17,21v-.18A3,3,0,0,0,16,15a1,1,0,0,1,0-2h2a1,1,0,0,0,0-2H17a1,1,0,0,0-2,0v.18A3,3,0,0,0,16,17a1,1,0,0,1,0,2H14a1,1,0,0,0,0,2h1a1,1,0,0,0,2,0Z"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <h3 class="h5 fw-medium mb-15">Upfront Corporate Pricing</h3>
+                                <p class="m-justift">We offer transparent corporate pricing with flat, pre-approved rates, no surge fees, and clear invoicing—ideal for executive travel management, approvals, and expense reporting across Dallas and surrounding business districts.</p>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 card-with-icon-list-item">
+                            <article class="card-with-icon">
+                                <span class="icon-holder d-flex align-items-center justify-content-center mb-15">
+                                    <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve">
+                                        <g>
+                                            <g id="steering_x5F_wheel">
+                                                <path style="fill:#fff;" d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M16,4
+                c5.207,0,9.605,3.354,11.266,8H4.734C6.395,7.354,10.793,4,16,4z M16,18c-1.105,0-2-0.895-2-2s0.895-2,2-2s2,0.895,2,2
+                S17.105,18,16,18z M4,16c5.465,0,9.891,5.266,9.984,11.797C8.328,26.828,4,21.926,4,16z M18.016,27.797
+                C18.109,21.266,22.535,16,28,16C28,21.926,23.672,26.828,18.016,27.797z"></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <h3 class="h5 fw-medium mb-15">Career Chauffeurs</h3>
+                                <p class="m-justift">Our career chauffeurs are professionally trained, background-checked, and experienced in executive and airport transportation, delivering punctual, discreet, and consistent black car service throughout Dallas, DFW Airport, and Love Field.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 card-with-icon-list-item">
+                            <article class="card-with-icon">
+                                <span class="icon-holder d-flex align-items-center justify-content-center mb-15">
+                                    <svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 20L4.6797 10.8496C4.34718 10.434 4.18092 10.2262 4.13625 9.9757C4.09159 9.72524 4.17575 9.47276 4.34407 8.96778L5.0883 6.73509C5.52832 5.41505 5.74832 4.75503 6.2721 4.37752C6.79587 4 7.49159 4 8.88304 4H15.117C16.5084 4 17.2041 4 17.7279 4.37752C18.2517 4.75503 18.4717 5.41505 18.9117 6.73509L19.6559 8.96778C19.8243 9.47276 19.9084 9.72524 19.8637 9.9757C19.8191 10.2262 19.6528 10.434 19.3203 10.8496L12 20ZM12 20L15.5 9M12 20L8.5 9M19.5 10L15.5 9M15.5 9L14 5M15.5 9H8.5M10 5L8.5 9M8.5 9L4.5 10" stroke="#fff" stroke-linecap="round"></path>
+                                    </svg>
+                                </span>
+                                <h3 class="h5 fw-medium mb-15">Executive-Grade Fleet</h3>
+                                <p class="m-justift">Our executive-grade fleet includes late-model sedans and luxury SUVs, meticulously maintained for comfort, cleanliness, and reliability—supporting business-critical travel across Dallas, Plano, Frisco, Allen, and nearby cities.</p>
+                            </article>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
-                        <article class="we-serve-item custom-card mb-30 mb-md-35">
-                            <div class="img-holder">
-                                <img src="/img/affordable-dallas-limousine-service-with-chauffeur.webp" alt="corporate executive shuttle transportation Dallas TX" class="img-fluid">
+            </section>
+        </div>
+   
+   <div class="px-15 cta-one-t">
+                <div class="py-30 d-md-none bdr-radius">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h4 class="h4 fw-semibold mb-20">
+                                    On-Time Black Car Service for DFW &amp; Love Field Airport Travel
+                                </h4>
+                                <a href="/booking/" class="btn btn-primary w-100 fw-medium text-capitalize">Book Airport Black Car Service</a>
                             </div>
-                            <div class="text-detail">
-                                <h3 class="mb-10 h4 fw-semibold">Cities & Regional Communities</h3>
-                                <p class="mb-0 font-base">We proudly serve Dallas, Fort Worth, Plano, Frisco, McKinney, and Allen, providing reliable executive shuttle transportation across major cities and nearby communities.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
-                        <article class="we-serve-item custom-card mb-30 mb-md-35">
-                            <div class="img-holder">
-                                <img src="/img/dfw-airport-limo-and-black-car-service-dallas.webp" alt="luxury executive shuttle van service Dallas Fort Worth" class="img-fluid">
-                            </div>
-                            <div class="text-detail">
-                                <h3 class="mb-10 h4 fw-semibold">Airports & Aviation Access</h3>
-                                <p class="mb-0 font-base">We provide airport shuttle service to DFW International Airport, Dallas Love Field, Addison Airport, McKinney National Airport, and Fort Worth Alliance Airport.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
-                        <article class="we-serve-item custom-card mb-30 mb-md-35">
-                            <div class="img-holder">
-                                <img src="/img/luxury-dallas-limo-and-black-car-service.webp" alt="corporate shuttle service Dallas TX executive transportation" class="img-fluid">
-                            </div>
-                            <div class="text-detail">
-                                <h3 class="mb-10 h4 fw-semibold">Corporate & Lifestyle Zones</h3>
-                                <p class="mb-0 font-base">Our service connects travelers to Downtown Dallas, Legacy West Plano, The Star Frisco, Las Colinas Irving, Dallas Arts District, and Preston Hollow.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
-                        <article class="we-serve-item custom-card mb-30 mb-md-35">
-                            <div class="img-holder">
-                                <img src="{{ asset('new_assets/assets/image-08.jpg') }}" alt="business group transportation executive shuttle Dallas Texas" class="img-fluid">
-                            </div>
-                            <div class="text-detail">
-                                <h3 class="mb-10 h4 fw-semibold">Sports & Entertainment Venues</h3>
-                                <p class="mb-0 font-base">We provide transportation to AT&T Stadium, Globe Life Field, American Airlines Center, Toyota Stadium, PGA Frisco, and Toyota Music Factory.</p>
-                            </div>
-                        </article>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="detail-content-section bg-gray py-40 py-sm-50 py-md-50 py-lg-40 seciononeheading">
-        <div class="ah-container">
-            
-            <div class="py-20 row align-items-center">
-                <div class="col-12 col-md-6 h-100 only-m">
-                    <div class="service-image">
-                        <img src="/img/dallas-black-car-service-dfw-love-field-airport-mobile.webp" class="img-fluid" alt="executive shuttle service for corporate events Dallas">
-                    </div>
-                </div>
+   
+   <section class="detail-content-section py-20">
+            <div class="container">
                 
-                <div class="col-12 col-md-6 pr-xl-50">
-                    <h3 class="h5 fw-semibold">Dallas Executive Shuttle Service to Airports, Hotels & Offices</h3>
-                    <p class="font-base text-justify">Our Dallas executive shuttle service provides reliable and <a href="/services/airport-transfers-dallas/"><strong>professional transportation to airports</strong></a>, offices, hotels, conference venues, and corporate destinations. Whether you are traveling for business, executive events, airport shuttle service, or team transportation, our experienced chauffeurs ensure a smooth and punctual ride experience. At Dallas Limo and Black Cars, we specialize in luxury shuttle transportation designed for comfort, reliability, and efficiency across the Dallas–Fort Worth metroplex.
-
-Our service is ideal for travelers coming from Downtown Dallas, Plano, Frisco, Irving, Arlington, McKinney, and surrounding DFW cities who need dependable shuttle transportation. With real-time trip coordination, door-to-door service, and professional chauffeurs, we make sure you arrive at the airport, hotel, or meeting on time without stress. Our luxury fleet of sedans, SUVs, and executive vehicles provides the perfect combination of comfort and reliability for both personal and business travel.</p>
-                <a href="/booking/" class="btn btn-primary sm fw-medium fifa-btn-full">Book Reliable Executive Shuttle Service Today</a>
-                </div>
-                <div class="col-12 col-md-6 h-100 only-d">
-                    <div class="service-image">
-                        <img src="/img/dallas-black-car-service-dfw-love-field-airport.webp" class="img-fluid" alt="luxury shuttle transportation Dallas for business teams">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="flex-row-reverse py-20 row align-items-center">
-                <div class="col-12 col-md-6 h-100 only-m">
-                    <div class="service-image">
-                        <img src="/img/dallas-corporate-black-car-chauffeur-service-mobile.webp" class="img-fluid" alt="Dallas corporate executive shuttle service for group travel">
-                    </div>
-                </div>
-                <div class="mb-20 col-12 col-md-6 pr-xl-50">
-                    <h3 class="h5 fw-semibold">Reliable Airport Shuttle Service with Professional Chauffeurs</h3>
-                    <p class="font-base text-justify">When it comes to dependable airport shuttle service in Dallas, professionalism and punctuality are essential. Our Dallas executive shuttle transportation is designed to deliver a premium travel experience with highly trained chauffeurs and luxury vehicles. We understand the importance of reliable transportation when catching a flight, arriving in the city, or coordinating executive group travel for business trips and events.
-
-Our professional chauffeurs monitor traffic and travel schedules to ensure timely pickups and smooth drop-offs at <a href="/airports/dfw-car-service/"><strong>DFW International Airport</strong></a> and Dallas Love Field Airport. Whether you need transportation from a hotel, office, home, or corporate venue, our service offers convenient door-to-door airport shuttle transfers across the Dallas–Fort Worth region. Business travelers, executives, families, and visitors trust our executive shuttle service for its comfort, privacy, and dependable performance.
-</p>
-                    <a href="/booking/" class="btn btn-primary sm fw-medium fifa-btn-full">Get Airport Shuttle Quote Now</a>
-                </div>
-                <div class="col-12 col-md-6 h-100 only-d">
-                    <div class="service-image">
-                        <img src="/img/dallas-corporate-black-car-chauffeur-service.webp" class="img-fluid" alt="executive airport shuttle service Dallas to DFW airport">
-                    </div>
-                </div>
-            </div>
-               <div class="py-20 row align-items-center">
-                  <div class="col-12 col-md-6 h-100 only-m">
-                    <div class="service-image">
-                        <img src="/img/dallas-city-to-city-black-car-service-mobile.webp" class="img-fluid" alt="corporate airport shuttle transportation Dallas Texas">
-                    </div>
-                </div>
-                
-                <div class="col-12 col-md-6 pr-xl-50">
-                    <h3 class="h5 fw-semibold">Luxury Executive Shuttle Service Across the Dallas–Fort Worth Area</h3>
-                    <p class="font-base text-justify">Traveling for business or airport transportation should be comfortable and stress-free. Our luxury executive shuttle service in Dallas offers <a href="/city-to-city-rides/"><strong>premier black car service</strong></a> designed for travelers who value reliability, privacy, and professional service. At Dallas Limo and Black Cars, we provide first-class shuttle transportation for airport arrivals, departures, executive travel, and group transfers throughout the DFW metro area.
-
-Our luxury fleet includes executive sedans, spacious SUVs, and premium vehicles perfect for shuttle transportation. Whether you are traveling alone, with colleagues, or with a group, our vehicles provide a comfortable and stylish ride to airports, offices, hotels, and venues across Dallas and nearby cities. With experienced chauffeurs, well-maintained vehicles, and flexible scheduling, our Dallas executive shuttle service ensures every trip is smooth, safe, and perfectly timed for your travel plans.</p>
-                  <a href="/booking/" class="btn btn-primary sm fw-medium fifa-btn-full">Reserve Your Executive Shuttle Service</a>
-                </div>
-                <div class="col-12 col-md-6 h-100 only-d">
-                    <div class="service-image">
-                        <img src="/img/dallas-city-to-city-black-car-service.webp" class="img-fluid" alt="luxury executive shuttle van pickup DFW airport">
-                    </div>
-                </div>
-            </div>
-            
-            
-        </div>
-    </section>
-    
-    
-       <section class="py-40 py-lg-40">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="swiper logo-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-01.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-02.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-03.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-04.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-05.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-06.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-07.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-08.png') }}" class="img-fluid"></div>
-
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-01.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-02.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-03.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-04.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-05.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-06.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-07.png') }}" class="img-fluid"></div>
-                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-08.png') }}" class="img-fluid"></div>
+                <div class="row py-20">
+                    
+                    <div class="col-12 col-md-5 h-100 only-m">
+                        <div class="img-holder ms-md-auto">
+                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/img/luxury-black-car-service-dallas-love-field-airport-mobile.webp') }}" width="407" height="210" class="img-fluid" alt="Luxury black car service in Dallas TX with professional chauffeur">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    
-         <section
-        class="intercity-ride-section bg-gray pt-40 pb-30 pt-sm-40 pb-sm-35 pt-md-40 pb-md-40 pt-lg-40 pb-lg-40">
-        <div class="ah-container">
-            <div class="row justify-content-center">
-                <div class="text-center col-12 col-lg-11 col-xl-10 mb-25 mb-md-30 mb-lg-40">
-                    <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30 seciononeheading">Top Cities & <span class="theme-color">Top
-                            Routes</span></h2>
-                    <p class="font-base">Our Dallas executive shuttle service connects you to the most popular cities and travel routes across Texas. Whether you're heading to airports, Arlington, Waco, Tyler, or nearby destinations, our professional chauffeurs ensure smooth, punctual, and comfortable transportation. Enjoy reliable executive shuttle and airport shuttle service from Dallas with luxury vehicles, private travel, and a stress-free ride experience every time.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
-                        <div class="img-holder">
-                            <img src="/img/black-car-service-austin.webp" alt="Mercedes Sprinter executive shuttle service Dallas TX" class="img-fluid">
-                        </div>
-                        <div class="city-details p-15 position-absolute">
-                           <div class="row">
-                           <div class="col-md-6 col-sm-6">
-                            <h3 class="mb-1 text-white h6">Dallas
-                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
-                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
-                                    data-testid="ChevronRightIcon">
-                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
-                                </svg>
-                                DFW Airport
-                            </h3>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                            <p class="mb-0 text-white font-base">20 miles &nbsp;&nbsp;|&nbsp;&nbsp; 28m</p>
-                             </div>
-                            </div>
-                            
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
-                        <div class="img-holder">
-                            <img src="/img/black-car-service-college-station.webp" alt="luxury executive shuttle van transportation Dallas Texas" class="img-fluid">
-                        </div>
-                        <div class="city-details p-15 position-absolute">
-                      <div class="row">
-                           <div class="col-md-6 col-sm-6">
-                            <h3 class="mb-1 text-white h6">Dallas
-                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
-                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
-                                    data-testid="ChevronRightIcon">
-                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
-                                </svg>
-                                Love Field
-                            </h3>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                            <p class="mb-0 text-white font-base">8 miles &nbsp;&nbsp;|&nbsp;&nbsp; 18m</p>
-                             </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
-                        <div class="img-holder">
-                            <img src="/img/black-car-service-houston.webp" alt="executive shuttle service Dallas for corporate group travel" class="img-fluid">
-                        </div>
-                        <div class="city-details p-15 position-absolute">
-                          
-                              <div class="row">
-                           <div class="col-md-6 col-sm-6">
-                            <h3 class="mb-1 text-white h6">Dallas
-                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
-                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
-                                    data-testid="ChevronRightIcon">
-                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
-                                </svg>
-                                Arlington
-                            </h3>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                            <p class="mb-0 text-white font-base">20 miles &nbsp;&nbsp;|&nbsp;&nbsp; 30m</p>
-                             </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
-                        <div class="img-holder">
-                            <img src="/img/black-car-service-sherman.webp" alt="executive shuttle transportation Dallas for corporate conferences" class="img-fluid">
-                        </div>
-                        <div class="city-details p-15 position-absolute">
-                              <div class="row">
-                           <div class="col-md-6 col-sm-6">
-                            <h3 class="mb-1 text-white h6">Dallas
-                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
-                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
-                                    data-testid="ChevronRightIcon">
-                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
-                                </svg>
-                                 Sherman
-                            </h3>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                            <p class="mb-0 text-white font-base">65.2 miles &nbsp;&nbsp;|&nbsp;&nbsp; 1h 56m</p>
-                             </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
-                        <div class="img-holder">
-                            <img src="/img/black-car-service-tyler.webp" alt="luxury group shuttle service Dallas business event transportation" class="img-fluid">
-                        </div>
-                        <div class="city-details p-15 position-absolute">
-                             <div class="row">
-                           <div class="col-md-6 col-sm-6">
-                            <h3 class="mb-1 text-white h6">Dallas
-                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
-                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
-                                    data-testid="ChevronRightIcon">
-                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
-                                </svg>
-                                Tyler
-                            </h3>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                            <p class="mb-0 text-white font-base">98 miles &nbsp;&nbsp;|&nbsp;&nbsp; 1h 34m</p>
-                             </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
-                        <div class="img-holder">
-                            <img src="/img/black-car-service-waco.webp" alt="executive shuttle service for meetings and conventions Dallas" class="img-fluid">
-                        </div>
-                        <div class="city-details p-15 position-absolute">
-                              <div class="row">
-                           <div class="col-md-6 col-sm-6">
-                            <h3 class="mb-1 text-white h6">Dallas
-                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
-                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
-                                    data-testid="ChevronRightIcon">
-                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
-                                </svg>
-                                Waco
-                            </h3>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                            <p class="mb-0 text-white font-base">93.8 miles &nbsp;&nbsp;|&nbsp;&nbsp; 1h 23m</p>
-                             </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+                    
+                    <div class="col-12 col-md-7">
+                        <h3 class="h4 fw-semibold">Areas We Serve Across Dallas</h3>
+                        <p class="font-md all-justify">
+                         Dallas Limos and Black Car Service proudly provides Premier Black Car Service throughout Dallas and nearby cities, supporting airport transfers, corporate travel, events, and personal transportation. Our service coverage is designed to connect clients with major business districts, luxury hotels, sports venues, and regional airports across the Dallas–Fort Worth metro area.
+                         </p>
+                         <h3 class="h4 fw-semibold">Our service areas include:</h3>
+                        <ul>
  
-    
-     <section class="testimonial-section bg-blue py-40 py-sm-40 py-md-40 py-lg-50">
-    <div class="ah-container">
-        <div class="row">
-            <div class="mb-10 text-center col-12 mb-md-20">
-                <h2 class="text-white h2 fw-bold">What Travelers Say About Our Executive Shuttle Service</h2>
+<li>Dallas, Plano, Frisco, Allen, Irving, Addison, and Richardson.</li>
+
+<li>Downtown Dallas, Uptown, Highland Park, and University Park.</li>
+
+<li>Major hotels including The Ritz-Carlton Dallas, Omni Dallas Hotel, and Hilton Anatole.</li>
+
+<li>Sports and event venues such as AT&T Stadium and American Airlines Center.</li>
+<li>DFW International Airport, Dallas Love Field, Addison Airport, and Dallas Executive Airport.</li>
+
+ </ul>
+
+                    </div>
+                    
+                    <div class="col-12 col-md-5 h-100 only-d">
+                        <div class="img-holder ms-md-auto">
+                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/img/luxury-black-car-service-dallas-love-field-airport.webp') }}" width="407" height="210" class="img-fluid" alt="Premier Black Car Service in Dallas for airport and executive transportation">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="row flex-row-reverse py-20 d-md-flex">
+                    
+                        <div class="col-12 col-md-5 h-100 only-m">
+                        <div class="img-holder ms-md-auto">
+                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/img/chauffeur-driven-black-car-service-dallas-tx-mobile.webp') }}" width="407" height="210" class="img-fluid" alt="Black car service at DFW Airport for business travelers in Dallas">
+                        </div>
+                    </div>
+                    
+             <div class="col-12 col-md-7">
+                      <h3 class="h4 fw-semibold">Why Choose Our Premier Black Car Service in Dallas</h3>
+                        <p class="font-md all-justify">
+                          Dallas Limos and Black Car Service is trusted by executives, corporate teams, and travelers who require dependable airport and business transportation. Our Premier Black Car Service is built around precision, professionalism, and consistency—ensuring every ride meets high service standards. From airport transfers to corporate travel, we focus on reliability, discretion, and client comfort across Dallas and surrounding areas.
+                        </p>
+                         <h3 class="h4 fw-semibold"> Why clients choose us:</h3>
+                        <ul>
+<li>Professional, background-checked career chauffeurs.</li>
+
+<li>On-time airport car service Dallas travelers can depend on.</li>
+
+<li>Executive fleet including luxury sedans, SUVs, Sprinters, and group vehicles.</li>
+
+<li>Real-time flight monitoring and dispatch coordination.</li>
+
+<li>Transparent pricing with no surge fees or hidden costs.</li>
+
+<li>Consistent service for business, airport, and private travel needs.</li>
+</ul>
+                    </div>
+                    
+                   
+                   
+                  <div class="col-12 col-md-5 h-100 only-d">
+                        <div class="img-holder ms-md-auto">
+                            <img loading="lazy" decoding="async" src="{{ asset('dallaslimo-bl-design/img/chauffeur-driven-black-car-service-dallas-tx.webp') }}" width="407" height="210" class="img-fluid" alt="Dallas black car service providing corporate transportation solutions">
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="overflow-hidden bg-white swiper testimonial-slider py-30 py-lg-30">
+            
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse py-20 d-md-none">
+                    <div class="col-12 col-md-6">
+                        <h3 class="h4 fw-semibold">Flight-Monitored Airport Car Service</h3>
+                        <p class="font-md mb-0">
+                            Our flight-Monitored airport car service tracks your flight in real time. Pickup adjusts for
+                            early arrivals, delays, and gate changes. Your airport transfer stays aligned with your
+                            actual landing time. The chauffeur is dispatched from live flight updates. When curb access
+                            is limited, the vehicle is staged nearby. You know where to go and when pickup will happen.
+                            At DFW and Dallas Love Field, timing is planned around airport flow and traffic. The result
+                            is less waiting, cleaner curbside pickup, and reliable departures. Professional chauffeurs
+                            handle each trip for business and executive travel.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+   
+    <div class="">
+            <div class="container-fluid">
+                <div class="bg-gray-light sponser-logo-swiper logo-swiper p-30 py-md-50">
                     <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-01.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-02.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-03.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-04.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-05.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-06.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-07.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-08.png') }}" class="img-fluid"></div>
 
-                        <div class="swiper-slide px-30 px-sm-35 px-lg-35">
-                            <div class="testimonial-slider-item">
-                                <cite class="mb-2 text-center name fw-bold text-capitalize d-block">Ryan Peterson</cite>
-                                <span class="mb-10 text-center location fw-semibold font-lg d-block">Dallas, TX</span>
-                                <blockquote class="mb-30">
-                                    <p class="mb-0 text-center font-lg fw-medium">
-                                        Excellent executive shuttle service in Dallas. Our driver arrived early for our corporate pickup and the ride was smooth and comfortable. Highly professional black car service.
-                                    </p>
-                                </blockquote>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide px-30 px-sm-35 px-lg-35">
-                            <div class="testimonial-slider-item">
-                                <cite class="mb-2 text-center name fw-bold text-capitalize d-block">Laura Mitchell</cite>
-                                <span class="mb-10 text-center location fw-semibold font-lg d-block">Plano, TX</span>
-                                <blockquote class="mb-30">
-                                    <p class="mb-0 text-center font-lg fw-medium">
-                                        Reliable Dallas executive shuttle service. My driver handled our airport shuttle service perfectly and was waiting on time. Very comfortable and stress-free ride.
-                                    </p>
-                                </blockquote>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide px-30 px-sm-35 px-lg-35">
-                            <div class="testimonial-slider-item">
-                                <cite class="mb-2 text-center name fw-bold text-capitalize d-block">Christopher Adams</cite>
-                                <span class="mb-10 text-center location fw-semibold font-lg d-block">Frisco, TX</span>
-                                <blockquote class="mb-30">
-                                    <p class="mb-0 text-center font-lg fw-medium">
-                                        I regularly use their Dallas executive shuttle service for business trips. Always punctual, professional chauffeurs, and luxury vehicles. Best executive transportation in Dallas.
-                                    </p>
-                                </blockquote>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide px-30 px-sm-35 px-lg-35">
-                            <div class="testimonial-slider-item">
-                                <cite class="mb-2 text-center name fw-bold text-capitalize d-block">Jessica Carter</cite>
-                                <span class="mb-10 text-center location fw-semibold font-lg d-block">Arlington, TX</span>
-                                <blockquote class="mb-30">
-                                    <p class="mb-0 text-center font-lg fw-medium">
-                                        Fantastic airport shuttle transportation service. The driver picked us up from our hotel and took us to the airport on time. Very comfortable executive shuttle ride.
-                                    </p>
-                                </blockquote>
-                            </div>
-                        </div>
-
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-01.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-02.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-03.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-04.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-05.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-06.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-07.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-08.png') }}" class="img-fluid"></div>
                     </div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        
+        <section class="py-40 overflow-hidden">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <header class="mb-15">
+                            <h2 class="h2 fw-semibold text-center">What Our Clients Say About Our Black Car Service
+                            </h2>
+                        </header>
+                    </div>
+                </div>
+                <div class="row position-relative">
+                    <div class="col-12">
+                        <div class="swiper testimonial-swiper custom-swiper-01">
+                            <div class="d-flex justify-content-end gap-3 swiper-arrows-holder">
+                                <div class="swiper-button-prev">
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path
+                                            d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"
+                                            fill="#fff" />
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path
+                                            d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"
+                                            fill="#fff" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card">
+                                        <blockquote class="text-center">
+                                            <q class="font-md ">
+Dallas Limos and Black Car Service has been our go-to for executive airport transportation. Always on time, professional chauffeurs, and smooth pickups at DFW and Love Field. Exactly what corporate travel requires.
+                                            </q>
+                                            <cite class="name"> — Corporate Client, Dallas TX</cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
 
- 
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card">
+                                        <blockquote class="text-center">
+                                            <q class="font-md ">
+                                               I’ve used their Premier Black Car Service multiple times for business meetings and personal travel. The vehicles are spotless, the service is reliable, and the entire experience feels professional from start to finish.
+                                            </q>
+                                            <cite class="name"> — Business Traveler, Plano</cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                
+                                
+                                 <div class="swiper-slide">
+                                    <div class="testimonial-card">
+                                        <blockquote class="text-center">
+                                            <q class="font-md ">
+                                              We rely on Dallas Limos and Black Car Service for corporate transportation and executive airport transfers. Their consistency, clear communication, and on-time service make them a dependable partner for our team
+                                            </q>
+                                            <cite class="name"> — Operations Manager, Dallas TX</cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card">
+                                        <blockquote class="text-center">
+                                            <q class="font-md ">
+                                               Booking was easy, the vehicle arrived early, and the chauffeur was extremely professional. Whether it’s DFW Airport or meetings across Dallas, this black car service delivers every time.
+                                            </q>
+                                            <cite class="name"> — Executive Client, Allen</cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card">
+                                        <blockquote class="text-center">
+                                            <q class="font-md ">
+                                               From hotel pickup to airport drop-off, everything was seamless. The chauffeur was courteous, punctual, and knew Dallas well. Easily one of the most dependable black car services in the area.
+                                            </q>
+                                            <cite class="name"> — Private Client, Frisco</cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
 
-<section class="faqs-section py-40 py-sm-40 py-md-50 py-lg-50">
-    <div class="ah-container">
-        <div class="row">
-            <div class="text-center col-12 mb-20 mb-md-15 mb-lg-20">
-                <h2 class="h2 fw-bold seciononeheading">Frequently Asked <span class="theme-color">Questions</span></h2>
+                            </div>
+
+                            <!-- Optional -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-6 col-lg-6 col-xl-6 col-666 accordion-holder" id="accordion01">
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseOne">
-                            What areas does your Dallas executive shuttle service cover?
-                        </button>
-                    </h2>
-                    <div id="accordion01-collapseOne" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Our Dallas executive shuttle service covers the entire Dallas–Fort Worth metroplex including Plano, Frisco, Irving, Arlington, McKinney, and surrounding cities with reliable executive transportation.
+        </section>
+        <div class="px-15 cta-one-t">
+                <div class="py-30 d-md-none bdr-radius">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h4 class="h4 fw-semibold mb-20">
+                                 Professional Chauffeurs. Reliable Black Car Service.
+                                </h4>
+                                <a href="/booking/" class="btn btn-primary w-100 fw-medium text-capitalize">Book Your Chauffeur Today</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseTwo">
-                            Do you provide airport shuttle service to DFW Airport and Dallas Love Field?
-                        </button>
-                    </h2>
-                    <div id="accordion01-collapseTwo" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Yes, we provide professional airport shuttle service to DFW International Airport and Dallas Love Field Airport with punctual pickups and comfortable luxury vehicles.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseThree">
-                            Is your executive shuttle service available for corporate travel?
-                        </button>
-                    </h2>
-                    <div id="accordion01-collapseThree" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Yes, our Dallas executive shuttle service is ideal for executives, business travelers, and corporate teams needing professional chauffeur transportation for meetings and airport transfers.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseFour">
-                            Can I book executive shuttle transportation from Dallas?
-                        </button>
-                    </h2>
-                    <div id="accordion01-collapseFour" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Yes, we offer executive shuttle transportation from Dallas for airports, hotels, business events, conferences, and other nearby Texas destinations.
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            
+        <section class="py-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <header class="mb-15">
+                            <h2 class="h2 fw-semibold text-center">Frequently Asked Questions</h2>
+                        </header>
+                    </div>
+                </div>
+                <div class="row" id="faqAccordion">
+                    <div class="col-12 col-md-6 accordion-holder accordion">
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button
+                                    class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    What areas do you serve for black car service?
 
-            <div class="col-6 col-lg-6 col-xl-6 col-666 accordion-holder">
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body pl-0 px-20 mb-0 pr-0">
+                                    <p class="font-base">We provide black car service throughout Dallas and surrounding cities, including Plano, Frisco, Allen, Irving, and Addison, as well as all major airports and business districts in the Dallas–Fort Worth area.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button
+                                    class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                   Do you offer airport black car service to DFW and Love Field?
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body pl-0 px-20 mb-0 pr-0">
+                                    <p class="font-base mb-0">Yes, we specialize in airport transportation to and from DFW International Airport and Dallas Love Field, offering on-time pickups, flight monitoring, and professional chauffeur service.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button
+                                    class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                  Is your black car service available for corporate travel?
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body pl-0 px-20 mb-0 pr-0">
+                                    <p class="font-base mb-0">Absolutely. Our Premier Black Car Service is ideal for corporate meetings, executive travel, roadshows, and daily business transportation across Dallas and nearby cities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button
+                                    class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                    aria-expanded="false" aria-controls="collapseFour">
+                                    What types of vehicles are included in your fleet?
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseFive">
-                            How do I book your Dallas executive shuttle service?
-                        </button>
-                    </h2>
-                    <div id="accordion01-collapseFive" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            You can easily book our Dallas executive shuttle service online through our website or request a ride quote for quick reservation confirmation.
+
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body pl-0 px-20 mb-0 pr-0">
+                                    <p class="font-base mb-0">Our fleet includes luxury sedans, executive SUVs, and Mercedes-Benz Sprinter vans, all professionally maintained to deliver comfort, privacy, and reliability for every ride.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 accordion-holder accordion">
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button
+                                    class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                    aria-expanded="false" aria-controls="collapseFive">
+                                    Are your chauffeurs professionally trained?
+
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body pl-0 px-20 mb-0 pr-0">
+                                    <p class="font-base mb-0">Yes, all chauffeurs are career professionals who are background-checked, experienced, and trained to provide discreet, courteous, and punctual black car service in Dallas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button
+                                    class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                    aria-expanded="false" aria-controls="collapseSix">
+                                  Do you offer hourly black car service?
+
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body pl-0 px-20 mb-0 pr-0">
+                                    <p class="font-base mb-0">We offer flexible hourly black car service for meetings, shopping, dining, events, and multi-stop itineraries, allowing clients full control over their schedule.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button
+                                    class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+                                    aria-expanded="false" aria-controls="collapseSeven">
+                                 Is pricing transparent with no hidden fees?
+
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body pl-0 px-20 mb-0 pr-0">
+                                    <p class="font-base mb-0">Yes, we provide upfront, transparent pricing with no surge rates or hidden charges, making our service ideal for corporate accounts and personal travel planning.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button
+                                    class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight"
+                                    aria-expanded="false" aria-controls="collapseEight">
+                                    How do I book a black car service in Dallas?
+
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640">
+                                        <path
+                                            d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body pl-0 px-20 mb-0 pr-0">
+                                    <p class="font-base mb-0">You can easily book by phone at 214-919-5377 or request a quote online. Our team will confirm details and schedule your chauffeur promptly.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseSix">
-                            What vehicles are available for executive shuttle transportation?
-                        </button>
-                    </h2>
-                    <div id="accordion01-collapseSix" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Our fleet includes luxury sedans, executive SUVs, sprinter vans, and minibuses suitable for airport shuttle service, corporate travel, and group transportation.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseSeven">
-                            Are your chauffeurs professionally trained?
-                        </button>
-                    </h2>
-                    <div id="accordion01-collapseSeven" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Yes, our chauffeurs are licensed, experienced, and professionally trained to provide safe, reliable, and comfortable transportation throughout Dallas.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseEight">
-                            Why choose your Dallas executive shuttle service?
-                        </button>
-                    </h2>
-                    <div id="accordion01-collapseEight" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Our Dallas executive shuttle service offers punctual pickups, luxury vehicles, professional chauffeurs, and reliable transportation for airports, hotels, and executive travel.
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </div>
-</section>
-    
+        </section>
     
 @endsection
