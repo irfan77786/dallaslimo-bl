@@ -1,139 +1,115 @@
-<section class="faqs-section py-40">
-    <div class="container">
+<section class="faqs-section py-50 py-sm-60 py-md-70 py-lg-80">
+    <div class="ah-container">
         <div class="row">
-             <div class="col-12 text-center mb-20">
-                <h2 class="h2 fw-bold">Frequently Asked <span class="theme-color br-css-tt">Questions</span></h2>
+            <div class="col-12 text-center mb-25 mb-md-30 mb-lg-40">
+                <h2 class="h2 fw-bold">Frequently Asked Questions</h2>
             </div>
         </div>
-        <div class="row" id="faqAccordion">
-            <div class="col-12 col-md-6 accordion-holder accordion">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8 accordion-holder" id="accordion01">
                 <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingOne">
+                    <h2 class="accordion-header" id="accordion01-headingOne">
                         <button
-                            class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                            aria-expanded="false" aria-controls="collapseOne">
-                            Do you provide FBO pickups (Signature, Atlantic, Million Air, etc.)?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body pl-0 pt-0 pr-0">
-                            <p class="font-base">Yes. We provide professional FBO pickup and drop-off service at all major private aviation terminals across Dallas–Fort Worth, including Signature Flight Support, Atlantic Aviation, and Million Air. Chauffeur arrivals are coordinated discreetly around flight timing and FBO protocols to ensure smooth, on-time transfers.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button
-                            class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                            aria-expanded="false" aria-controls="collapseTwo">
-                            Do you offer corporate accounts and monthly invoicing?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body pl-0 pt-0 pr-0">
-                            <p class="font-base">Yes. We offer corporate accounts with consolidated monthly invoicing for companies, executive assistants, and travel managers. Billing is itemized and structured for clear reporting, internal tracking, and ongoing executive travel throughout the Dallas–Fort Worth area.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button
-                            class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                            aria-expanded="false" aria-controls="collapseThree">
-                            Do you offer hourly as-directed service for executives and roadshows?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body pl-0 pt-0 pr-0">
-                            <p class="font-base">Yes. We provide hourly as-directed black car service for executives and roadshows, supporting flexible, multi-stop itineraries. Chauffeurs remain on standby while dispatch actively monitors timing and routing to support assistant-managed schedules, meetings, and investor roadshow logistics.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button
-                            class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                            aria-expanded="false" aria-controls="collapseFour">
+                            class="h6 accordion-button px-15 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseOne"
+                            aria-expanded="false" aria-controls="accordion01-collapseOne">
                             How early will the driver arrive before my pickup time?
+                            <span class="chevron-icon ms-auto">
+                                <img src="{{ asset('new_assets/assets/chevron-down.svg') }}" width="20" alt="chevron" class="img-fluid">
+                            </span>
                         </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#faqAccordion">
+                    <div id="accordion01-collapseOne" class="accordion-collapse collapse"
+                        aria-labelledby="accordion01-headingOne">
                         <div class="accordion-body pl-0 pt-0 pr-0">
-                            <p class="font-base">For most Dallas–Fort Worth pickups, chauffeurs arrive 10–15 minutes early. This arrival buffer supports smooth loading, schedule protection, and reliable on-time departures for airport transfers, corporate meetings, and executive appointments.</p>
+                            <br>
+                            <p class="font-base">Our drivers arrive 10–15 minutes early to give you a
+                                stress-free start to your ride.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-             <div class="col-12 col-md-6 accordion-holder accordion">
                 <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingFive">
+                    <h2 class="accordion-header" id="accordion01-headingTwo">
                         <button
-                            class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
-                            aria-expanded="false" aria-controls="collapseFive">
+                            class="h6 accordion-button px-15 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseTwo"
+                            aria-expanded="false" aria-controls="accordion01-collapseTwo">
+                            Can I make multiple stops during my trip?
+                            <span class="chevron-icon ms-auto">
+                                <img src="{{ asset('new_assets/assets/chevron-down.svg') }}" width="20" alt="chevron" class="img-fluid">
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseTwo" class="accordion-collapse collapse"
+                        aria-labelledby="accordion01-headingTwo">
+                        <div class="accordion-body pl-0 pt-0 pr-0">
+                            <br>
+                            <p class="font-base">Yes, our Black Car Service Dallas allows multiple stops. The
+                                driver will plan the route efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item ">
+                    <h2 class="accordion-header" id="accordion01-headingThree">
+                        <button
+                            class="h6 accordion-button px-15 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseThree"
+                            aria-expanded="false" aria-controls="accordion01-collapseThree">
                             Can I request a specific driver?
+                            <span class="chevron-icon ms-auto">
+                                <img src="{{ asset('new_assets/assets/chevron-down.svg') }}" width="20" alt="chevron" class="img-fluid">
+                            </span>
                         </button>
                     </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                        data-bs-parent="#faqAccordion">
+                    <div id="accordion01-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="accordion01-headingThree">
                         <div class="accordion-body pl-0 pt-0 pr-0">
-                            <p class="font-base">Yes. You may request a preferred chauffeur when available, particularly for recurring corporate travel or airport transportation in Dallas–Fort Worth. Advance requests help maintain consistency, familiarity, and efficient pickups for executives and executive assistants.</p>
+                            <br>
+                            <p class="font-base">Absolutely. You can request the same driver for your trips if
+                                available. Many corporate clients prefer consistent drivers for comfort and
+                                trust.</p>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingSix">
+                    <h2 class="accordion-header" id="accordion01-headingFour">
                         <button
-                            class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"
-                            aria-expanded="false" aria-controls="collapseSix">
-                            Do you offer VIP airport service for executives?
+                            class="h6 accordion-button px-15 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseFour"
+                            aria-expanded="false" aria-controls="accordion01-collapseFour">
+                            What happens if my flight is delayed?
+                            <span class="chevron-icon ms-auto">
+                                <img src="{{ asset('new_assets/assets/chevron-down.svg') }}" width="20" alt="chevron" class="img-fluid">
+                            </span>
                         </button>
                     </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                        data-bs-parent="#faqAccordion">
+                    <div id="accordion01-collapseFour" class="accordion-collapse collapse"
+                        aria-labelledby="accordion01-headingFour">
                         <div class="accordion-body pl-0 pt-0 pr-0">
-                            <p class="font-base">Yes. We provide VIP airport service at Dallas Fort Worth International Airport and Dallas Love Field. Service includes discreet coordination, real-time flight monitoring, and schedule-focused handling designed for senior executives and visiting leaders.</p>
+                            <br>
+                            <p class="font-base">We track flights in real-time. The driver adjusts your pickup
+                                time to match your arrival.</p>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingSeven">
+                    <h2 class="accordion-header" id="accordion01-headingFive">
                         <button
-                            class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven"
-                            aria-expanded="false" aria-controls="collapseSeven">
-                            How much wait time is included for DFW airport pickups?
+                            class="h6 accordion-button px-15 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseFive"
+                            aria-expanded="false" aria-controls="accordion01-collapseFive">
+                            Are there WiFi or charging options in the cars?
+                            <span class="chevron-icon ms-auto">
+                                <img src="{{ asset('new_assets/assets/chevron-down.svg') }}" width="20" alt="chevron" class="img-fluid">
+                            </span>
                         </button>
                     </h2>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-                        data-bs-parent="#faqAccordion">
+                    <div id="accordion01-collapseFive" class="accordion-collapse collapse"
+                        aria-labelledby="accordion01-headingFive">
                         <div class="accordion-body pl-0 pt-0 pr-0">
-                            <p class="font-base">Included wait time depends on your reservation type and arrival details. Grace periods are designed to accommodate deplaning and baggage claim at DFW, with trips monitored in real time to support smooth coordination in the event of early arrivals or delays.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingEight">
-                        <button
-                            class="h6 accordion-button px-0 py-15 py-sm-20 py-lg-25 mb-0 fw-semibold collapsed"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight"
-                            aria-expanded="false" aria-controls="collapseEight">
-                            Do you provide round-trip service to AT&T Stadium?
-                        </button>
-                    </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body pl-0 pt-0 pr-0">
-                            <p class="font-base">Yes. We provide round-trip chauffeur service to major Dallas–Fort Worth venues, including AT&T Stadium. Drop-off and return pickup planning is coordinated in advance to simplify arrival, post-event departures, and overall event transportation logistics.</p>
+                            <br>
+                            <p class="font-base">Yes. Most vehicles have WiFi and charging ports so you can stay
+                                connected during your ride.</p>
                         </div>
                     </div>
                 </div>

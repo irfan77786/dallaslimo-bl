@@ -1,585 +1,692 @@
 @extends('master')
 
 @section('content')
-    <section class="d-md-none">
+      
+      <section class="d-md-none">
+    <div class="ah-container">
+        <div class="search-form-mobile">
+            @include('partials.search', ['id_suffix' => '_mobile'])
+        </div>
+    </div>
+</section>
+
+{{-- Banner: text (and desktop form) --}}
+<section class="home-banner-section">
+    <div id="hero-banner-container" class="py-60 ah-container position-relative py-sm-70 py-md-80 py-lg-100"
+         style="z-index: 2; background-image: url('https://dallaslimoandblackcars.com/img/dallas-limo-and-black-cars-banner.webp');">
+        <div id="map" class="position-absolute w-100 h-100" style="top:0; left:0; z-index: 1; display:none;"></div>
+
+        <div class="row" style="pointer-events: none;">
+            <div id="home-text-content" class="col-12 col-md-6 d-flex flex-column justify-content-center" style="pointer-events: auto; position: relative; z-index: 0;">
+                <h1 class="text-white h2 fw-bold mb-15">FIFA World Cup 2026 Transportation</h1>
+                <div class="d-none d-md-block">
+                    <p class="text-white font-lg fw-medium mb-30">Enjoy reliable FIFA World Cup 2026 transportation in Dallas with our professional black car chauffeurs. We provide punctual and comfortable transportation for airports, stadiums, hotels, fan events, and group travel, ensuring a smooth, stress-free ride experience throughout the tournament.</p>
+ 
+                    <p class="text-white font-base d-flex align-items-center mb-30 mb-md-0">
+                        Call: <a href="tel:+12148978056" class="mx-2 fw-bold font-lg theme-color">+1 214-897-8056</a>
+                    </p>
+                </div>
+            </div>
+            <div class="d-none col-12 col-md-6 d-md-block" style="pointer-events: auto; position: relative; z-index: 2;">
+                <div class="search-form-wrapper-desktop">
+                    @include('partials.search', ['id_suffix' => '_form'])
+                </div>
+            </div>
+        </div>
+    </div>
+    @include('partials.hero_banner_styles')
+</section>
+
+
+     <section class="fleet-section py-40 py-sm-50 py-md-50 py-lg-50">
         <div class="ah-container">
-            <div class="search-form-mobile">
-                @include('partials.search', ['id_suffix' => '_mobile'])
-            </div>
-        </div>
-    </section>
-
-    <section class="home-banner-section">
-        <div class="hero-banner-container py-60 ah-container position-relative py-sm-70 py-md-80 py-lg-100"
-             style="z-index: 2; background-image: url('{{ asset('assets/banner-01.webp') }}'); background-size: cover; background-position: center;">
-            <!-- Map Container (Initially hidden, shows up when location is selected) -->
-            <div id="map" class="position-absolute w-100 h-100" style="top:0; left:0; z-index: 1; display:none;"></div>
-
-            <div class="row" style="pointer-events: none;">
-                <div id="home-text-content" class="banner-text-content col-12 col-md-6 d-flex flex-column justify-content-center" style="pointer-events: auto; position: relative; z-index: 0;">
-                    <h1 class="h1 fw-bold text-white mb-15">FIFA World Cup 2026 Car Service in Dallas</h1>
-                    <p class="font-lg fw-medium text-white mb-0">Professional black car and chauffeur service for FIFA World Cup 2026 matches, airport arrivals, hotels, stadium transfers, and VIP travel across Dallas–Fort Worth.</p>
-                    <p class="font-md text-white d-flex align-items-center">
-                        Call: <a href="tel:(214) 897-8056" class="fw-bold font-lg theme-color mx-2 text-underline">(214) 897-8056</a>
-                    </p>
-                </div>
-                <div class="d-none col-12 col-md-6 d-md-block" style="pointer-events: auto; position: relative; z-index: 2;">
-                    <div class="search-form-wrapper-desktop">
-                        @include('partials.search', ['id_suffix' => ''])
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="luxury-cars-section bg-gray pb-40 pb-sm-60 py-md-40">
-        <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-11 col-xl-10 text-md-center mb-15 mb-sm-25 mb-md-30 mb-lg-40">
-                    <h2 class="h2 fw-bold mb-10 text-center">FIFA World Cup 2026 <span class="theme-color br-css-tt">Chauffeured Fleet in Dallas</span></h2>
-                    <p class="font-md mb-0 mobile-justify">Our professionally chauffeured fleet in Dallas is designed for <a href="/booking/"><b>FIFA World Cup 2026 transportation</b></a>, supporting <a href="/services/airport-transfer-dallas/"><b>airport transfers</b></a>, hotel pickups, stadium travel, and group movement across the Dallas–Fort Worth area. We offer luxury sedans, premium and luxury SUVs, Sprinter vans, and minibuses for individual travelers, VIP guests, teams, and large groups. All vehicles are commercially insured, maintained to executive standards, and scheduled in advance to ensure reliable, comfortable, and on-time service during World Cup events in Dallas.</p>
+                <div class="text-center col-12 col-xl-10">
+                    <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30 seciononeheading">Our Luxury Fleet –  <span class="theme-color fw-bold">Travel for FIFA World Cup 2026 with Comfort and Class</span></h2>
                 </div>
-            </div>
-            <div class="row luxury-cars-item-holder justify-content-center d-none d-md-flex">
-                <div class="col-12 col-lg-3 px-30 px-sm-15">
-                    <article class="text-center luxury-cars-item mx-auto">
-                        <div class="img-holder mb-15">
-                            <img loading="lazy" decoding="async" src="{{ asset('assets/Sedan.webp') }}" alt="Black car service Dallas luxury sedan"
-                                class="img-fluid" width="750" height="410">
-                        </div>
-                        <h3 class="fw-semibold h6 mb-3">Premier Sadan</h3>
-                        <p class="font-base mb-2">Mercedes S550, BMW 750 or similar</p>
-                        <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="PeopleIcon">
-                                    <path
-                                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                    </path>
-                                </svg>
-                                max 3
-                            </li>
-                            <li class="px-2"></li>
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="LuggageIcon">
-                                    <path
-                                        d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                    </path>
-                                </svg>
-                                max 3
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-12 col-lg-3 px-30 px-sm-15">
-                    <article class="text-center luxury-cars-item mx-auto">
-                        <div class="img-holder mb-15">
-                            <img loading="lazy" decoding="async" src="{{ asset('assets/suv.webp') }}" alt="Luxury SUV black car service Dallas"
-                                class="img-fluid" width="750" height="410">
-                        </div>
-                        <h3 class="fw-semibold h6 mb-3">Premier SUV</h3>
-                        <p class="font-base mb-2">Chevrolet Suburban or similar</p>
-                        <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="PeopleIcon">
-                                    <path
-                                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                    </path>
-                                </svg>
-                                max 6
-                            </li>
-                            <li class="px-2"></li>
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="LuggageIcon">
-                                    <path
-                                        d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                    </path>
-                                </svg>
-                                max 6
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-12 col-lg-3 px-30 px-sm-15">
-                    <article class="text-center luxury-cars-item mx-auto">
-                        <div class="img-holder mb-15">
-                            <img loading="lazy" decoding="async" src="{{ asset('assets/luxury-suv.webp') }}" alt="Premium SUV black car service Dallas"
-                                class="img-fluid" width="750" height="410">
-                        </div>
-                        <h3 class="fw-semibold h6 mb-3">Luxury SUV</h3>
-                        <p class="font-base mb-2">Cadillac Escalade ESV, Lincoln Navigator or similar</p>
-                        <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="PeopleIcon">
-                                    <path
-                                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                    </path>
-                                </svg>
-                                max 6
-                            </li>
-                            <li class="px-2"></li>
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="LuggageIcon">
-                                    <path
-                                        d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                    </path>
-                                </svg>
-                                max 6
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-12 col-lg-3 px-30 px-sm-15">
-                    <article class="text-center luxury-cars-item mx-auto">
-                        <div class="img-holder mb-15">
-                            <img loading="lazy" decoding="async" src="{{ asset('assets/sprinter.webp') }}" alt="Black SUV chauffeur service in Dallas"
-                                class="img-fluid" width="750" height="410">
-                        </div>
-                        <h3 class="fw-semibold h6 mb-3">Busniess Sprinter</h3>
-                        <p class="font-base mb-2">Mercedes benz Sprinter Van or similar</p>
-                        <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="PeopleIcon">
-                                    <path
-                                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                    </path>
-                                </svg>
-                                max 12
-                            </li>
-                            <li class="px-2"></li>
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="LuggageIcon">
-                                    <path
-                                        d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                    </path>
-                                </svg>
-                                max 30
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="col-12 col-lg-3 px-30 px-sm-15">
-                    <article class="text-center luxury-cars-item mx-auto">
-                        <div class="img-holder mb-15">
-                            <img loading="lazy" decoding="async" src="{{ asset('assets/mini-bus.webp') }}" alt="Spacious black SUV for Dallas black car service"
-                                class="img-fluid" width="750" height="410">
-                        </div>
-                        <h3 class="fw-semibold h6 mb-3">Mini Bus</h3>
-                        <p class="font-base mb-2">24-Seater Mini Bus</p>
-                        <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="PeopleIcon">
-                                    <path
-                                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                    </path>
-                                </svg>
-                                max 24
-                            </li>
-                            <li class="px-2"></li>
-                            <li class="d-flex gap-2 align-items-center">
-                                <svg width="20" height="20" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-                                    data-testid="LuggageIcon">
-                                    <path
-                                        d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                    </path>
-                                </svg>
-                                max 20
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-            <!-- Mobile Slider -->
-            <div class="row d-md-none">
                 <div class="col-12">
-                    <div class="luxury-cars-slider-holder">
-                        <div>
-                            <article class="text-center luxury-cars-slider-item mx-auto">
-                                <div class="img-holder mb-15">
-                                    <img loading="lazy" decoding="async" src="{{ asset('assets/Sedan.webp') }}" alt="Black car service Dallas luxury sedan"
-                                        class="img-fluid" width="750" height="410">
-                                </div>
-                                <h3 class="fw-semibold h5 mb-2">Premier Sadan</h3>
-                                <p class="font-base mb-2">Mercedes S550, BMW 750 or similar</p>
-                                <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="PeopleIcon">
-                                            <path
-                                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                            </path>
-                                        </svg>
-                                        max 3
-                                    </li>
-                                    <li class="px-2"></li>
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="LuggageIcon">
-                                            <path
-                                                d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                            </path>
-                                        </svg>
-                                        max 3
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                        <div>
-                            <article class="text-center luxury-cars-slider-item mx-auto">
-                                <div class="img-holder mb-15">
-                                    <img loading="lazy" decoding="async" src="{{ asset('assets/suv.webp') }}" alt="Luxury SUV black car service Dallas"
-                                        class="img-fluid" width="750" height="410">
-                                </div>
-                                <h3 class="fw-semibold h5 mb-2">Premier SUV</h3>
-                                <p class="font-base mb-2">Chevrolet Suburban or similar</p>
-                                <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="PeopleIcon">
-                                            <path
-                                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                            </path>
-                                        </svg>
-                                        max 6
-                                    </li>
-                                    <li class="px-2"></li>
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="LuggageIcon">
-                                            <path
-                                                d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                            </path>
-                                        </svg>
-                                        max 6
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                        <div>
-                            <article class="text-center luxury-cars-slider-item mx-auto">
-                                <div class="img-holder mb-15">
-                                    <img loading="lazy" decoding="async" src="{{ asset('assets/luxury-suv.webp') }}" alt="Premium SUV black car service Dallas"
-                                        class="img-fluid" width="750" height="410">
-                                </div>
-                                <h3 class="fw-semibold h5 mb-2">Luxury SUV</h3>
-                                <p class="font-base mb-2">Cadillac Escalade ESV, Lincoln Navigator or similar</p>
-                                <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="PeopleIcon">
-                                            <path
-                                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                            </path>
-                                        </svg>
-                                        max 6
-                                    </li>
-                                    <li class="px-2"></li>
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="LuggageIcon">
-                                            <path
-                                                d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                            </path>
-                                        </svg>
-                                        max 6
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                        <div>
-                            <article class="text-center luxury-cars-slider-item mx-auto">
-                                <div class="img-holder mb-15">
-                                    <img loading="lazy" decoding="async" src="{{ asset('assets/sprinter.webp') }}" alt="Black SUV chauffeur service in Dallas"
-                                        class="img-fluid" width="750" height="410">
-                                </div>
-                                <h3 class="fw-semibold h5 mb-2">Busniess Sprinter</h3>
-                                <p class="font-base mb-2">Mercedes benz Sprinter Van or similar</p>
-                                <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="PeopleIcon">
-                                            <path
-                                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                            </path>
-                                        </svg>
-                                        max 12
-                                    </li>
-                                    <li class="px-2"></li>
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="LuggageIcon">
-                                            <path
-                                                d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                            </path>
-                                        </svg>
-                                        max 20
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                        <div>
-                            <article class="text-center luxury-cars-slider-item mx-auto">
-                                <div class="img-holder mb-15">
-                                    <img loading="lazy" decoding="async" src="{{ asset('assets/mini-bus.webp') }}" alt="Black SUV chauffeur service in Dallas"
-                                        class="img-fluid" width="750" height="410">
-                                </div>
-                                <h3 class="fw-semibold h6 mb-3">Mini Bus</h3>
-                                <p class="font-base mb-2">24-Seater Mini Bus</p>
-                                <ul class="list-unstyled pl-0 mb-0 d-flex justify-content-center">
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="PeopleIcon">
-                                            <path
-                                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5">
-                                            </path>
-                                        </svg>
-                                        max 24
-                                    </li>
-                                    <li class="px-2"></li>
-                                    <li class="d-flex gap-2 align-items-center">
-                                        <svg width="20" height="20" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" data-testid="LuggageIcon">
-                                            <path
-                                                d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2 0 .55.45 1 1 1s1-.45 1-1h6c0 .55.45 1 1 1s1-.45 1-1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2M9.5 18H8V9h1.5zm3.25 0h-1.5V9h1.5zm.75-12h-3V3.5h3zM16 18h-1.5V9H16z">
-                                            </path>
-                                        </svg>
-                                        max 20
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                    </div>
+                    <p class="font-base justify-mobile">At Dallas Limo and Black Cars, we offer a premium fleet of luxury vehicles designed to deliver comfort, reliability, and style for every tournament journey. Whether you need FIFA World Cup 2026 transportation, airport pickups, stadium transfers, executive event travel, or group transportation, our professionally maintained vehicles ensure a smooth and stress-free ride. Our fleet includes luxury sedans, black SUVs, and spacious minibuses, all driven by professional chauffeurs dedicated to providing first-class FIFA World Cup 2026 transportation in Dallas.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="detail-content-section py-20">
-        <div class="container">
-            <div class="row py-20">
-                <div class="col-12 col-md-4 h-100 only-m">
-                    <div class="img-holder ms-md-auto">
-                        <img loading="lazy" decoding="async" src="{{ asset('assets/mercedes-benz-sprinter-service.webp') }}" width="407" height="210" class="img-fluid" alt="Luxury black car at Dallas Love Field Airport">
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-8 pr-xl-50">
-                    <h3 class="h4 fw-semibold">Mercedes-Benz Sprinter Service for FIFA World Cup 2026</h3>
-                    <p class="font-md justify-class">
-                        Our Mercedes-Benz <a href="/booking/"><b>Sprinter service for the FIFA World Cup 2026</b></a> is designed for groups that want to travel together with comfort, privacy, and precise scheduling. This option is ideal for fans, corporate guests, media teams, and VIP groups attending matches and official events in the Dallas–Fort Worth area. Executive Sprinter vans offer spacious seating, climate-controlled interiors, and generous luggage capacity, making them perfect for full match-day travel.
-                        <br><br>
-                        Sprinter service is commonly used for transportation to and from AT&T Stadium, FIFA fan zones, hotels, and airports such as DFW Airport and Dallas Love Field. Professional chauffeurs manage traffic conditions, road closures, and timed arrivals to ensure your group reaches the venue without stress. By traveling in one vehicle, groups avoid parking challenges and rideshare delays. With advance scheduling, clear pricing, and experienced event chauffeurs, our Mercedes-Benz Sprinter service delivers smooth and reliable group transportation throughout the FIFA World Cup 2026 in Dallas.
-                    </p>
-                    <div class="fifa-btnss sec-btn">
-                        <a href="/get-a-quote/">Book Executive Black Car for Match Days</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 h-100 only-d">
-                    <div class="img-holder ms-md-auto">
-                        <img loading="lazy" decoding="async" src="{{ asset('assets/01.webp') }}" width="407" height="210" class="img-fluid" alt="Luxury black car at Dallas Love Field Airport">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row flex-row-reverse py-20">
-                <div class="col-12 col-md-4 h-100 only-m">
-                    <div class="img-holder">
-                        <img loading="lazy" decoding="async" src="{{ asset('assets/mini-bus-car-service.webp') }}" width="407" height="210" class="img-fluid" alt="Professional chauffeur for black car service Dallas">
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-8 pr-xl-50 mb-20">
-                    <h3 class="h4 fw-semibold">Mini Bus Transportation for FIFA World Cup 2026 in Dallas</h3>
-                    <p class="font-md justify-class">
-                        Our <a href="/services/chauffeur-service-dallas/"><b>mini bus transportation service for FIFA World Cup 2026 in Dallas</b></a> is built for medium-sized groups that require organized, comfortable, and dependable travel. This service is ideal for fan groups, corporate delegations, tour operators, and hospitality planners coordinating transportation for matches and related events. Mini buses provide ample seating, luggage space, and easy group boarding, keeping everyone together on busy match days.
-                        <br><br>
-                        Mini bus transportation is frequently used for hotel-to-stadium transfers, airport pickups, fan zone travel, and multi-stop itineraries across Dallas and Arlington. Chauffeurs are experienced in managing event traffic patterns and venue access requirements, helping groups arrive on time despite increased congestion. By using a dedicated mini bus, groups eliminate the need for multiple vehicles or complex coordination. With professional drivers, clear communication, and scheduled pickups, our mini bus service supports smooth, efficient group movement during the FIFA World Cup 2026.
-                    </p>
-                    <div class="fifa-btnss sec-btn">
-                        <a href="/get-a-quote/">Reserve VIP Chauffeur Service</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 h-100 only-d">
-                    <div class="img-holder">
-                        <img loading="lazy" decoding="async" src="{{ asset('assets/02.webp') }}" width="407" height="210" class="img-fluid" alt="Professional chauffeur for black car service Dallas">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row py-20 d-md-flex">
-                <div class="col-12 col-md-4 h-100 only-m">
-                    <div class="img-holder">
-                        <img loading="lazy" decoding="async" src="{{ asset('assets/charter-bus-service-dallas.webp') }}" width="407" height="210" class="img-fluid" alt="Professional chauffeur for black car service Dallas">
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-8 pr-xl-50 mb-20">
-                    <h3 class="h4 fw-semibold">Charter Bus Service for FIFA World Cup Groups in Dallas</h3>
-                    <p class="font-md justify-class">
-                        Our <a href="/booking/"><b>charter bus service for FIFA World Cup in Dallas</b></a> is designed for large-scale transportation needs during the tournament. This service is well suited for large fan groups, corporate hospitality programs, sports organizations, and travel agencies managing group arrivals and departures. Charter buses provide comfortable seating, climate control, and sufficient storage for luggage and event gear.
-                        <br><br>
-                        Charter bus transportation is commonly used for coordinated travel between airports, hotels, AT&T Stadium, and official FIFA venues. Our team plans routes and schedules in advance to account for match-day traffic, security zones, and timed entry windows. Professional chauffeurs handle navigation and logistics, allowing groups to focus on the event experience. With dependable scheduling, transparent pricing, and scalable fleet options, our charter bus service delivers reliable, organized transportation for large groups attending the FIFA World Cup 2026 in Dallas.
-                    </p>
-                    <div class="fifa-btnss sec-btn">
-                        <a href="/get-a-quote/">Request FIFA VIP Transportation</a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-4 h-100 only-d">
-                    <div class="img-holder">
-                        <img loading="lazy" decoding="async" src="{{ asset('assets/03.webp') }}" width="407" height="210" class="img-fluid" alt="Professional chauffeur for black car service Dallas">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-gray pt-50 pb-25 pb-md-20">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-6 col-md-4 mb-25 mb-md-30">
-                    <article class="text-center">
-                        <span class="icon-holder mb-10 d-block">
-                            <img loading="lazy" decoding="async" src="{{ asset('assets/icon-03.svg') }}" alt="Luxury black car transportation for FIFA World Cup 2026 in Dallas" class="img-fluid">
-                        </span>
-                        <h3 class="h6 fw-semibold">Book Online or Call</h3>
-                        <p class="font-md">Schedule your FIFA World Cup 2026 transportation online or by phone. Choose your pickup time, vehicle type, and locations across Dallas–Fort Worth.</p>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 mb-25 mb-md-30">
-                    <article class="text-center">
-                        <span class="icon-holder mb-10 d-block">
-                            <img loading="lazy" decoding="async" src="{{ asset('assets/icon-02.svg') }}" alt="Airport transfer service for FIFA World Cup 2026 travelers in Dallas" class="img-fluid">
-                        </span>
-                        <h3 class="h6 fw-semibold">Get Instant Confirmation</h3>
-                        <p class="font-md">Get immediate confirmation with complete trip and chauffeur details sent by text or email. Everything is scheduled and documented in advance.</p>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 mb-25 mb-md-30">
-                    <article class="text-center">
-                        <span class="icon-holder mb-10 d-block">
-                            <img loading="lazy" decoding="async" src="{{ asset('assets/icon-01.svg') }}" alt="FIFA World Cup 2026 hotel to stadium car service in Dallas" class="img-fluid">
-                        </span>
-                        <h3 class="h6 fw-semibold">Meet Your Chauffeur</h3>
-                        <p class="font-md">Your chauffeur arrives on time, professionally dressed, and ready to assist with airport, hotel, or stadium transportation—no delays, no confusion.</p>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="bg-gray py-30 d-md-none">
-        <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h4 class="h4 fw-semibold mb-20">
-                        <span class="theme-color">Reserve Your Executive Ride </span> <br>in Dallas Fort Worth
-                    </h4>
-                    <a href="/booking/" class="btn btn-primary w-100 fw-medium text-capitalize">Book Corporate Chauffeur Service</a>
+                <div class="col-12">
+                    <ul class="list-unstyled">
+                        <li>
+                            
+                            <p class="font-base justify-mobile"><strong class="font-lg gray-700 fw-bold">Luxury Sedans:</strong> Our executive sedans provide a quiet and comfortable ride, ideal for business travelers, couples, or individual fans heading to airports, hotels, or FIFA World Cup 2026 events in Dallas. Vehicles such as the Mercedes-Benz S-Class, Cadillac CT6, and Volvo S90 deliver premium comfort and privacy.</p>
+                        </li>
+                        <li>
+                            
+                            <p class="justify-mobile font-base"><strong class="font-lg gray-700 fw-bold ">Black SUVs:</strong>  For travelers needing extra space or luggage capacity, our luxury SUVs including the Cadillac Escalade, GMC Yukon XL, and Chevrolet Suburban provide spacious interiors and smooth rides for reliable event and airport transportation.
+                            </p>
+                        </li>
+                        <li>
+                         
+                            <p class="justify-mobile font-base"><strong class="font-lg gray-700 fw-bold ">Executive Sprinter Vans:</strong> Perfect for group event transfers, our Mercedes-Benz Sprinter Vans offer spacious seating and modern interiors, making them ideal for corporate teams, fan groups, families, and tournament travel.</p>
+                        </li>
+                        <li>
+                            
+                            <p class="justify-mobile font-base"><strong class="font-lg gray-700 fw-bold ">Mini Bus Luxury Bus (23-27
+                                Passengers):</strong> Our luxury minibuses are ideal for medium-sized groups traveling to or from stadiums, hotels, or airports, offering comfortable seating and convenient group transportation.</p>
+                        </li>
+                        <li>
+                         
+                            <p class="justify-mobile font-base">   <strong class="font-lg gray-700 fw-bold">Mini Bus (31-38
+                                Passengers):</strong> For larger groups, our spacious minibuses provide dependable event transportation with professional chauffeur service and comfortable interiors.</p>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="img-holder">
+                        <img src="{{ asset('new_assets/assets/fleet-img.webp') }}" alt="Fleet Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="text-center col-12 pt-15">
+                    <a href="/booking/" class="btn btn-primary fifa-btn">Book Your Chauffeur Service Now </a>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+   
+<section class="fifa-main-banner only-m" style="
+    background: url(/img/black-car-service-for-fifa-world-cup-2026-mobile.webp) center top;
+">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               <div class="fifa-btns">
+                 
+                 
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+</section>
+<section class="fifa-main-banner only-d" style="
+    background: url(/img/black-car-service-for-fifa-world-cup-2026.webp) center top;
+">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               <div class="fifa-btns">
+                 
+                 
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+</section>
+   
+   <div class="container text-center here-fifa">
+ <div class="row">
+         <div class="col-md-12">
+              <div class="fifa-btnss">  
+                    
+                   
+            <a href="/fifa-world-cup-2026-car-service-dallas/" class="btn btn-primary fifa-btn">Visit FIFA World Cup 2026 Page</a>
+            </div>
+            </div>
+            </div>
+            
+    </div>
+    
+        <section class="detail-content-section bg-gray py-40 py-sm-40 py-md-40 py-lg-50">
+            <div class="ah-container">
+                <div class="row justify-content-center">
+                    <div class="mb-20 text-center col-12 col-lg-11 col-xl-10 mb-md-30 mb-lg-40">
+                        <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30 seciononeheading">Why Choose Our <span class="theme-color"> Black
+                                Car Service?</span></h2>
+                        <p class="font-base">Our Dallas Black Car Service provides reliable and luxury FIFA World Cup 2026 transportation for airports, stadiums, hotels, fan zones, and event venues, offering professional chauffeur service and comfortable transportation across the Dallas–Fort Worth metroplex, including Downtown Dallas, Arlington, Frisco, Plano, and Irving.</p>
+                    </div>
+                </div>
+                <div class="py-20 row align-items-center">
+                    <div class="col-12 col-md-6 pr-xl-50">
+                        <h3 class="h5 fw-semibold">Dallas FIFA World Cup 2026 Transportation & Black Car Service</h3>
+                        <p class="font-base text-justify">Looking for reliable FIFA World Cup 2026 transportation in Dallas? At Dallas Limo and Black Cars, we provide professional black car transportation for airport pickups, stadium transfers, hotel transportation, and tournament-related travel, ensuring every traveler enjoys a smooth, punctual, and stress-free ride. Our premium Dallas event car service is trusted by business travelers, fan groups, families, and visitors who need dependable transportation throughout the Dallas–Fort Worth metroplex.
+
+We proudly serve Downtown Dallas, Arlington, Frisco, Plano, Irving, Las Colinas, and nearby DFW cities, providing efficient routes and on-time pickups so you never have to worry about event delays, traffic stress, or missing important World Cup activities.</p>
+                    
+                
+<ul>
+<li>Real-time trip coordination and schedule monitoring.</li>
+<li>On-time pickups and drop-offs to airports and venues.</li>
+<li>Convenient door-to-door transportation service.</li>
+<li>Experienced and professional chauffeur service.</li>
+<li>Luxury black car fleet with premium comfort.</li>
+</ul>    
+                    
+                     </div>
+                    <div class="col-12 col-md-6 h-100">
+                        <div class="why-imgs">
+                            <img src="/img/dallas-black-car-service-dfw-love-field-airport.webp" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section class="where-we-serve-section bg-gray pt-40 pb-25 pt-sm-40 pb-sm-35 pt-md-40 pb-md-40 pt-lg-40 pb-lg-40">
+            <div class="ah-container">
+                <div class="row justify-content-center">
+                    <div class="text-center col-12 col-lg-11 col-xl-10 mb-25 mb-md-30 mb-lg-40">
+                        <h2 class="h2 fw-bold mb-15 mb-lg-20 seciononeheading">Where we serve</h2>
+                        <p class="font-base">Our Dallas black car service provides professional chauffeur transportation across the Dallas–Fort Worth metroplex, connecting travelers to airports, cities, business districts, stadiums, hotels, and major FIFA World Cup 2026 event venues.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
+                        <article class="we-serve-item custom-card mb-30 mb-md-35">
+                            <div class="img-holder">
+                                <img src="/img/affordable-dallas-limousine-service-with-chauffeur.webp" alt="" class="img-fluid">
+                            </div>
+                            <div class="text-detail">
+                                <h3 class="mb-10 h4 fw-semibold">Cities & Regional Communities</h3>
+                                <p class="mb-0 font-base">We proudly serve Dallas, Fort Worth, Arlington, Frisco, Plano, and McKinney, providing reliable black car transportation across major cities and nearby communities.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
+                        <article class="we-serve-item custom-card mb-30 mb-md-35">
+                            <div class="img-holder">
+                                <img src="/img/dfw-airport-limo-and-black-car-service-dallas.webp" alt="" class="img-fluid">
+                            </div>
+                            <div class="text-detail">
+                                <h3 class="mb-10 h4 fw-semibold">Airports & Aviation Access</h3>
+                                <p class="mb-0 font-base">We provide airport transfers to DFW International Airport, Dallas Love Field, Addison Airport, McKinney National Airport, and Fort Worth Alliance Airport.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
+                        <article class="we-serve-item custom-card mb-30 mb-md-35">
+                            <div class="img-holder">
+                                <img src="/img/luxury-dallas-limo-and-black-car-service.webp" alt="" class="img-fluid">
+                            </div>
+                            <div class="text-detail">
+                                <h3 class="mb-10 h4 fw-semibold">Corporate & Lifestyle Zones</h3>
+                                <p class="mb-0 font-base">Our service connects travelers to Downtown Dallas, Legacy West Plano, The Star Frisco, Las Colinas Irving, Dallas Arts District, and Preston Hollow.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
+                        <article class="we-serve-item custom-card mb-30 mb-md-35">
+                            <div class="img-holder">
+                                <img src="{{ asset('new_assets/assets/image-08.jpg') }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="text-detail">
+                                <h3 class="mb-10 h4 fw-semibold">Sports & Entertainment Venues</h3>
+                                <p class="mb-0 font-base">We provide transportation to AT&T Stadium, Globe Life Field, American Airlines Center, Toyota Stadium, PGA Frisco, and Toyota Music Factory.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="detail-content-section bg-gray py-40 py-sm-50 py-md-50 py-lg-40 seciononeheading">
+        <div class="ah-container">
+            
+            <div class="py-20 row align-items-center">
+                <div class="col-12 col-md-6 h-100 only-m">
+                    <div class="service-image">
+                        <img src="/img/dallas-black-car-service-dfw-love-field-airport-mobile.webp" class="img-fluid" alt="">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 pr-xl-50">
+                    <h3 class="h5 fw-semibold">FIFA World Cup 2026 Transportation for Airports, Hotels & Stadiums</h3>
+                    <p class="font-base text-justify">Our FIFA World Cup 2026 transportation service provides reliable and professional travel for airports, hotels, stadiums, and event destinations across the Dallas–Fort Worth area. Whether you are traveling for tournament matches, fan experiences, business hospitality, or group events, our experienced chauffeurs ensure a smooth and punctual ride experience. At Dallas Limo and Black Cars, we specialize in luxury transportation designed for comfort, reliability, and efficiency during one of the busiest international events in the region.
+
+Our service is ideal for travelers coming from Downtown Dallas, Arlington, Frisco, Plano, Irving, McKinney, and surrounding DFW cities who need dependable event transportation. With real-time trip coordination, door-to-door service, and professional chauffeurs, we make sure you arrive at airports, venues, hotels, and match-day destinations on time without stress. Our luxury fleet of sedans, SUVs, and executive vehicles provides the perfect combination of comfort and reliability for both personal and business travel.</p>
+                <a href="/booking/" class="btn btn-primary sm fw-medium fifa-btn-full">Book Reliable Event Transportation Today</a>
+                </div>
+                <div class="col-12 col-md-6 h-100 only-d">
+                    <div class="service-image">
+                        <img src="/img/dallas-black-car-service-dfw-love-field-airport.webp" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-row-reverse py-20 row align-items-center">
+                <div class="col-12 col-md-6 h-100 only-m">
+                    <div class="service-image">
+                        <img src="/img/dallas-corporate-black-car-chauffeur-service-mobile.webp" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="mb-20 col-12 col-md-6 pr-xl-50">
+                    <h3 class="h5 fw-semibold">Reliable Match Day Transportation with Professional Chauffeurs</h3>
+                    <p class="font-base text-justify">When it comes to dependable FIFA World Cup 2026 transportation in Dallas, professionalism and punctuality are essential. Our Dallas black car event service is designed to deliver a premium travel experience with highly trained chauffeurs and luxury vehicles. We understand the importance of reliable transportation when managing airport arrivals, stadium schedules, hotel transfers, and high-demand event traffic during major tournament dates.
+
+Our professional chauffeurs monitor traffic patterns and trip schedules to ensure timely pickups and smooth drop-offs at AT&T Stadium, fan zones, airports, hotels, and nearby venues. Whether you need transportation from a hotel, office, home, or private event, our service offers convenient door-to-door tournament transportation across the Dallas–Fort Worth region. Business travelers, executives, families, fan groups, and visitors trust our event transportation service for its comfort, privacy, and dependable performance.
+</p>
+                    <a href="/booking/" class="btn btn-primary sm fw-medium fifa-btn-full">Get Event Travel Quote Now</a>
+                </div>
+                <div class="col-12 col-md-6 h-100 only-d">
+                    <div class="service-image">
+                        <img src="/img/dallas-corporate-black-car-chauffeur-service.webp" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+               <div class="py-20 row align-items-center">
+                  <div class="col-12 col-md-6 h-100 only-m">
+                    <div class="service-image">
+                        <img src="/img/dallas-city-to-city-black-car-service-mobile.webp" class="img-fluid" alt="">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 pr-xl-50">
+                    <h3 class="h5 fw-semibold">Luxury FIFA World Cup 2026 Transportation Across the Dallas–Fort Worth Area</h3>
+                    <p class="font-base text-justify">Traveling during the tournament should be comfortable and stress-free. Our luxury FIFA World Cup 2026 transportation service in Dallas offers premium black car transportation designed for travelers who value reliability, privacy, and professional service. At Dallas Limo and Black Cars, we provide first-class transportation for airport arrivals, departures, match-day travel, hotel pickups, and group transfers throughout the DFW metro area.
+
+Our luxury fleet includes executive sedans, spacious SUVs, and premium vehicles perfect for event transportation. Whether you are traveling alone, with colleagues, or with family and friends, our vehicles provide a comfortable and stylish ride to airports, stadiums, hotels, and entertainment destinations across Dallas and nearby cities. With experienced chauffeurs, well-maintained vehicles, and flexible scheduling, our FIFA World Cup 2026 transportation service ensures every trip is smooth, safe, and perfectly timed for your event plans.</p>
+                  <a href="/booking/" class="btn btn-primary sm fw-medium fifa-btn-full">Reserve Your FIFA Transportation Service</a>
+                </div>
+                <div class="col-12 col-md-6 h-100 only-d">
+                    <div class="service-image">
+                        <img src="/img/dallas-city-to-city-black-car-service.webp" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+    
+    
+       <section class="py-40 py-lg-40">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="swiper logo-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-01.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-02.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-03.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-04.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-05.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-06.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-07.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-08.png') }}" class="img-fluid"></div>
+
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-01.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-02.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-03.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-04.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-05.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-06.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-07.png') }}" class="img-fluid"></div>
+                            <div class="swiper-slide"><img src="{{ asset('new_assets/assets/logo-08.png') }}" class="img-fluid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+      <section
+        class="intercity-ride-section bg-gray pt-40 pb-30 pt-sm-40 pb-sm-35 pt-md-40 pb-md-40 pt-lg-40 pb-lg-40">
+        <div class="ah-container">
+            <div class="row justify-content-center">
+                <div class="text-center col-12 col-lg-11 col-xl-10 mb-25 mb-md-30 mb-lg-40">
+                    <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30 seciononeheading">Top Cities & <span class="theme-color">Top
+                            Routes</span></h2>
+                    <p class="font-base">Our Dallas Black Car Service connects you to the most popular cities and travel routes across Texas. Whether you're heading to Austin, Arlington, Waco, Tyler, or nearby destinations, our professional chauffeurs ensure smooth, punctual, and comfortable transportation. Enjoy reliable city-to-city black car service from Dallas with luxury vehicles, private travel, and a stress-free ride experience every time.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
+                        <div class="img-holder">
+                            <img src="img/black-car-service-austin.webp" alt="Top City" class="img-fluid">
+                        </div>
+                        <div class="city-details p-15 position-absolute">
+                           <div class="row">
+                           <div class="col-md-6 col-sm-6">
+                            <h3 class="mb-1 text-white h6">Dallas
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
+                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
+                                    data-testid="ChevronRightIcon">
+                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
+                                </svg>
+                                Austin
+                            </h3>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                            <p class="mb-0 text-white font-base">195 miles &nbsp;&nbsp;|&nbsp;&nbsp; 2h 54m</p>
+                             </div>
+                            </div>
+                            
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
+                        <div class="img-holder">
+                            <img src="img/black-car-service-college-station.webp" alt="Top City" class="img-fluid">
+                        </div>
+                        <div class="city-details p-15 position-absolute">
+                      <div class="row">
+                           <div class="col-md-6 col-sm-6">
+                            <h3 class="mb-1 text-white h6">Dallas
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
+                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
+                                    data-testid="ChevronRightIcon">
+                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
+                                </svg>
+                                College Station
+                            </h3>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                            <p class="mb-0 text-white font-base">181 miles &nbsp;&nbsp;|&nbsp;&nbsp; 2h 46m</p>
+                             </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
+                        <div class="img-holder">
+                            <img src="img/black-car-service-houston.webp" alt="Top City" class="img-fluid">
+                        </div>
+                        <div class="city-details p-15 position-absolute">
+                          
+                              <div class="row">
+                           <div class="col-md-6 col-sm-6">
+                            <h3 class="mb-1 text-white h6">Dallas
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
+                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
+                                    data-testid="ChevronRightIcon">
+                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
+                                </svg>
+                                Houston
+                            </h3>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                            <p class="mb-0 text-white font-base">239 miles &nbsp;&nbsp;|&nbsp;&nbsp; 3h 24m</p>
+                             </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
+                        <div class="img-holder">
+                            <img src="img/black-car-service-sherman.webp" alt="Top City" class="img-fluid">
+                        </div>
+                        <div class="city-details p-15 position-absolute">
+                              <div class="row">
+                           <div class="col-md-6 col-sm-6">
+                            <h3 class="mb-1 text-white h6">Dallas
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
+                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
+                                    data-testid="ChevronRightIcon">
+                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
+                                </svg>
+                                 Sherman
+                            </h3>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                            <p class="mb-0 text-white font-base">65.2 miles &nbsp;&nbsp;|&nbsp;&nbsp; 1h 56m</p>
+                             </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
+                        <div class="img-holder">
+                            <img src="img/black-car-service-tyler.webp" alt="Top City" class="img-fluid">
+                        </div>
+                        <div class="city-details p-15 position-absolute">
+                             <div class="row">
+                           <div class="col-md-6 col-sm-6">
+                            <h3 class="mb-1 text-white h6">Dallas
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
+                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
+                                    data-testid="ChevronRightIcon">
+                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
+                                </svg>
+                                Tyler
+                            </h3>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                            <p class="mb-0 text-white font-base">98 miles &nbsp;&nbsp;|&nbsp;&nbsp; 1h 34m</p>
+                             </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="mb-20 top-cities-item mb-sm-25 mb-md-30">
+                        <div class="img-holder">
+                            <img src="img/black-car-service-waco.webp" alt="Top City" class="img-fluid">
+                        </div>
+                        <div class="city-details p-15 position-absolute">
+                              <div class="row">
+                           <div class="col-md-6 col-sm-6">
+                            <h3 class="mb-1 text-white h6">Dallas
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
+                                    focusable="false" aria-hidden="true" width="20" viewBox="0 0 24 24"
+                                    data-testid="ChevronRightIcon">
+                                    <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#fff"></path>
+                                </svg>
+                                Waco
+                            </h3>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                            <p class="mb-0 text-white font-base">93.8 miles &nbsp;&nbsp;|&nbsp;&nbsp; 1h 23m</p>
+                             </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ 
+    
+   <section class="testimonial-section bg-blue py-40 py-sm-40 py-md-40 py-lg-50">
+        <div class="ah-container">
+            <div class="row">
+                <div class="mb-10 text-center col-12 mb-md-20">
+                    <h2 class="text-white h2 fw-bold">What Our Executive Clients Are Saying</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="overflow-hidden bg-white swiper testimonial-slider py-30 py-lg-30">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide px-30 px-sm-35 px-lg-35">
+                                <div class="testimonial-slider-item">
+                                    <cite class="mb-2 text-center name fw-bold text-capitalize d-block">James Anderson</cite>
+                                    <span class="mb-10 text-center location fw-semibold font-lg d-block">Dallas, TX</span>
+                                    <blockquote class="mb-30">
+                                        <!-- <span class="quote">“</span> -->
+                                        <p class="mb-0 text-center font-lg fw-medium">
+                                          Excellent service from start to finish. Our driver arrived early for our DFW Airport pickup, and the ride was smooth and comfortable. Very professional chauffeur service. I’ll definitely book again.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="swiper-slide px-30 px-sm-35 px-lg-35">
+                                <div class="testimonial-slider-item">
+                                    <cite class="mb-2 text-center name fw-bold text-capitalize d-block">Michael Thompson</cite>
+                                    <span class="mb-10 text-center location fw-semibold font-lg d-block">Plano, TX</span>
+                                    <blockquote class="mb-30">
+                                        <p class="mb-0 text-center font-lg fw-medium">
+                                           I use this Dallas black car service regularly for business meetings. The vehicles are always clean, the drivers are professional, and the service is reliable every time. Highly recommended for corporate travel.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="swiper-slide px-30 px-sm-35 px-lg-35">
+                                <div class="testimonial-slider-item">
+                                    <cite class="mb-2 text-center name fw-bold text-capitalize d-block">Jennifer Miller</cite>
+                                    <span class="mb-10 text-center location fw-semibold font-lg d-block">Frisco, TX</span>
+                                    <blockquote class="mb-30">
+                                        <!-- <span class="quote">“</span> -->
+                                        <p class="mb-0 text-center font-lg fw-medium">
+                                          Great experience with their airport black car service. My flight arrived late at Love Field Airport, but the driver was already waiting. The ride home was comfortable and stress-free.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="swiper-slide px-30 px-sm-35 px-lg-35">
+                                <div class="testimonial-slider-item">
+                                    <cite class="mb-2 text-center name fw-bold text-capitalize d-block">David Wilson</cite>
+                                    <span class="mb-10 text-center location fw-semibold font-lg d-block">Arlington, TX
+</span>
+                                    <blockquote class="mb-30">
+                                        <p class="mb-0 text-center font-lg fw-medium">
+                                           We booked their city-to-city black car service from Dallas to Austin, and the trip was fantastic. The car was luxurious, and the driver was courteous and professional throughout the journey.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+<section class="faqs-section py-40 py-sm-40 py-md-50 py-lg-50">
+    <div class="ah-container">
+        <div class="row">
+            <div class="text-center col-12 mb-20 mb-md-15 mb-lg-20">
+                <h2 class="h2 fw-bold seciononeheading">Frequently Asked <span class="theme-color">Questions</span></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-lg-6 col-xl-6 col-666 accordion-holder" id="accordion01">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseOne">
+                            What areas does your FIFA World Cup 2026 transportation service cover?
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseOne" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Our FIFA World Cup 2026 transportation service covers the entire Dallas–Fort Worth metroplex including Dallas, Arlington, Frisco, Plano, Irving, McKinney, and surrounding cities with reliable event transportation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseTwo">
+                            Do you provide transportation to airports, hotels, and stadiums?
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseTwo" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Yes, we provide professional FIFA World Cup 2026 transportation to airports, hotels, stadiums, fan zones, and event venues with punctual pickups and comfortable luxury vehicles.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseThree">
+                            Is your black car service available for corporate travel and VIP guests?
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseThree" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Yes, our Dallas black car service is ideal for executives, business travelers, VIP guests, and corporate teams needing professional chauffeur transportation for meetings, hospitality events, and tournament travel.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseFour">
+                            Can I book group transportation for FIFA World Cup 2026 events?
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseFour" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Yes, we offer group transportation for fan groups, families, corporate teams, and private event guests traveling to stadiums, airports, hotels, and nearby Texas destinations.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-6 col-lg-6 col-xl-6 col-666 accordion-holder">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseFive">
+                            How do I book your FIFA World Cup 2026 transportation service?
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseFive" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            You can easily book our FIFA World Cup 2026 transportation service online through our website or request a ride quote for quick reservation confirmation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseSix">
+                            What vehicles are available for event transportation?
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseSix" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Our fleet includes luxury sedans, executive SUVs, sprinter vans, and minibuses suitable for airport transfers, corporate travel, VIP transportation, and group event transportation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseSeven">
+                            Are your chauffeurs professionally trained?
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseSeven" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Yes, our chauffeurs are licensed, experienced, and professionally trained to provide safe, reliable, and comfortable transportation throughout Dallas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion01-collapseEight">
+                            Why choose your Dallas FIFA World Cup 2026 transportation service?
+                        </button>
+                    </h2>
+                    <div id="accordion01-collapseEight" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Our Dallas FIFA World Cup 2026 transportation service offers punctual pickups, luxury vehicles, professional chauffeurs, and reliable transportation for airports, hotels, venues, and event travel with comfort and privacy.
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-
-    <section class="pt-50 pt-sm-60 pt-md-70 pt-lg-80 pb-30 pb-sm-40 pb-md-50 pb-lg-60">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-11 col-xl-10 text-center mb-15 mb-md-20 mb-lg-30">
-                    <h2 class="h2 fw-bold mb-15 mb-sm-20 mb-lg-30">Chosen By People At <span class="theme-color">Top Companies</span></h2>
-                    <p class="font-md">Chosen by professionals at leading corporations, financial institutions, and luxury hotels, our black car service is trusted for reliability, discretion, and consistent executive standards. Clients rely on us for <a href="/services/airport-transfer-dallas/"><b>airport transfers</b></a>, corporate travel, and high-profile events where punctuality, comfort, and professional presentation matter most.</p>
-                </div>
-                <div class="col-12">
-                    <div class="companies-logo-marquee">
-                        <div class="companies-logo-track">
-                            @foreach ([1, 2, 3, 4, 5, 6, 7, 8] as $i)
-                            <div class="py-10 px-15">
-                                <span class="img-holder">
-                                    <img loading="lazy" width="90" height="60" decoding="async"
-                                        src="{{ asset('assets/logo-0' . $i . '.svg') }}" alt="Logo" class="img-fluid">
-                                </span>
-                            </div>
-                            @endforeach
-                            @foreach ([1, 2, 3, 4, 5, 6, 7, 8] as $i)
-                            <div class="py-10 px-15">
-                                <span class="img-holder">
-                                    <img loading="lazy" width="90" height="60" decoding="async"
-                                        src="{{ asset('assets/logo-0' . $i . '.svg') }}" alt="" class="img-fluid">
-                                </span>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="detail-content-section py-20">
-        <div class="container">
-            <div class="row py-20">
-                <div class="col-12 col-md-8 pr-xl-50">
-                    <h3 class="h4 fw-semibold">FIFA World Cup 2026 Car Service in Dallas</h3>
-                    <p class="font-md">
-                       Our <a href="/booking/"><b>FIFA World Cup 2026 car service in Dallas</b></a> offers reliable, pre-scheduled black car and chauffeur transportation for match days, airport arrivals, hotel pickups, and stadium travel. Designed for international visitors, families, VIP guests, and groups, every ride is planned in advance to avoid traffic delays and event congestion. Professional chauffeurs manage timing, routing, and pickups so you can focus on the World Cup experience.
-                    </p>
-                    <p class="font-md">Service coverage includes:</p>
-                    <ul>
-                        <li><a href="/love-field-airport-car-service/"><b>Airport transfers to/from Dallas Love Field Airport</b></a> and DFW International Airport.</li>
-                        <li>Hotel pickups from Omni Dallas Hotel and Hyatt Regency Dallas.</li>
-                        <li>Stadium transportation to AT&T Stadium.</li>
-                        <li>Private sedans, SUVs, Sprinter vans, and minibuses.</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4 h-100">
-                    <div class="img-holder ms-md-auto">
-                        <img loading="lazy" decoding="async" src="{{ asset('assets/fifa-cup-image.jpg') }}" width="407" height="210" class="img-fluid" alt="Luxury black car at Dallas Love Field Airport">
-                    </div>
-                </div>
-            </div>
-            <div class="row flex-row-reverse py-20 d-none d-md-flex">
-                <div class="col-12 col-md-8 pr-xl-50 mb-20">
-                    <h3 class="h4 fw-semibold">Areas We Serve in Dallas</h3>
-                    <p class="font-md">
-                       Our Dallas car service covers key business districts, hotels, airports, and major event locations, providing dependable transportation for airport arrivals, corporate travel, hotel transfers, and large events such as the FIFA World Cup 2026. All rides are professionally chauffeured, pre-scheduled, and planned with local traffic conditions in mind to ensure timely and comfortable travel.
-                    </p>
-                    <p class="font-md"> We regularly serve: </p>
-                    <ul>
-                        <li>Downtown Dallas, Uptown Dallas, Las Colinas, Plano, <a href="/black-car-service-frisco-tx/"><b>Frisco</b></a>, and Arlington.</li>
-                        <li>Major hotels including Omni Dallas Hotel, Hyatt Regency Dallas, and nearby luxury accommodations.</li>
-                        <li>Airport transportation to and from DFW International Airport and Dallas Love Field.</li>
-                        <li>Stadium and event travel to AT&T Stadium.</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4 h-100">
-                    <div class="img-holder">
-                        <img loading="lazy" decoding="async" src="{{ asset('assets/fifa-02.jpg') }}" width="407" height="210" class="img-fluid" alt="Professional chauffeur for black car service Dallas">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    @include('partials.testimonials')
-    @include('partials.faq')
-
-    <div class="bg-gray py-30 d-md-none">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h3 class="h4 fw-semibold mb-20">
-                       Arrive With Confidence <br><span class="theme-color">Book Your Chauffeur Now</span>
-                    </h3>
-                    <a href="/booking/" class="btn btn-primary w-100 fw-medium text-capitalize">Book Your Chauffeur Today</a>
-                </div>
-            </div>
-        </div>
-    </div>
+</section>
+    
+    
 @endsection

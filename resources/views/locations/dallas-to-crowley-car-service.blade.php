@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="img-holder">
-                    <img src="{{ asset('assets/fleet-img.webp') }}" alt="Fleet Image" class="img-fluid">
+                    <img src="{{ asset('new_assets/assets/fleet-img.webp') }}" alt="Fleet Image" class="img-fluid">
                 </div>
             </div>
             <div class="text-center col-12 pt-15">
@@ -114,7 +114,7 @@
             </div>
             <div class="col-12 col-md-6 h-100">
                 <div class="img-holder ms-md-auto">
-                    <img src="{{ asset('assets/airport-transfer.JPG') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('new_assets/assets/airport-transfer.JPG') }}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
             <div class="col-12 col-sm-6 col-md-4 mb-25 mb-md-30 d-flex">
                 <article class="custom-card d-flex flex-column w-100">
                     <span class="mb-20 icon-holder">
-                        <img src="{{ asset('assets/icon-03.svg') }}" alt="Booking" class="img-fluid">
+                        <img src="{{ asset('new_assets/assets/icon-03.svg') }}" alt="Booking" class="img-fluid">
                     </span>
                     <h3 class="h3 fw-semibold">Book Online or Call</h3>
                     <p class="font-lg">Use our form or call to schedule your ride.</p>
@@ -135,7 +135,7 @@
             <div class="col-12 col-sm-6 col-md-4 mb-25 mb-md-30 d-flex">
                 <article class="custom-card d-flex flex-column w-100">
                     <span class="mb-20 icon-holder">
-                        <img src="{{ asset('assets/icon-02.svg') }}" alt="Confirmation" class="img-fluid">
+                        <img src="{{ asset('new_assets/assets/icon-02.svg') }}" alt="Confirmation" class="img-fluid">
                     </span>
                     <h3 class="h3 fw-semibold">Get Instant Confirmation</h3>
                     <p class="font-lg">Receive driver and trip details via text or email.</p>
@@ -144,7 +144,7 @@
             <div class="col-12 col-sm-6 col-md-4 mb-25 mb-md-30 d-flex">
                 <article class="custom-card d-flex flex-column w-100">
                     <span class="mb-20 icon-holder">
-                        <img src="{{ asset('assets/icon-01.svg') }}" alt="Driver" class="img-fluid">
+                        <img src="{{ asset('new_assets/assets/icon-01.svg') }}" alt="Driver" class="img-fluid">
                     </span>
                     <h3 class="h3 fw-semibold">Meet Your Chauffeur</h3>
                     <p class="font-lg">On-time, professional, and ready to assist.</p>
@@ -172,7 +172,7 @@
             </div>
             <div class="col-12 col-md-6 h-100">
                 <div class="img-holder ms-md-auto">
-                    <img src="{{ asset('assets/image-01.png') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('new_assets/assets/image-01.png') }}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
@@ -189,7 +189,7 @@
             </div>
             <div class="col-12 col-md-6 h-100">
                 <div class="img-holder">
-                    <img src="{{ asset('assets/image-02.png') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('new_assets/assets/image-02.png') }}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>

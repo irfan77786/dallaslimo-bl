@@ -26,17 +26,21 @@ class AuthenticatedSessionController extends Controller
     {
         $login_type = $request->input('login_type');
 
-        if ($request->type == 'guest') {
-            session()->put('booker_first_name', $request->first_name);
-            session()->put('booker_last_name', $request->last_name);
-            session()->put('booker_email', $request->email);
-            session()->put('guest', [
+        if($request->type == 'guest') {
+            $sanitizedNumber = preg_replace('/[^\d+]/', '', trim($request->number ?? ''));
+            $guestData = [
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'email' => $request->email,
-                'number' => $request->number,
-            ]);
-        } else {
+                'number' => $sanitizedNumber ?: $request->number,
+            ];
+            session()->put('guest', $guestData);
+            session()->put('booker_first_name', $request->first_name);
+            session()->put('booker_last_name', $request->last_name);
+            session()->put('booker_email', $request->email);
+            session($guestData); // first_name, last_name, email, number for step 4 display
+        }
+        else{
             $request->authenticate();
             $request->session()->regenerate();
         }

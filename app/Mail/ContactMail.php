@@ -35,10 +35,10 @@ class ContactMail extends Mailable
      */
     public function envelope()
     {
-        $subject = $this->isAdmin
+        $subject = $this->isAdmin 
             ? 'New Contact Message from ' . ($this->details['full_name'] ?? 'User')
             : 'Thank You for Contacting Us - Dallas Black Cars';
-
+        
         return new Envelope(
             subject: $subject
         );
