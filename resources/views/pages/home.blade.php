@@ -1,85 +1,53 @@
 @extends('master-home')
 
 @section('content')
-    <section class="d-md-none">
-        <div class="ah-container">
-            <div class="search-form-mobile">
-                @include('partials.search', ['id_suffix' => '_mobile'])
-            </div>
-        </div>
-    </section>
-
-    <section class="home-banner-section">
-        <div id="hero-banner-container" class="py-60 ah-container position-relative py-sm-70 py-md-80 py-lg-100"
-             style="z-index: 2; background-image: url('https://dallaslimoandblackcars.com/img/dallas-limo-and-black-cars-banner.webp');">
-            <!-- Map Container (Initially hidden, shows up when location is selected) -->
-            <div id="map" class="position-absolute w-100 h-100" style="top:0; left:0; z-index: 1; display:none;">
-            </div>
-
-            <div class="row" style="pointer-events: none;">
-                <div id="home-text-content" class="col-12 col-md-6 d-flex flex-column justify-content-center" style="pointer-events: auto; position: relative; z-index: 0;">
-                    <h1 class="text-white h2 fw-bold mb-15">Premier Black Car Service Dallas</h1>
-                    <div class="d-none d-md-block">
-                        <p class="text-white font-lg fw-medium mb-30">Luxury black car and limo service in Dallas, TX. Professional chauffeurs for airport transfers, corporate travel, and special events. Serving Dallas, Plano, Frisco, Allen, and the entire DFW area.</p>
-                       
-                        <p class="text-white font-base d-flex align-items-center  mb-30 mb-md-0">
-                            Call Now: <a href="tel:+12148978056" class="mx-2 fw-bold font-lg theme-color">+1
-                                214-897-8056</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="d-none col-12 col-md-6 d-md-block" style="pointer-events: auto; position: relative; z-index: 2;">
-                    <!-- Booking Form -->
-                    <div class="search-form-wrapper-desktop">
-                        @include('partials.search', ['id_suffix' => ''])
+    <div class="px-md-15">
+        <section class="banner-section bdr-radius position-relative">
+            <div id="map" class="position-absolute w-100 h-100" style="top:0; left:0; z-index: 1; display:none; border-radius: inherit;"></div>
+            <div class="container-fluid">
+                <span class="bg-img-cover bdr-radius only-m">
+                    <img src="{{ asset('dallaslimo-bl-design/img/black-car-service-dallas-banner.webp') }}" alt="Hero Banner Image" class="img-fluid">
+                </span>
+                <span class="bg-img-cover bdr-radius only-d">
+                    <img src="{{ asset('dallaslimo-bl-design/assets/banner-01.webp') }}" alt="Hero Banner Image" class="img-fluid">
+                </span>
+                <div class="px-20">
+                    <div class="distance-form-holder d-md-none">
+                        @include('partials.search', ['id_suffix' => '_mobile'])
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="container py-30 pb-md-50">
+                <div class="row justify-content-center">
+                    <div id="home-text-content" class="col-12 col-lg-11 col-xl-10">
+                        <header class="mb-md-15 text-center">
+                            <h1 class="h1 fw-semibold text-center">Dallas Limos and Black Car Service</h1>
+                            <p class="font-md">Experience reliable black car service in Dallas with professional chauffeurs, luxury vehicles, and on-time<br class="d-none d-md-block"> service for airports, business travel, and special occasions across Plano, Frisco, and Allen.</p>
+                            <div class="text-center">
+                                <a href="tel:+12148978056" class="btn btn-primary text-capitalize">Call Now: +1 214-897-8056</a>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6"></div>
+                    <div class="col-12 col-md-6 d-none d-md-block pr-md-30">
+                        <div class="distance-form-holder">
+                            @include('partials.search', ['id_suffix' => ''])
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-        <style>
-            @media (max-width: 767px) {
-                #hero-banner-container {
-                    min-height: 300px !important;
-                    height: 300px !important;
-                    background-size: cover !important;
-                    background-position: center center !important;
-                    background-repeat: no-repeat !important;
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-                }
-                #hero-banner-container .row {
-                    width: 100%;
-                    margin: 0;
-                    justify-content: center !important;
-                    align-items: center !important;
-                }
-                #home-text-content {
-                    justify-content: center !important;
-                    align-items: center !important;
-                    text-align: center !important;
-                }
-                #home-text-content h1 {
-                    text-align: center !important;
-                    white-space: nowrap !important;
-                }
-            }
-            @media (min-width: 768px) {
-                #hero-banner-container {
-                    min-height: 570px;
-                }
-                #home-text-content {
-                    margin-top: 130px;
-                }
-                .search-form-wrapper-desktop {
-                    position: absolute;
-                    width: 100%;
-                    z-index: 10;
-                }
-            }
-        </style>
-    </section>
+    <style>
+        /* Form stays above map when map is shown */
+        .banner-section .distance-form-holder {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
 
     @include('partials.home-dallaslimo-content')
 
