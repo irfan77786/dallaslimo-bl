@@ -79,6 +79,17 @@
                                     <li class="nav-item"><a class="nav-link" href="/fifa-world-cup-2026-car-service-dallas/">FIFA World Cup 26</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/get-a-quote/">Get a Quote</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/book-now/">Book Now</a></li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHelp" role="button" data-bs-toggle="dropdown" aria-expanded="false">Help</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownHelp">
+                                            <li><a class="dropdown-item" href="/get-a-quote/">Get a Quote</a></li>
+                                            <li><a class="dropdown-item" href="/contact-us/">Contact us</a></li>
+                                            <li><a class="dropdown-item" href="/faqs/">FAQs</a></li>
+                                            <li><a class="dropdown-item" href="/terms-and-conditions">Terms & Conditions</a></li>
+                                            <li><a class="dropdown-item" href="/privacy-policy">Privacy Policy</a></li>
+                                            <li><a class="dropdown-item" href="/cancellation-policy">Cancellation Policy</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>

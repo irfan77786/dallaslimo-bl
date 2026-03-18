@@ -1,105 +1,330 @@
-@extends('master')
+@extends('master-home')
+
 @section('content')
-<section class="home-banner-section">
-    <div class="py-60 ah-container position-relative py-sm-70 py-md-80 py-lg-100"
-        style="background-image: url('https://dallaslimoandblackcars.com/img/dallas-limo-and-black-cars-banner.webp');">
-        <div class="row">
-            <div class="text-center col-12 col-md-10 col-lg-8 col-xl-6 text-md-start">
-                <h1 class="text-white h1 fw-bold mb-15">Term & Conditions – Black Car Service Dallas</h1>
-                <p class="mb-0 text-white font-lg fw-medium">Request Instant Pricing for Black Car, SUV, or Group Travel in DFW.</p>
-                <span class="my-2 text-white font-base d-block">24/7 Service Available – <strong
-                        class="font-lg fw-semibold">Click to Call
-                        Now</strong></span>
-                <div class="pt-3"><a href="/booking" class="btn btn-primary sm fw-medium">Book Your Ride Now</a></div>
+    <div class="px-md-15">
+        <section class="banner-section bdr-radius position-relative">
+            <div class="container-fluid">
+                <span class="bg-img-cover bdr-radius only-m">
+                    <img src="{{ asset('dallaslimo-bl-design/img/black-car-service-dallas-banner.webp') }}" alt="Hero Banner Image" class="img-fluid">
+                </span>
+                <span class="bg-img-cover bdr-radius only-d">
+                    <img src="{{ asset('dallaslimo-bl-design/assets/banner-01.webp') }}" alt="Hero Banner Image" class="img-fluid">
+                </span>
+            </div>
+            <div class="container py-30 pb-md-50">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-11 col-xl-10">
+                        <header class="mb-md-15 text-center">
+                            <h1 class="h1 fw-semibold text-center">Terms and Conditions</h1>
+                            <p class="font-md">Review our terms and conditions for Dallas black car service.</p>
+                            <div class="text-center">
+                                <a href="tel:+12148978056" class="btn btn-primary text-capitalize">Call Now: +1 214-897-8056</a>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="py-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- <h3 class="h4 fw-semibold">Dallas Limos and Black Car Service</h3> -->
+                        <!-- <p class="font-base">Welcome to Dallas Limos and Black Car Service. These Terms and Conditions
+                            govern your access to and use of our website and transportation services. By accessing this
+                            website or using our services, you agree to comply with and be bound by these Terms. If you
+                            do not agree, you should discontinue use of this website and our services.
+                        </p>
+                        <p class="font-base">Dallas Limos and Black Car Service reserves the right to modify these Terms
+                            at any time without prior notice. Continued use of the website or services constitutes
+                            acceptance of any updated Terms. We encourage you to review this page periodically.</p>
+                        <p class="font-base">
+                            For questions or concerns, please contact us at:<br>
+                            <strong>Email: </strong><a class="font-base single-line-ellipses"
+                                href="mailto:info@dallasblacklimoservice.com.com">info@dallasblacklimoservice.com.com
+                            </a> <br />
+                            <strong>Phone: </strong><a class="font-base single-line-ellipses"
+                                href="tel:+11234567890">+11234567890
+                            </a>
+                        </p> -->
+                        <h3 class="h5 fw-medium">1. Definitions</h3>
+                        <ul class="list-unstyled custom-unorder-list pl-0">
+                            <li>
+                                <p class="mb-0">
+                                <b>“Dallas Limos and Black Car Service,” “we,” “our,” or “us”</b> refers to the company,
+                                its website, owners, operators, employees, and affiliates.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    <b>“You” or “User”</b> refers to any individual or entity accessing or using our website
+                                or services.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                <b>“Services”</b> refers to chauffeured transportation arrangements, reservations,
+                                customer support, and related offerings.
+                                </p>
+                            </li>
+                        </ul>
+                        <h3 class="h5 fw-medium">2. Acceptance of Terms</h3>
+                        <p>By using our website or services, you confirm that you have read, understood, and agreed to
+                            these Terms and Conditions. If you do not accept these Terms, you may not access or use our
+                            services.</p>
+                        <p>Dallas Limos and Black Car Service may update these Terms at any time. Continued use
+                            following changes indicates acceptance of the revised Terms.</p>
+                        <h3 class="h5 fw-medium">3. Services Provided</h3>
+                        <p>Dallas Limos and Black Car Service provides professional chauffeured transportation services,
+                            including but not limited to:</p>
+                        <ul class="list-unstyled custom-unorder-list pl-0">
+                            <li>Airport Transfers</li>
+                            <li>Corporate and Executive Transportation</li>
+                            <li>Special Event Transportation</li>
+                            <li>Hourly and Point-to-Point Services</li>
+                        </ul>
+                        <p>Users are responsible for confirming all booking details, including pickup and drop-off
+                            locations, dates, and times. Booking confirmations and payment receipts will be sent via
+                            email or SMS.</p>
+                        <h3 class="h5 fw-medium">4. Booking and Payment Policy</h3>
+                        <ul class="list-unstyled custom-unorder-list">
+                            <li class="mb-0">
+                                <p class="mb-0">Reservations may be made online or by phone.</p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0">Payment is required at the time of booking and is processed through
+                                    secure
+                                    payment systems.</p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0">Accepted payment methods include major credit and debit cards.
+                                    Additional
+                                    payment options will be disclosed at the time of booking.
+                                </p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0">Once payment is processed, a confirmation will be sent via email or SMS.
+                                </p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0"><strong>Automatic Charges:</strong> The payment method on file may be
+                                    charged up to one day prior to service. Any additional services requested after
+                                    confirmation will be billed separately.
+                                </p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0"><strong>Declined Payments:</strong> If a payment is declined and no
+                                    alternate method is provided, the reservation may be canceled. Dallas Limos and
+                                    Black Car Service is not responsible for cancellations resulting from payment
+                                    issues.
+                                </p>
+                            </li>
+                        </ul>
+
+                        <h3 class="h5 fw-medium">5. User Responsibilities</h3>
+                        <p>Users agree to: </p>
+                        <ul class="list-unstyled custom-unorder-list">
+                            <li class="mb-0">Provide accurate and complete information when making a reservation.</li>
+                            <li class="mb-0">Use the website and services lawfully and ethically.</li>
+                            <li class="mb-0">Treat staff and chauffeurs with respect at all times.</li>
+                        </ul>
+                        <p>Dallas Limos and Black Car Service reserves the right to refuse service or cancel
+                            reservations if these responsibilities are not met.</p>
+                        <h3 class="h5 fw-medium">6. Prohibited Activities</h3>
+                        <p>The following actions are strictly prohibited:</p>
+                        <ul class="list-unstyled custom-unorder-list">
+                            <li class="mb-0">Using the website for unlawful purposes.</li>
+                            <li class="mb-0">Copying, reproducing, modifying, or distributing website content without
+                                authorization.</li>
+                            <li class="mb-0">Uploading or distributing malware, viruses, or harmful software.</li>
+                            <li class="mb-0">Attempting to hack, spam, or disrupt the website.</li>
+                        </ul>
+                        <p>Violations may result in termination of service, cancellation of bookings, and potential
+                            legal action.</p>
+                        <h3 class="h5 fw-medium">7. Dispute Resolution and Arbitration</h3>
+                        <p>In the event of a dispute:</p>
+                        <ul class="list-unstyled custom-unorder-list">
+                            <li class="mb-0">Users must first attempt to resolve the issue directly with Dallas Limos
+                                and Black Car Service.</li>
+                            <li class="mb-0">If unresolved, disputes will be settled through binding arbitration under
+                                applicable U.S. law.</li>
+                            <li class="mb-0">Arbitration will take place at a mutually agreed location, and the
+                                arbitrator’s decision will be final.</li>
+                            <li class="mb-0">Users waive the right to participate in class-action lawsuits related to
+                                these services.</li>
+                        </ul>
+                        <h3 class="h5 fw-medium">8. Data Protection and Privacy</h3>
+                        <p>We are committed to protecting your personal information. By using our website or services,
+                            you consent to the collection and use of data in accordance with our Privacy Policy.</p>
+                        <ul class="list-unstyled custom-unorder-list">
+                            <li class="mb-0">
+                                <p class="mb-0"><strong>Data Usage:</strong>
+                                    Personal information such as name, contact details, and payment information is
+                                    collected solely to provide services.
+                                </p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0"><strong>Data Security:</strong>
+                                    Information is stored securely and not shared with third parties except as required
+                                    by law.
+                                </p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0"><strong>User Rights:</strong>
+                                    You may request access, correction, or deletion of your personal data by contacting
+                                    us at
+                                </p>
+                            </li>
+                        </ul>
+                        <h3 class="h5 fw-medium">9. Liability and Indemnification</h3>
+                        <p>Dallas Limos and Black Car Service is not liable for delays or service interruptions caused
+                            by:</p>
+                        <ul class="list-unstyled custom-unorder-list">
+                            <li class="mb-0">
+                                <p class="mb-0">Traffic conditions</p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0">Weather or natural events</p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0">Third-party system failures or mechanical issues
+                                </p>
+                            </li>
+                        </ul>
+                        <p>By using our services, you agree to indemnify and hold harmless Dallas Limos and Black Car
+                            Service, its affiliates, employees, and contractors from claims arising from misuse of
+                            services or violation of these Terms.</p>
+                        <h3 class="h5 fw-medium">10. Intellectual Property</h3>
+                        <p>All content on this website, including text, images, logos, and media, is the property of
+                            Dallas Limos and Black Car Service or its licensed partners and is protected by copyright
+                            laws. Unauthorized use or reproduction is strictly prohibited.</p>
+                        <p><strong>Reporting Copyright Infringement:</strong>Reporting Copyright Infringement:
+                            To report potential copyright infringement, please contact us at *******, including:</p>
+                        <ul class="list-unstyled custom-unorder-list">
+                            <li class="mb-0">
+                                <p class="mb-0">A description of the material in question</p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0">Your contact information</p>
+                            </li>
+                            <li class="mb-0">
+                                <p class="mb-0">Proof of ownership or authorization
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="">
+            <div class="container-fluid">
+                <div class="bg-gray-light sponser-logo-swiper logo-swiper p-30 py-md-50">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-01.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-02.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-03.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-04.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-05.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-06.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-07.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-08.png') }}" class="img-fluid"></div>
+
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-01.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-02.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-03.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-04.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-05.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-06.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-07.png') }}" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="{{ asset('dallaslimo-bl-design/assets/logo-08.png') }}" class="img-fluid"></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="py-50 py-sm-60 py-md-70 py-lg-80">
-    <div class="ah-container">
-        <div class="row">
-            <div class="col-12">
-                <p class="font-base">Welcome to Dallas Black Cars Service! These Terms and Conditions
-                    govern your use of this website and our services. By getting access to and the usage of this
-                    website and our services, you agree to be bound using those Terms. If you do not agree to
-                    those Terms, you can no longer use our offerings or this website. You acknowledge that
-                    Dallas Black Cars Service has the right to exchange those Terms at any time without
-                    notice to you. Continue to check them from time to time for updates.
-                </p>
-                <h3 class="h5 fw-medium">1. Definitions</h3>
-                <p><b>Dallas Black Cars Service, "we", "our", or "us":</b> Refers to the enterprise, the
-                    internet
-                    site, the owners, the operators, and/or the associates.
-                    <b>"You" or "User":</b> Refers to individuals or entities who get admission to or employ our
-                    internet site or offerings.
-                </p>
-                <h3 class="h5 fw-medium">2. Acknowledgment And Agreement To Terms</h3>
-                <p>When you use our site or what we do, you say you have looked at and get these rules, and you
-                    say yes to them. But if you don't go along with these rules, don't use our site or anything
-                    we give you.</p>
-                <p>Dallas Black Cars Service may change the Terms and Conditions at any time. If you
-                    continue to use the services, you accept the new Terms and Conditions.</p>
-                <h3 class="h5 fw-medium">3. Services Offered</h3>
-                <p>Dallas Black Cars Service is an elite provider of professional chauffeured limousine
-                    services, specializing in the following areas:</p>
-                <p>
-                <ul class="list-unstyled custom-unorder-list">
-                    <li class="mb-0">Airport Transfers</li>
-                    <li class="mb-0">Corporate and Executive Transportation</li>
-                    <li class="mb-0">Special Event Services</li>
-                </ul>
-                </p>
-                <p>Users must confirm all booking details, including the pickup/drop-off points, dates, and
-                    times. All booking details and payment confirmations will be sent to users through email or
-                    SMS.</p>
-                <h3 class="h5 fw-medium">4. Booking And Payment Policy</h3>
-                <p>
-                <ul class="list-unstyled custom-unorder-list">
-                    <li class="mb-0">Service bookings may be made online or over the phone with a
-                        representative.</li>
-                    <li class="mb-0">Payment will be required at the time of booking and will be processed
-                        securely. The most common method of payment generally accepted is debit/credit cards,
-                        and other acceptable methods will be notified to you at the time of booking.</li>
-                    <li class="mb-0">After payment is completed, you will receive a confirmation via email or
-                        SMS text message containing your booking information.</li>
-                    <li class="mb-0 d-block"><b>Automatic Charges:</b>Payments for service will be automatically
-                        charged to the same form of payment one day prior to service. Services associated with
-                        your booking that are requested after booking confirmation will be billed separately.
-                    </li>
-                    <li class="mb-0 d-block"><b>Declined Payments:</b>Payments that are declined will require
-                        you to provide another form of payment. If the alternate form of payment is not given,
-                        it is possible your booking may be canceled. Dallas Black Cars Service is not
-                        liable for cancellations on your booking due to payment issues.</li>
-                    <li class="mb-0">After payment is completed, you will receive a confirmation via email or
-                        SMS text message containing your booking information.</li>
-                </ul>
-                </p>
-                <p>Our mobile applications offer features designed to enhance your user experience. We may
-                    collect personal information, such as location data, to provide better and more personalized
-                    services. Please check the privacy settings within the apps for details on the data we
-                    collect and how it is used.</p>
-                <h3 class="h5 fw-medium">5. Social Media/Social Networks</h3>
-                <p>We may include social media plugins on our services to allow interaction with our social
-                    media profiles. These plugins may collect personal information according to their privacy
-                    policies. Please review third-party privacy policies for more details.</p>
-                <h3 class="h5 fw-medium">6. Data Processing During Registered Use and Booking Rides</h3>
-                <p>When you book a ride or use our services, we collect personal data such as contact details,
-                    payment information, and ride preferences. We use this data to provide services, communicate
-                    regarding your service, handle billing, and improve offerings. By using our services, you
-                    consent to this data processing.</p>
-                <h3 class="h5 fw-medium">7. Disputes And Arbitration</h3>
-                <p>In the event of disputes stemming from the use of our services or website:</p>
-                <p>
-                <ul class="list-unstyled custom-unorder-list">
-                    <li class="mb-0">The user must first contact Dallas Black Cars Service directly for resolution.</li>
-                    <li class="mb-0">If there is no resolution, disputes will be settled through binding arbitration under relevant U.S. law.</li>
-                    <li class="mb-0">Arbitration will take place at a mutually agreed-upon location, and the arbitrator's decision will be final.</li>
-                    <li class="mb-0">Users waive their right to bring a class action lawsuit relating to the services of Dallas Black Cars Service or its terms.</li>
-                </ul>
+        <section class="py-40 overflow-hidden">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <header class="mb-15">
+                            <h2 class="h2 fw-semibold text-center">Trusted by Corporate Teams and Executive Assistants
+                            </h2>
+                        </header>
+                    </div>
+                </div>
+                <div class="row position-relative">
+                    <div class="col-12">
+                        <div class="swiper testimonial-swiper custom-swiper-01">
+                            <div class="d-flex justify-content-end gap-3 swiper-arrows-holder">
+                                <div class="swiper-button-prev">
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path
+                                            d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"
+                                            fill="#fff" />
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path
+                                            d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"
+                                            fill="#fff" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card">
+                                        <blockquote class="text-center">
+                                            <q class="font-md ">
+                                                As an executive assistant, I need airport transportation handled without
+                                                reminders or follow-ups. Flights are tracked, drivers are positioned on
+                                                time, and any schedule changes are managed quietly. That reliability is
+                                                why I use them for executive airport transfers in Dallas
+                                            </q>
+                                            <cite class="name"> — Emily Carter, Executive Assistant</cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card">
+                                        <blockquote class="text-center">
+                                            <q class="font-md ">
+                                                As an executive assistant, I need airport transportation handled without
+                                                reminders or follow-ups. Flights are tracked, drivers are positioned on
+                                                time, and any schedule changes are managed quietly. That reliability is
+                                                why I use them for executive airport transfers in Dallas
+                                            </q>
+                                            <cite class="name"> — Emily Carter, Executive Assistant</cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card">
+                                        <blockquote class="text-center">
+                                            <q class="font-md ">
+                                                As an executive assistant, I need airport transportation handled without
+                                                reminders or follow-ups. Flights are tracked, drivers are positioned on
+                                                time, and any schedule changes are managed quietly. That reliability is
+                                                why I use them for executive airport transfers in Dallas
+                                            </q>
+                                            <cite class="name"> — Emily Carter, Executive Assistant</cite>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Optional -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-@include('partials.testimonials')
-@include('partials.faq')
+        </section>
+    
 @endsection

@@ -133,6 +133,30 @@ class WebsiteController extends Controller
         ]);
     }
 
+    public function faqs(Request $request){
+        if($request->edit){
+            session(['edit'=>1]);
+        }else{
+            session()->flush();
+            $request->session()->regenerateToken();
+        }
+
+        $seo = [
+            'title' => 'FAQs – Dallas Black Car Service',
+            'description' => 'Frequently asked questions about Dallas black car service, airport transfers, and chauffeur transportation.',
+            'keywords' => 'Dallas black car service FAQs, airport car service Dallas, chauffeur service Dallas',
+            'og_title' => 'FAQs – Dallas Black Car Service',
+            'og_description' => 'Frequently asked questions about Dallas black car service, airport transfers, and chauffeur transportation.',
+            'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
+        ];
+
+        return view('website.faqs', [
+            'backgroundImage' => '/img/black-car-service-frisco.webp',
+            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
+            'seo' => $seo
+        ]);
+    }
+
     public function contactUsPost(Request $request)
     {
         $validated = $request->validate([
