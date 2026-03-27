@@ -13,10 +13,11 @@ use App\Models\Quote;
 
 class WebsiteController extends Controller
 {
-    public function aboutUs(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function aboutUs(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -37,10 +38,11 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function fifaWorldCup2026CarServiceDallas(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function fifaWorldCup2026CarServiceDallas(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -61,10 +63,11 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function ourFleet(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function ourFleet(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -85,10 +88,11 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function getAQuote(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function getAQuote(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -109,10 +113,11 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function contactUs(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function contactUs(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -133,10 +138,11 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function faqs(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function faqs(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -179,7 +185,7 @@ class WebsiteController extends Controller
             Contact::create($contactData);
 
             Mail::to($validated['email'])->send(new ContactMail($contactData, false));
-            
+
             Mail::to('info@legacyonelimo.com')->send(new ContactMail($contactData, true));
 
             return redirect()->back()->with('success', 'Your message has been sent successfully!');
@@ -188,10 +194,11 @@ class WebsiteController extends Controller
         }
     }
 
-    public function CancellationPolicy(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function CancellationPolicy(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -212,10 +219,11 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function TermsAndConditions(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function TermsAndConditions(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -236,10 +244,11 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function PrivacyPolicy(Request $request){
-        if($request->edit){
-            session(['edit'=>1]);
-        }else{
+    public function PrivacyPolicy(Request $request)
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+        } else {
             session()->flush();
             $request->session()->regenerateToken();
         }
@@ -280,7 +289,7 @@ class WebsiteController extends Controller
             CorporateSupport::create($corporateData);
 
             Mail::to($validated['email'])->send(new CorporateSupportMail($corporateData, false));
-            
+
             Mail::to('info@legacyonelimo.com')->send(new CorporateSupportMail($corporateData, true));
 
             return redirect()->back()->with('success', 'Your corporate support request has been sent successfully!');
@@ -321,8 +330,8 @@ class WebsiteController extends Controller
             Quote::create($quoteData);
 
             Mail::to($validated['email'])->send(new QuoteMail($quoteData, false));
-            
-            Mail::to('info@legacyonelimo.com')->send(new QuoteMail($quoteData, true));
+
+            Mail::to('hafizirfan8078@gmail.com')->send(new QuoteMail($quoteData, true));
 
             return redirect()->back()->with('success', 'Your quote request has been sent successfully! We will send you a quote shortly.');
         } catch (\Exception $e) {

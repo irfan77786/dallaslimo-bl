@@ -328,7 +328,7 @@
         </section>
    
    <section class="fifa-main-banner only-d" style="
-    background: url(../../img/dallas-fifa-world-cup-black-car-service.webp) center center no-repeat;
+    background: url({{ asset('dallaslimo-bl-design/img/dallas-fifa-world-cup-black-car-service.webp') }}) center center no-repeat;
 ">
     <div class="container">
         <div class="row">
@@ -345,7 +345,7 @@
     </div>
 </section>
    <section class="fifa-main-banner only-m" style="
-    background: url(../../img/dallas-fifa-world-cup-black-car-service-mobile.webp) center top;
+    background: url({{ asset('dallaslimo-bl-design/img/dallas-fifa-world-cup-black-car-service-mobile.webp') }}) center top;
 ">
     <div class="container">
         <div class="row">
