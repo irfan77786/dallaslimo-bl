@@ -57,8 +57,10 @@
                         </div>
                         <ul class="widget-list">
                             <li><a href="{{ route('black_car_service_allen_texas') }}" style="font-size: 18px">Allen</a></li><br>
+                            <li><a href="{{ route('booking') }}" style="font-size: 18px">Dallas</a></li><br>
                             <li><a href="{{ route('black_car_service_fort_worth_texas') }}" style="font-size: 18px">Fort Worth</a></li><br>
                             <li><a href="{{ route('black_car_service_frisco_texas') }}" style="font-size: 18px">Frisco</a></li><br>
+                            <li><a href="{{ route('black_car_service_anna_texas') }}" style="font-size: 18px">Anna</a></li><br>
                             <li><a href="{{ route('black_car_service_plano_texas') }}" style="font-size: 18px">Plano</a></li><br>
                         </ul>
                     </div>
@@ -70,11 +72,12 @@
                             <h4>City-to-City rides</h4>
                         </div>
                         <ul class="widget-list">
-                            <li><a href="{{ route('dallas_to_austin') }}" style="font-size: 18px">Dallas - Austin</a></li><br>
-                            <li><a href="{{ route('dallas_to_college_station') }}" style="font-size: 18px">Dallas - College Station</a></li><br>
-                            <li><a href="{{ route('dallas_to_sherman') }}" style="font-size: 18px">Dallas - Sherman</a></li><br>
-                            <li><a href="{{ route('dallas_to_tyler') }}" style="font-size: 18px">Dallas - Tyler</a></li><br>
-                            <li><a href="{{ route('dfw_to_waco') }}" style="font-size: 18px">DFW - Waco</a></li><br>
+                            <li><a href="{{ route('dallas_to_austin_car_service') }}" style="font-size: 18px">Dallas - Austin</a></li><br>
+                            <li><a href="{{ route('dallas_to_arlington_car_service') }}" style="font-size: 18px">Dallas - Arlington</a></li><br>
+                            <li><a href="{{ route('dallas_to_crowley_car_service') }}" style="font-size: 18px">Dallas - Crowley</a></li><br>
+                            <li><a href="{{ route('dallas_to_anna_car_service') }}" style="font-size: 18px">Dallas - Anna</a></li><br>
+                            <li><a href="{{ route('dallas_to_tyler_car_service') }}" style="font-size: 18px">Dallas - Tyler</a></li><br>
+                            <li><a href="{{ route('dfw_to_waco_car_service') }}" style="font-size: 18px">DFW - Waco</a></li><br>
                         </ul>
                     </div>
                 </div>

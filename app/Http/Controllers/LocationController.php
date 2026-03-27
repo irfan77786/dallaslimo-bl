@@ -23,10 +23,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.black-car-service-allen-texas', [
-            'backgroundImage' => '/img/black-car-service-frisco.webp',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Black Car Service Allen',
+            'bannerSubtitle' => 'Enjoy reliable Allen black car service with our professional chauffeurs and luxury vehicles. We provide punctual and comfortable transportation for airport transfers, corporate travel, private rides, and special events, ensuring a smooth, stress-free travel experience every time.',
         ]);
     }
 
@@ -47,10 +47,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.black-car-service-fort-worth-texas', [
-            'backgroundImage' => '/img/black-car-service-frisco.webp',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Black Car Service Fort Worth',
+            'bannerSubtitle' => 'Enjoy reliable Fort Worth black car service with our professional chauffeurs and luxury vehicles. We provide punctual and comfortable transportation to DFW International Airport, Dallas Love Field, downtown Fort Worth, and surrounding areas, ensuring a smooth, stress-free travel experience every time.',
         ]);
     }
 
@@ -71,10 +71,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.black-car-service-frisco-texas', [
-            'backgroundImage' => '/img/black-car-service-frisco.webp',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Black Car Service Frisco',
+            'bannerSubtitle' => 'Enjoy reliable Frisco black car service with our professional chauffeurs and luxury vehicles. We provide punctual and comfortable transportation for airport transfers, corporate travel, private rides, and special events, ensuring a smooth, stress-free travel experience every time.',
         ]);
     }
 
@@ -95,10 +95,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.black-car-service-plano-texas', [
-            'backgroundImage' => '/img/black-car-service-frisco.webp',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Black Car Service Plano',
+            'bannerSubtitle' => 'Enjoy reliable Plano black car service with our professional chauffeurs and luxury vehicles. We provide punctual and comfortable transportation to DFW International Airport, Dallas Love Field, corporate offices, and nearby destinations, ensuring a smooth, stress-free travel experience every time.',
         ]);
     }
 
@@ -119,10 +119,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.black-car-service-anna-texas', [
-            'backgroundImage' => '/img/black-car-service-anna.webp',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Black Car Service Anna',
+            'bannerSubtitle' => 'Enjoy reliable black car service in Anna with our professional chauffeurs and luxury vehicles. We provide punctual, comfortable, and private transportation for airport transfers, business travel, local rides, and special occasions throughout Anna and nearby North Texas communities.',
         ]);
     }
 
@@ -143,10 +143,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.black-car-service-dallas-texas', [
-            'backgroundImage' => '/new_assets/assets/black-car-service-dallas-logo.png',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Dallas to Austin Car Service',
+            'bannerSubtitle' => 'Book premium Dallas to Austin transportation with professional chauffeurs and luxury vehicles for business, events, and long-distance travel.',
         ]);
     }
 
@@ -167,10 +167,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.dallas-to-arlington-car-service', [
-            'backgroundImage' => '/new_assets/assets/black-car-service-dallas-logo.png',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Dallas to Arlington Car Service',
+            'bannerSubtitle' => 'Reliable Dallas to Arlington transportation with executive sedans, SUVs, and private chauffeurs for work, events, and everyday travel.',
         ]);
     }
 
@@ -191,10 +191,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.dallas-to-crowley-car-service', [
-            'backgroundImage' => '/new_assets/assets/black-car-service-dallas-logo.png',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Dallas to Crowley Car Service',
+            'bannerSubtitle' => 'Comfortable Dallas to Crowley rides with door-to-door service, dependable scheduling, and professionally chauffeured vehicles.',
         ]);
     }
 
@@ -215,10 +215,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.dallas-to-anna-car-service', [
-            'backgroundImage' => '/new_assets/assets/black-car-service-dallas-logo.png',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Dallas to Anna Car Service',
+            'bannerSubtitle' => 'Private Dallas to Anna black car and chauffeur transportation for residents, visitors, and businesses.',
         ]);
     }
 
@@ -239,10 +239,10 @@ class LocationController extends Controller
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.dallas-to-tyler-car-service', [
-            'backgroundImage' => '/new_assets/assets/black-car-service-dallas-logo.png',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Dallas to Tyler Car Service',
+            'bannerSubtitle' => 'Long-distance Dallas to Tyler car service with luxury vehicles and experienced chauffeurs for business and leisure travel.',
         ]);
     }
 
@@ -255,18 +255,18 @@ class LocationController extends Controller
         }
 
         $seo = [
-            'title' => 'Fort Worth to Waco Car Service | Luxury Travel Texas',
-            'description' => 'Experience top-tier Fort Worth to Waco car service with luxury sedans, SUVs, and minibuses. Ideal for business trips, weddings, and events. Book your ride today!',
-            'keywords' => 'Fort Worth to Waco car service, Houston to Waco car service',
-            'og_title' => 'Fort Worth to Waco Car Service | Luxury Travel Texas',
-            'og_description' => 'Experience top-tier Fort Worth to Waco car service with luxury sedans, SUVs, and minibuses. Ideal for business trips, weddings, and events. Book your ride today!',
+            'title' => 'DFW to Waco Car Service | Luxury Travel Texas',
+            'description' => 'Book reliable DFW to Waco car service with professional chauffeurs, luxury vehicles, and private door-to-door transportation from Dallas/Fort Worth to Waco.',
+            'keywords' => 'DFW to Waco car service, Dallas to Waco car service, Fort Worth to Waco car service',
+            'og_title' => 'DFW to Waco Car Service | Luxury Travel Texas',
+            'og_description' => 'Book reliable DFW to Waco car service with professional chauffeurs, luxury vehicles, and private door-to-door transportation from Dallas/Fort Worth to Waco.',
             'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
         ];
 
-        return view('locations.dfw-to-waco-car-service', [
-            'backgroundImage' => '/new_assets/assets/black-car-service-dallas-logo.png',
-            'mobileImage' => 'new_assets/assets/black-car-service-dallas-logo.png',
-            'seo' => $seo
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'DFW to Waco Car Service',
+            'bannerSubtitle' => 'Professional chauffeurs, luxury vehicles, and dependable private transportation from Dallas/Fort Worth to Waco for business, school, and leisure travel.',
         ]);
     }
 

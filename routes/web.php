@@ -437,6 +437,8 @@ Route::prefix('services')->group(function(){
     Route::get('/dallas-to-crowley-car-service', [LocationController::class, 'DallasToCrowleyCarService'])->name('dallas_to_crowley_car_service');
     Route::get('/dallas-to-anna-car-service', [LocationController::class, 'DallasToAnnaCarService'])->name('dallas_to_anna_car_service');
     Route::get('/dallas-to-tyler-car-service', [LocationController::class, 'DallasToTylerCarService'])->name('dallas_to_tyler_car_service');
+    Route::get('/dallas-to-college-station-car-service', [LocationController::class, 'DallasToCollegeStationCarService'])->name('dallas_to_college_station_car_service');
+    Route::get('/dallas-to-sherman-car-service', [LocationController::class, 'DallasToShermanCarService'])->name('dallas_to_sherman_car_service');
     Route::get('/dfw-to-waco-car-service', [LocationController::class, 'DfwToWacoCarService'])->name('dfw_to_waco_car_service');
     Route::get('/cancellation-policy', [WebsiteController::class, 'CancellationPolicy'])->name('cancellation_policy');
     Route::get('/terms-and-conditions', [WebsiteController::class, 'TermsAndConditions'])->name('terms_and_conditions');

@@ -120,12 +120,12 @@
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <h5 class="h5 fw-bold mb-10 mb-md-3 text-white">City-to-City Rides</h5>
                                     <ul class="footer-nav-list-item list-unstyled mb-30 mb-lg-0">
-                                        <li><a href="/dallas-to-austin-car-service">Dallas - Austin</a></li>
-                                        <li><a href="/dallas-to-houston-car-service">Dallas - Houston</a></li>
-                                        <li><a href="/city-to-city-ride/dallas-to-college-station/">Dallas - College Station</a></li>
-                                        <li><a href="/dallas-to-oklahoma-city-ok">Dallas - OKC</a></li>
-                                        <li><a href="/dallas-to-tyler-car-service">Dallas - Tyler</a></li>
-                                        <li><a href="/dfw-to-waco-car-service">DFW - Waco</a></li>
+                                        <li><a href="{{ route('dallas_to_austin_car_service') }}">Dallas - Austin</a></li>
+                                        <li><a href="{{ route('dallas_to_arlington_car_service') }}">Dallas - Arlington</a></li>
+                                        <li><a href="{{ route('dallas_to_crowley_car_service') }}">Dallas - Crowley</a></li>
+                                        <li><a href="{{ route('dallas_to_anna_car_service') }}">Dallas - Anna</a></li>
+                                        <li><a href="{{ route('dallas_to_tyler_car_service') }}">Dallas - Tyler</a></li>
+                                        <li><a href="{{ route('dfw_to_waco_car_service') }}">DFW - Waco</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
@@ -142,12 +142,12 @@
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <h5 class="h5 fw-bold mb-10 mb-md-3 text-white">Popular Cities</h5>
                                     <ul class="footer-nav-list-item list-unstyled mb-30 mb-lg-0">
-                                        <li><a href="/texas/black-car-service-allen-tx/">Allen</a></li>
-                                        <li><a href="/">Dallas</a></li>
-                                        <li><a href="/texas/black-car-service-fort-worth-tx/">Fort Worth</a></li>
-                                        <li><a href="/texas/black-car-service-frisco-tx/">Frisco</a></li>
-                                        <li><a href="/texas/black-car-service-anna-tx/">Anna</a></li>
-                                        <li><a href="/texas/black-car-service-plano-tx/">Plano</a></li>
+                                        <li><a href="{{ route('black_car_service_allen_texas') }}">Allen</a></li>
+                                        <li><a href="{{ route('booking') }}">Dallas</a></li>
+                                        <li><a href="{{ route('black_car_service_fort_worth_texas') }}">Fort Worth</a></li>
+                                        <li><a href="{{ route('black_car_service_frisco_texas') }}">Frisco</a></li>
+                                        <li><a href="{{ route('black_car_service_anna_texas') }}">Anna</a></li>
+                                        <li><a href="{{ route('black_car_service_plano_texas') }}">Plano</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">

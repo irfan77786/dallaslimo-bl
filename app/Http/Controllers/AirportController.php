@@ -78,6 +78,30 @@ class AirportController extends Controller
         ]);
     }
 
+    public function DallasExecutiveAirportCarService(Request $request){
+        if($request->edit){
+            session(['edit'=>1]);
+        }else{
+            session()->flush();
+            $request->session()->regenerateToken();
+        }
+
+        $seo = [
+            'title' => 'Dallas Executive Airport Car Service | Luxury Black Car & Chauffeur',
+            'description' => 'Book Dallas Executive Airport (RBD) car service with luxury sedans, SUVs, and professional chauffeurs. Private airport transfers, FBO pickups, and on-time service in Dallas.',
+            'keywords' => 'Dallas Executive Airport car service, RBD airport black car, Dallas Executive Airport transportation, chauffeur Dallas Executive',
+            'og_title' => 'Dallas Executive Airport Car Service | Luxury Black Car & Chauffeur',
+            'og_description' => 'Book Dallas Executive Airport (RBD) car service with luxury sedans, SUVs, and professional chauffeurs. Private airport transfers, FBO pickups, and on-time service in Dallas.',
+            'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
+        ];
+
+        return view('locations.city-to-city-service-page', [
+            'seo' => $seo,
+            'bannerTitle' => 'Dallas Executive Airport Car Service',
+            'bannerSubtitle' => 'Private black car and chauffeur service for Dallas Executive Airport (RBD)—reliable pickups, business travel, and luxury transportation across Dallas and nearby areas.',
+        ]);
+    }
+
     public function SignatureFlightSupport(Request $request){
         if($request->edit){
             session(['edit'=>1]);
