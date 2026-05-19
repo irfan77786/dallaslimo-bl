@@ -5940,6 +5940,16 @@ section.detail-content-section.py-20 li {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   position: relative;
 }
+@media (max-width: 767px) {
+  .banner-section .distance-form-holder {
+    height: auto;
+    min-height: 280px;
+    margin-bottom: 20px;
+  }
+  .banner-section > .container {
+    padding-top: 10px;
+  }
+}
 @media (min-width: 768px) {
   .distance-form-holder {
     height: 350px;
@@ -5984,11 +5994,15 @@ section.detail-content-section.py-20 li {
 }
 
 @media (max-width: 991px) {
+  header {
+    position: relative;
+    z-index: 1050;
+  }
   .custom-navbar .navbar-collapse {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 10;
+    z-index: 1050;
     padding: 15px 12px 0;
     width: 100%;
   }
