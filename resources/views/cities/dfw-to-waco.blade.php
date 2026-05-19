@@ -8,12 +8,15 @@ $isHourly = session('service_type') === 'hourlyHire';
 @if(!session('pickup_location') && !session('dropoff_location'))
 @include('partials.banner', ['title' => "DFW to Waco Car Service"])
 @endif
-<div class="bottom-banner" style="{{ session('pickup_location') && session('dropoff_location') ? 'background-image: none' : '' }}">
+<div class="bottom-banner"
+    style="{{ session('pickup_location') && session('dropoff_location') ? 'background-image: none' : '' }}">
     <div class="row">
         <div class="col-sm-12 back-container">
             <div class="container">
                 <div class="row justify-content-end">
-                    <div class="col-sm-7 bottom-banner-inside banner-hidden-mobile" bis_skin_checked="1" id="hide_on_map" style="padding-top: 65px; {{ session('pickup_location') && session('dropoff_location') ? 'display: none' : '' }}">
+                    <div class="col-sm-7 bottom-banner-inside banner-hidden-mobile" bis_skin_checked="1"
+                        id="hide_on_map"
+                        style="padding-top: 65px; {{ session('pickup_location') && session('dropoff_location') ? 'display: none' : '' }}">
                         <div class="bottom-banner-text" bis_skin_checked="1">
                             <h1>DFW to Waco Car Service</h1>
                             <p>
@@ -26,7 +29,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                             </p>
                             <p class="bt-text">24/7 Service Available, Click to Call Now!</p>
                             <div class="bottom-banner-btn" bis_skin_checked="1">
-                                <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056" bis_skin_checked="1">Call: 214-897-8056</a>
+                                <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056"
+                                    bis_skin_checked="1">Call: 214-919-5377</a>
                             </div>
                         </div>
                     </div>
@@ -39,7 +43,8 @@ $isHourly = session('service_type') === 'hourlyHire';
             </div>
         </div>
 
-        <div id="map" style="height: 100%; width: 100%; display: none; border-radius: 15px; overflow: hidden; left:0;z-index: 9 !important; top:0">
+        <div id="map"
+            style="height: 100%; width: 100%; display: none; border-radius: 15px; overflow: hidden; left:0;z-index: 9 !important; top:0">
             <div class="map-overlay"></div>
         </div>
 
@@ -76,7 +81,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </p>
                     <p class="bt-text">24/7 Service – Call Now</p>
                     <div class="bottom-banner-btn" bis_skin_checked="1">
-                        <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056" bis_skin_checked="1">Call: 214-897-8056</a>
+                        <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056"
+                            bis_skin_checked="1">Call: 214-919-5377</a>
                     </div>
                 </div>
             </div>
@@ -92,8 +98,10 @@ $isHourly = session('service_type') === 'hourlyHire';
                     <div class="btom-bottom">
                         <h2>Dallas Limo And Black Cars Service – Fleet for Dallas to Waco Shuttle Service</h2>
                         <p>
-                            Whether it’s for business, leisure, or university events, our Dallas to Waco shuttle service ensures safe and stylish travel.
-                            Our chauffeurs deliver dependable long-distance transportation with comfort and professionalism for every passenger.
+                            Whether it’s for business, leisure, or university events, our Dallas to Waco shuttle service
+                            ensures safe and stylish travel.
+                            Our chauffeurs deliver dependable long-distance transportation with comfort and
+                            professionalism for every passenger.
                         </p>
                     </div>
 
@@ -104,12 +112,14 @@ $isHourly = session('service_type') === 'hourlyHire';
 
                     <p>
                         <strong class="strong-c-color">Luxury SUVs: </strong>
-                        Escalade, Suburban, and Yukon XL provide reliable, stylish group transport with space for luggage.
+                        Escalade, Suburban, and Yukon XL provide reliable, stylish group transport with space for
+                        luggage.
                     </p>
 
                     <p>
                         <strong class="strong-c-color">Executive Sprinter Vans: </strong>
-                        Mercedes-Benz Sprinters are ideal for Baylor University events, family transfers, or business trips.
+                        Mercedes-Benz Sprinters are ideal for Baylor University events, family transfers, or business
+                        trips.
                     </p>
 
                     <p>
@@ -119,17 +129,17 @@ $isHourly = session('service_type') === 'hourlyHire';
 
                     <p>
                         <strong class="strong-c-color">Luxury Motor Coaches (55–60 Passengers): </strong>
-                        The top choice for conventions, sports teams, or student groups traveling between Dallas and Waco.
+                        The top choice for conventions, sports teams, or student groups traveling between Dallas and
+                        Waco.
                     </p>
 
 
-<p class="tagline-bottom">Choose our long-distance car service Dallas to Waco
+                    <p class="tagline-bottom">Choose our long-distance car service Dallas to Waco
                         for luxury group transportation and professional chauffeurs.</p>
 
 
 
-                    <img
-                        src="/img/dallas-black-car-service.webp"
+                    <img src="/img/dallas-black-car-service.webp"
                         alt="Dallas to Waco black car shuttle service luxury fleet" />
                 </div>
 
@@ -154,7 +164,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                         Travel between Dallas & Waco Regional Airport in comfort with
                         our DFW to Waco limo service. We serve areas like Coppell,
                         Farmers Branch & Plano. Choose luxury sedans for solo travelers.
-                        Spacious SUVs are for families & groups. <a href="/services/chauffeur-service-dallas-texas/" class="internal-links-w">Our professional
+                        Spacious SUVs are for families & groups. <a href="/services/chauffeur-service-dallas-texas/"
+                            class="internal-links-w">Our professional
                             chauffeurs</a> handle traffic, directions & luggage. You will arrive
                         on time. Vehicles are clean, well-kept & comfy. Business,
                         leisure, or airport trips—we cover it all. Our private car
@@ -168,10 +179,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             </div>
             <div class="col-md-6">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/dallas-to-waco-black-car-service.webp"
-                        width="522"
-                        height="564"
+                    <img src="/img/dallas-to-waco-black-car-service.webp" width="522" height="564"
                         alt="Reliable black car service near Dallas" />
                 </div>
             </div>
@@ -195,7 +203,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     districts, Legacy West, or AT&amp;T Stadium game days.
                 </p>
 
-                <a style="cursor: pointer;" class="quick-book-link bottom-cta-vtb-c" href="#">Travel in Comfort – Book Now</a>
+                <a style="cursor: pointer;" class="quick-book-link bottom-cta-vtb-c" href="#">Travel in Comfort – Book
+                    Now</a>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -207,8 +216,7 @@ $isHourly = session('service_type') === 'hourlyHire';
         <div class="row">
             <div class="col-md-4">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/luxury-car-service-dallas-to-waco.webp"
+                    <img src="/img/luxury-car-service-dallas-to-waco.webp"
                         alt="Chauffeured black car service in Dallas" />
                 </div>
             </div>
@@ -220,7 +228,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </h5>
 
                     <p class="pt-section-description">
-                        Our Dallas to Waco <a href="/services/private-car-service-in-dallas-texas/" class="internal-links">private car service</a> is great for families,
+                        Our Dallas to Waco <a href="/services/private-car-service-in-dallas-texas/"
+                            class="internal-links">private car service</a> is great for families,
                         friends, or business teams. We provide roomy SUVs & luxury vans
                         for passengers & luggage. We serve areas like Highland Park,
                         University Park & Richardson. Drivers carefully plan routes to
@@ -230,7 +239,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                         every ride smooth & reliable.
                     </p>
                     <p class="pt-section-description">
-                        <a href="/book-now/" class="internal-links">Reserve your group transfer today</a> & enjoy a hassle-free ride
+                        <a href="/book-now/" class="internal-links">Reserve your group transfer today</a> & enjoy a
+                        hassle-free ride
                         from Dallas to Waco.
                     </p>
                 </div>
@@ -245,13 +255,11 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-md-1"></div>
 
             <div class="col-md-10">
-                <img
-                    src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
+                <img src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
                     alt="fifa world cup 2026 car service dallas" />
 
-                <a
-                    href="/fifa-world-cup-2026-car-service-dallas/"
-                    class="bottom-cta-vtb-c">Visit our fifa world cup 2026 page</a>
+                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Visit our fifa world cup
+                    2026 page</a>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -264,9 +272,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/booking.webp"
-                            alt="Online Portal
+                        <img src="/img/booking.webp" alt="Online Portal
  " />
                     </span>
 
@@ -281,9 +287,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/conformation.webp"
-                            alt="Clear-Cut All-Inclusive Pricing
+                        <img src="/img/conformation.webp" alt="Clear-Cut All-Inclusive Pricing
  " />
                     </span>
 
@@ -298,9 +302,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/chauffeur.webp"
-                            alt="Expert Chauffeurs
+                        <img src="/img/chauffeur.webp" alt="Expert Chauffeurs
  " />
                     </span>
 
@@ -319,9 +321,7 @@ $isHourly = session('service_type') === 'hourlyHire';
         <div class="row">
             <div class="col-md-4">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/chauffeur-service-dallas-to-waco.webp"
-                        alt="concerts and sporting events" />
+                    <img src="/img/chauffeur-service-dallas-to-waco.webp" alt="concerts and sporting events" />
                 </div>
             </div>
 
@@ -430,17 +430,12 @@ $isHourly = session('service_type') === 'hourlyHire';
                                 <span class="tns-visually-hidden">stop animation</span>stop
                             </button>
                             <div class="tns-inner" id="tns1-iw">
-                                <div
-                                    class="slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
-                                    id="tns1"
-                                    style="
+                                <div class="slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                                    id="tns1" style="
                         transform: translateX(-28%);
                         transition-duration: 0.3s;
                       ">
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 I used Black Car Service for a business trip, and it
@@ -454,10 +449,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 Black Car Service made effortless work of the
@@ -471,10 +463,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 Travelling with Black Car Service was a pleasure.
@@ -507,7 +496,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 
             <div class="col-md-10">
                 <h3><span class="main-color">Make Every Mile </span><br>First-Class</h3>
-                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car Today</a>
+                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car
+                    Today</a>
             </div>
             <div class="col-md-1">
             </div>
@@ -519,6 +509,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 @section('body-scripts')
 <script src="{{ asset('js/industrie-custom.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUqn8Dg3GICSzhyvw7DjXXHkyoGMCoTpM&libraries=places&loading=async&callback=initAutocomplete" async defer></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUqn8Dg3GICSzhyvw7DjXXHkyoGMCoTpM&libraries=places&loading=async&callback=initAutocomplete"
+    async defer></script>
 @endsection
 @endsection

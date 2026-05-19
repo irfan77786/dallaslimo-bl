@@ -1,4 +1,4 @@
-@extends('master')
+﻿@extends('master')
 @section('content')
 
 @section('styles')
@@ -192,7 +192,10 @@ a.hover-black {
 <h5 class="mb-2 fw-bold">Payment Information</h5>
 <p class="mb-3 small" style="color: #000;">All transactions are secure and encrypted. Safe and secure payments powered by <b>Stripe</b></p>
 
-<form id="payment-form" method="POST" action="{{ url('/completeBook') }}">
+@if (session('error'))
+<div class="alert alert-danger mb-3" role="alert">{{ session('error') }}</div>
+@endif
+<form id="payment-form" method="POST" action="{{ route('completeBook') }}">
 @csrf
 <input type="hidden" name="payment_method_id" id="payment_method_id">
 
@@ -241,11 +244,11 @@ a.hover-black {
     </span>
 </label>
 @empty
-<p class="text-danger">No saved cards found — Please enter card below</p>
+<p class="text-danger">No saved cards found â€” Please enter card below</p>
 @endforelse
 @endif
 
-{{-- ✅ FULL NAME + CARD NUMBER (SAME GROUP) --}}
+{{-- âœ… FULL NAME + CARD NUMBER (SAME GROUP) --}}
 <div id="new-card-fields">
 
     <!-- Full Name -->
@@ -275,7 +278,7 @@ a.hover-black {
 
 <div id="card-errors" class="mb-2 text-danger small"></div>
 
-{{-- ✅ BUTTON --}}
+{{-- âœ… BUTTON --}}
 <button type="submit" id="final-pay-button" class="mt-3 btn btn-primary w-100">
 BOOK NOW
 </button>
@@ -287,6 +290,8 @@ BOOK NOW
 
 </div>
 </div>
+
+@include('partials.booking_terms_modal')
 
 <script src="https://js.stripe.com/v3/"></script>
 
@@ -317,21 +322,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    // ✅ INITIAL STATE: SHOW NEW CARD FIELDS
+    // âœ… INITIAL STATE: SHOW NEW CARD FIELDS
     toggleNewCardFields(true);
 
-    // ✅ WHEN RADIO CHANGES
+    // âœ… WHEN RADIO CHANGES
     savedRadios.forEach(radio => {
         radio.addEventListener('change', function () {
             hiddenPaymentMethod.value = radio.value;
 
             if (radio.value) {
-                // saved card selected → hide new card
+                // saved card selected â†’ hide new card
                 const holderName = radio.dataset.holder || '';
                 cardNameInput.value = holderName;
                 toggleNewCardFields(false);
             } else {
-                // custom card selected → show new card
+                // custom card selected â†’ show new card
                 toggleNewCardFields(true);
             }
 
@@ -340,14 +345,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // ✅ IF USER TYPES MANUALLY → SWITCH TO NEW CARD MODE
+    // âœ… IF USER TYPES MANUALLY â†’ SWITCH TO NEW CARD MODE
     cardNameInput.addEventListener('input', function () {
         savedRadios.forEach(r => r.checked = false);
         hiddenPaymentMethod.value = '';
         toggleNewCardFields(true);
     });
 
-    // ✅ FINAL PAYMENT HANDLER
+    // âœ… FINAL PAYMENT HANDLER
 form.addEventListener('submit', async function (event) {
     event.preventDefault();
     errorDiv.innerText = '';
@@ -358,7 +363,7 @@ form.addEventListener('submit', async function (event) {
         return;
     }
 
-    // Otherwise, new card → validate and create PaymentMethod
+    // Otherwise, new card â†’ validate and create PaymentMethod
     const cardholder = cardNameInput.value.trim();
     if (!cardholder) {
         errorDiv.innerText = 'Card holder name is required.';
@@ -384,54 +389,13 @@ form.addEventListener('submit', async function (event) {
 
 });
 </script>
-
-{{-- ✅ TERMS MODAL --}}
-<div class="modal fade" id="terms-modal" tabindex="-1" aria-labelledby="terms-modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="terms-modal-label">Terms & Conditions</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Welcome to Dallas Limo and Black Cars! These Terms and Conditions govern your use of this website and our services. By getting access to and the usage of this website and our services, you agree to be bound using those Terms. If you do not agree to those Terms, you can no longer use our offerings or this website. You acknowledge that Dallas Limo and Black Cars has the right to exchange those Terms at any time without notice to you. Continue to check them from time to time for updates.</p>
-                <h6>1. Definitions</h6>
-                <p><b>Dallas Limo and Black Cars, "we", "our", or "us":</b> Refers to the enterprise, the internet site, the owners, the operators, and/or the associates. <b>"You" or "User":</b> Refers to individuals or entities who get admission to or employ our internet site or offerings.</p>
-                <h6>2. Acknowledgment And Agreement To Terms</h6>
-                <p>When you use our site or what we do, you say you have looked at and get these rules, and you say yes to them. But if you don't go along with these rules, don't use our site or anything we give you.</p>
-                <p>Dallas Limo and Black Cars may change the Terms and Conditions at any time. If you continue to use the services, you accept the new Terms and Conditions.</p>
-                <h6>3. Services Offered</h6>
-                <p>Dallas Limo and Black Cars is an elite provider of professional chauffeured limousine services, specializing in the following areas:</p>
-                <ul>
-                    <li>Airport Transfers</li>
-                    <li>Corporate and Executive Transportation</li>
-                    <li>Special Event Services</li>
-                </ul>
-                <p>Users must confirm all booking details, including the pickup/drop-off points, dates, and times. All booking details and payment confirmations will be sent to users through email or SMS.</p>
-                <h6>4. Booking And Payment Policy</h6>
-                <ul>
-                    <li>Service bookings may be made online or over the phone with a representative.</li>
-                    <li>Payment will be required at the time of booking and will be processed securely. The most common method of payment generally accepted is debit/credit cards, and other acceptable methods will be notified to you at the time of booking.</li>
-                    <li>After payment is completed, you will receive a confirmation via email or SMS text message containing your booking information.</li>
-                    <li><b>Automatic Charges:</b> Payments for service will be automatically charged to the same form of payment one day prior to service. Services associated with your booking that are requested after booking confirmation will be billed separately.</li>
-                    <li><b>Declined Payments:</b> Payments that are declined will require you to provide another form of payment. If the alternate form of payment is not given, it is possible your booking may be canceled. Dallas Limo and Black Cars is not liable for cancellations on your booking due to payment issues.</li>
-                </ul>
-                <h6>5. Social Media/Social Networks</h6>
-                <p>We may include social media plugins on our services to allow interaction with our social media profiles. These plugins may collect personal information according to their privacy policies. Please review third-party privacy policies for more details.</p>
-                <h6>6. Data Processing During Registered Use and Booking Rides</h6>
-                <p>When you book a ride or use our services, we collect personal data such as contact details, payment information, and ride preferences. We use this data to provide services, communicate regarding your service, handle billing, and improve offerings. By using our services, you consent to this data processing.</p>
-                <h6>7. Disputes And Arbitration</h6>
-                <ul>
-                    <li>The user must first contact Dallas Limo and Black Cars directly for resolution.</li>
-                    <li>If there is no resolution, disputes will be settled through binding arbitration under relevant U.S. law.</li>
-                    <li>Arbitration will take place at a mutually agreed-upon location, and the arbitrator's decision will be final.</li>
-                    <li>Users waive their right to bring a class action lawsuit relating to the services of Dallas Limo and Black Cars or its terms.</li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
- @endsection
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const termsModal = document.getElementById('staticBackdrop');
+    if (!termsModal) return;
+    termsModal.addEventListener('show.bs.modal', function () {
+        document.body.appendChild(termsModal);
+    });
+});
+</script>
+@endsection

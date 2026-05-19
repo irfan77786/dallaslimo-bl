@@ -8,12 +8,15 @@ $isHourly = session('service_type') === 'hourlyHire';
 @if(!session('pickup_location') && !session('dropoff_location'))
 @include('partials.banner', ['title' => "Dallas to Sherman Black Car Service"])
 @endif
-<div class="bottom-banner" style="{{ session('pickup_location') && session('dropoff_location') ? 'background-image: none' : '' }}">
+<div class="bottom-banner"
+    style="{{ session('pickup_location') && session('dropoff_location') ? 'background-image: none' : '' }}">
     <div class="row">
         <div class="col-sm-12 back-container">
             <div class="container">
                 <div class="row justify-content-end">
-                    <div class="col-sm-7 bottom-banner-inside banner-hidden-mobile" bis_skin_checked="1" id="hide_on_map" style="padding-top: 65px; {{ session('pickup_location') && session('dropoff_location') ? 'display: none' : '' }}">
+                    <div class="col-sm-7 bottom-banner-inside banner-hidden-mobile" bis_skin_checked="1"
+                        id="hide_on_map"
+                        style="padding-top: 65px; {{ session('pickup_location') && session('dropoff_location') ? 'display: none' : '' }}">
                         <div class="bottom-banner-text" bis_skin_checked="1">
                             <h1>Dallas to Sherman Black Car Service</h1>
                             <p>
@@ -26,7 +29,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                             </p>
                             <p class="bt-text">24/7 Service Available, Click to Call Now!</p>
                             <div class="bottom-banner-btn" bis_skin_checked="1">
-                                <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056" bis_skin_checked="1">Call: 214-897-8056</a>
+                                <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056"
+                                    bis_skin_checked="1">Call: 214-919-5377</a>
                             </div>
                         </div>
                     </div>
@@ -39,7 +43,8 @@ $isHourly = session('service_type') === 'hourlyHire';
             </div>
         </div>
 
-        <div id="map" style="height: 100%; width: 100%; display: none; border-radius: 15px; overflow: hidden; left:0;z-index: 9 !important; top:0">
+        <div id="map"
+            style="height: 100%; width: 100%; display: none; border-radius: 15px; overflow: hidden; left:0;z-index: 9 !important; top:0">
             <div class="map-overlay"></div>
         </div>
 
@@ -76,7 +81,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </p>
                     <p class="bt-text">24/7 Service – Call Now</p>
                     <div class="bottom-banner-btn" bis_skin_checked="1">
-                        <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056" bis_skin_checked="1">Call: 214-897-8056</a>
+                        <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056"
+                            bis_skin_checked="1">Call: 214-919-5377</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +98,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     <div class="btom-bottom">
                         <h2>Dallas Limo And Black Cars Service – Premium Fleet for Dallas to Sherman Travel</h2>
                         <p>
-                            For business or leisure, our Dallas to Sherman car service ensures comfort, style, and safety.
+                            For business or leisure, our Dallas to Sherman car service ensures comfort, style, and
+                            safety.
                         </p>
                     </div>
 
@@ -103,12 +110,14 @@ $isHourly = session('service_type') === 'hourlyHire';
 
                     <p>
                         <strong class="strong-c-color">Luxury SUVs –</strong>
-                        Escalade, Suburban, and Yukon XL deliver roomy seating and luxury finishes for families or small groups.
+                        Escalade, Suburban, and Yukon XL deliver roomy seating and luxury finishes for families or small
+                        groups.
                     </p>
 
                     <p>
                         <strong class="strong-c-color">Executive Sprinter Vans –</strong>
-                        Mercedes-Benz Sprinters are great for wedding groups, corporate shuttles, or group transfers to Sherman.
+                        Mercedes-Benz Sprinters are great for wedding groups, corporate shuttles, or group transfers to
+                        Sherman.
                     </p>
 
                     <p>
@@ -122,11 +131,11 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </p>
 
 
-<p class="tagline-bottom">Trust our luxury chauffeur service Dallas for punctual, reliable long-distance rides to Sherman.</p>
+                    <p class="tagline-bottom">Trust our luxury chauffeur service Dallas for punctual, reliable
+                        long-distance rides to Sherman.</p>
 
 
-                    <img
-                        src="/img/dallas-black-car-service.webp"
+                    <img src="/img/dallas-black-car-service.webp"
                         alt="Dallas to Sherman car service luxury black car" />
                 </div>
 
@@ -149,7 +158,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </h5>
                     <p class="pt-section-description">
                         Travel from Dallas to Sherman in style & comfort with our
-                        <a href="/services/dfw-limo-service/" class="internal-links-w">Dallas–Sherman limo service</a>. We provide safe, reliable & on-time
+                        <a href="/services/dfw-limo-service/" class="internal-links-w">Dallas–Sherman limo service</a>.
+                        We provide safe, reliable & on-time
                         rides for every occasion. We serve areas like Highland Park,
                         Farmers Branch & Coppell. Our fleet has luxury sedans for solo
                         travelers & roomy SUVs for families or groups. Going to business
@@ -167,10 +177,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             </div>
             <div class="col-md-6">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/dallas-to-sherman-black-car-service.webp"
-                        width="522"
-                        height="564"
+                    <img src="/img/dallas-to-sherman-black-car-service.webp" width="522" height="564"
                         alt="Reliable black car service near Dallas" />
                 </div>
             </div>
@@ -194,7 +201,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     districts, Legacy West, or AT&amp;T Stadium game days.
                 </p>
 
-                <a style="cursor: pointer;" class="quick-book-link bottom-cta-vtb-c" href="#">Travel in Comfort – Book Now</a>
+                <a style="cursor: pointer;" class="quick-book-link bottom-cta-vtb-c" href="#">Travel in Comfort – Book
+                    Now</a>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -206,8 +214,7 @@ $isHourly = session('service_type') === 'hourlyHire';
         <div class="row">
             <div class="col-md-4">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/images/img/airport-pickup-service-dallas.webp"
+                    <img src="/images/img/airport-pickup-service-dallas.webp"
                         alt="Chauffeured black car service in Dallas" />
                 </div>
             </div>
@@ -220,7 +227,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 
                     <p>
                         Traveling between Dallas &amp; Sherman has never been easier
-                        with our dependable <a href="" class="internal-links">city-to-city car service</a>. Whether you’re
+                        with our dependable <a href="" class="internal-links">city-to-city car service</a>. Whether
+                        you’re
                         heading north for business, visiting family, or attending local
                         events, our private rides provide comfort, safety, &amp;
                         convenience for every trip.
@@ -275,13 +283,11 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-md-1"></div>
 
             <div class="col-md-10">
-                <img
-                    src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
+                <img src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
                     alt="fifa world cup 2026 car service dallas" />
 
-                <a
-                    href="/fifa-world-cup-2026-car-service-dallas/"
-                    class="bottom-cta-vtb-c">Visit our fifa world cup 2026 page</a>
+                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Visit our fifa world cup
+                    2026 page</a>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -294,9 +300,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/booking.webp"
-                            alt="Online Portal
+                        <img src="/img/booking.webp" alt="Online Portal
  " />
                     </span>
 
@@ -311,9 +315,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/conformation.webp"
-                            alt="Clear-Cut All-Inclusive Pricing
+                        <img src="/img/conformation.webp" alt="Clear-Cut All-Inclusive Pricing
  " />
                     </span>
 
@@ -328,9 +330,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/chauffeur.webp"
-                            alt="Expert Chauffeurs
+                        <img src="/img/chauffeur.webp" alt="Expert Chauffeurs
  " />
                     </span>
 
@@ -349,9 +349,7 @@ $isHourly = session('service_type') === 'hourlyHire';
         <div class="row">
             <div class="col-md-4">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/luxury-car-service-dallas-to-sherman.webp"
-                        alt="concerts and sporting events" />
+                    <img src="/img/luxury-car-service-dallas-to-sherman.webp" alt="concerts and sporting events" />
                 </div>
             </div>
 
@@ -368,14 +366,18 @@ $isHourly = session('service_type') === 'hourlyHire';
                             <strong>Cities &amp; Regional Communities </strong> We proudly
                             serve major cities like Dallas and Fort Worth, along with
                             Plano,
-                            <a href="https://dallaslimoandblackcars.com/locations/black-car-service-frisco-texas/" class="internal-links">Frisco</a>, McKinney, and Allen. Our network also extends to Southlake,
+                            <a href="https://dallaslimoandblackcars.com/locations/black-car-service-frisco-texas/"
+                                class="internal-links">Frisco</a>, McKinney, and Allen. Our network also extends to
+                            Southlake,
                             Keller, Flower Mound, Carrollton, Richardson, Denton, Garland,
                             Mesquite, and The Colony.
                         </li>
                         <li>
                             <strong>Airports &amp; Aviation Access </strong>DFW International
                             Airport,
-                            <a href="https://dallaslimoandblackcars.com/airport/dallas-love-field-black-car-service/" class="internal-links">Dallas Love Field</a>, Addison Airport, McKinney National Airport, Fort Worth
+                            <a href="https://dallaslimoandblackcars.com/airport/dallas-love-field-black-car-service/"
+                                class="internal-links">Dallas Love Field</a>, Addison Airport, McKinney National
+                            Airport, Fort Worth
                             Alliance Airport, and VIP FBO Terminals.
                         </li>
                         <li>
@@ -443,17 +445,12 @@ $isHourly = session('service_type') === 'hourlyHire';
                                 <span class="tns-visually-hidden">stop animation</span>stop
                             </button>
                             <div class="tns-inner" id="tns1-iw">
-                                <div
-                                    class="slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
-                                    id="tns1"
-                                    style="
+                                <div class="slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                                    id="tns1" style="
                         transform: translateX(-28%);
                         transition-duration: 0.3s;
                       ">
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 I used Black Car Service for a business trip, and it
@@ -467,10 +464,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 Black Car Service made effortless work of the
@@ -484,10 +478,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 Travelling with Black Car Service was a pleasure.
@@ -520,7 +511,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 
             <div class="col-md-10">
                 <h3><span class="main-color">Make Every Mile </span><br>First-Class</h3>
-                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car Today</a>
+                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car
+                    Today</a>
             </div>
             <div class="col-md-1">
             </div>
@@ -532,6 +524,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 @section('body-scripts')
 <script src="{{ asset('js/industrie-custom.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUqn8Dg3GICSzhyvw7DjXXHkyoGMCoTpM&libraries=places&loading=async&callback=initAutocomplete" async defer></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUqn8Dg3GICSzhyvw7DjXXHkyoGMCoTpM&libraries=places&loading=async&callback=initAutocomplete"
+    async defer></script>
 @endsection
 @endsection

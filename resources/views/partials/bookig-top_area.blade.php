@@ -19,7 +19,9 @@
         4 => ['label' => 'Booking Detail', 'route' => ($currentStep >= 4 || session()->has('first_name'))
                     ? route('submit.passenger.info')
                     : null],
-        5 => ['label' => 'Payment', 'route' => null]
+        5 => ['label' => 'Payment', 'route' => ($currentStep >= 5 || session('final_price'))
+                    ? route('booking.payment')
+                    : null]
     ];
 @endphp
 

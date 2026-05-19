@@ -8,12 +8,15 @@ $isHourly = session('service_type') === 'hourlyHire';
 @if(!session('pickup_location') && !session('dropoff_location'))
 @include('partials.banner', ['title' => "Dallas to College Station Black Car Service"])
 @endif
-<div class="bottom-banner" style="{{ session('pickup_location') && session('dropoff_location') ? 'background-image: none' : '' }}">
+<div class="bottom-banner"
+    style="{{ session('pickup_location') && session('dropoff_location') ? 'background-image: none' : '' }}">
     <div class="row">
         <div class="col-sm-12 back-container">
             <div class="container">
                 <div class="row justify-content-end">
-                    <div class="col-sm-7 bottom-banner-inside banner-hidden-mobile" bis_skin_checked="1" id="hide_on_map" style="padding-top: 65px; {{ session('pickup_location') && session('dropoff_location') ? 'display: none' : '' }}">
+                    <div class="col-sm-7 bottom-banner-inside banner-hidden-mobile" bis_skin_checked="1"
+                        id="hide_on_map"
+                        style="padding-top: 65px; {{ session('pickup_location') && session('dropoff_location') ? 'display: none' : '' }}">
                         <div class="bottom-banner-text" bis_skin_checked="1">
                             <h1>Luxury Chauffeur Service from Dallas to College Station</h1>
                             <p>
@@ -26,7 +29,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                             </p>
                             <p class="bt-text">24/7 Service Available, Click to Call Now!</p>
                             <div class="bottom-banner-btn" bis_skin_checked="1">
-                                <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056" bis_skin_checked="1">Call: 214-897-8056</a>
+                                <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056"
+                                    bis_skin_checked="1">Call: 214-919-5377</a>
                             </div>
                         </div>
                     </div>
@@ -39,7 +43,8 @@ $isHourly = session('service_type') === 'hourlyHire';
             </div>
         </div>
 
-        <div id="map" style="height: 100%; width: 100%; display: none; border-radius: 15px; overflow: hidden; left:0;z-index: 9 !important; top:0">
+        <div id="map"
+            style="height: 100%; width: 100%; display: none; border-radius: 15px; overflow: hidden; left:0;z-index: 9 !important; top:0">
             <div class="map-overlay"></div>
         </div>
 
@@ -76,7 +81,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </p>
                     <p class="bt-text">24/7 Service – Call Now</p>
                     <div class="bottom-banner-btn" bis_skin_checked="1">
-                        <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056" bis_skin_checked="1">Call: 214-897-8056</a>
+                        <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056"
+                            bis_skin_checked="1">Call: 214-919-5377</a>
                     </div>
                 </div>
             </div>
@@ -94,41 +100,46 @@ $isHourly = session('service_type') === 'hourlyHire';
                             Dallas Limo And Black Cars Service – Luxury Rides to College Station
                         </h2>
                         <p>
-                         Heading to Texas A&M in College Station? Our fleet makes the journey from Dallas efficient and comfortable.
+                            Heading to Texas A&M in College Station? Our fleet makes the journey from Dallas efficient
+                            and comfortable.
                         </p>
                     </div>
 
                     <p>
-                        <strong class="strong-c-color">Luxury Sedans: </strong>Cadillac CT6, Volvo S90, and Mercedes-Benz S-Class for discreet, chauffeur-driven rides.
-                    </p>
-
-
-              <p>
-                        <strong class="strong-c-color">Luxury SUVs: </strong>Escalade, Suburban, and Yukon XL provide comfortable seating for students, families, or professionals.
+                        <strong class="strong-c-color">Luxury Sedans: </strong>Cadillac CT6, Volvo S90, and
+                        Mercedes-Benz S-Class for discreet, chauffeur-driven rides.
                     </p>
 
 
                     <p>
-                        <strong class="strong-c-color">Executive Sprinter Vans: </strong>Mercedes-Benz Sprinters are perfect for alumni events, college visits, or group transfers.
+                        <strong class="strong-c-color">Luxury SUVs: </strong>Escalade, Suburban, and Yukon XL provide
+                        comfortable seating for students, families, or professionals.
                     </p>
 
 
                     <p>
-                        <strong class="strong-c-color">23–38 Passenger Mini Bus: </strong>Designed for student groups, athletic teams, or business delegations visiting College Station.
+                        <strong class="strong-c-color">Executive Sprinter Vans: </strong>Mercedes-Benz Sprinters are
+                        perfect for alumni events, college visits, or group transfers.
                     </p>
 
 
                     <p>
-                        <strong class="strong-c-color">Luxury Motor Coaches (55–60 Passengers):</strong> The best option for sports groups, conventions, or large-scale travel between Dallas and College Station.
+                        <strong class="strong-c-color">23–38 Passenger Mini Bus: </strong>Designed for student groups,
+                        athletic teams, or business delegations visiting College Station.
                     </p>
 
 
-<p class="tagline-bottom">Book our Dallas to College Station long-distance car service for dependable, luxury group transportation.</p>
+                    <p>
+                        <strong class="strong-c-color">Luxury Motor Coaches (55–60 Passengers):</strong> The best option
+                        for sports groups, conventions, or large-scale travel between Dallas and College Station.
+                    </p>
 
 
-                    <img
-                        src="/img/dallas-black-car-service.webp"
-                        alt="luxury Dallas Limo And Black Cars" />
+                    <p class="tagline-bottom">Book our Dallas to College Station long-distance car service for
+                        dependable, luxury group transportation.</p>
+
+
+                    <img src="/img/dallas-black-car-service.webp" alt="luxury Dallas Limo And Black Cars" />
                 </div>
                 <div class="btom-btn">
                     <a style="cursor: pointer;" class="quick-book-link" href="#">Ride in Dallas – Book Now</a>
@@ -149,10 +160,12 @@ $isHourly = session('service_type') === 'hourlyHire';
                     <p class="pt-section-description">
                         Travel in style & comfort with our Dallas–College Station limo
                         service. We provide safe & reliable rides for students, parents
-                        & <a href="/services/private-car-service-in-dallas-texas/" class="internal-links-w">business travelers</a>. We serve neighborhoods like Addison,
+                        & <a href="/services/private-car-service-in-dallas-texas/" class="internal-links-w">business
+                            travelers</a>. We serve neighborhoods like Addison,
                         Mesquite & Carrollton. Our fleet has luxury sedans for solo
-                        travelers & spacious SUVs for families or groups. <a href="/services/chauffeur-service-dallas-texas/" class="internal-links-w">Professional
-                        chauffeurs</a> handle navigation, traffic & luggage. You can relax &
+                        travelers & spacious SUVs for families or groups. <a
+                            href="/services/chauffeur-service-dallas-texas/" class="internal-links-w">Professional
+                            chauffeurs</a> handle navigation, traffic & luggage. You can relax &
                         enjoy your trip. Whether attending a university event, business
                         meeting, or personal visit, we ensure on-time arrivals & a
                         hassle-free ride. Every ride is planned for your comfort &
@@ -166,10 +179,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             </div>
             <div class="col-md-6">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/dallas-to-college-station-black-car-service.webp"
-                        width="522"
-                        height="564"
+                    <img src="/img/dallas-to-college-station-black-car-service.webp" width="522" height="564"
                         alt="Reliable black car service near Dallas" />
                 </div>
             </div>
@@ -193,7 +203,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     districts, Legacy West, or AT&amp;T Stadium game days.
                 </p>
 
-                <a style="cursor: pointer;" class="quick-book-link bottom-cta-vtb-c" href="#">Travel in Comfort – Book Now</a>
+                <a style="cursor: pointer;" class="quick-book-link bottom-cta-vtb-c" href="#">Travel in Comfort – Book
+                    Now</a>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -205,8 +216,7 @@ $isHourly = session('service_type') === 'hourlyHire';
         <div class="row">
             <div class="col-md-4">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/images/img/airport-pickup-service-dallas.webp"
+                    <img src="/images/img/airport-pickup-service-dallas.webp"
                         alt="Chauffeured black car service in Dallas" />
                 </div>
             </div>
@@ -220,7 +230,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     <p class="pt-section-description">
                         Heading to College Station with friends, colleagues, or family?
                         Our limo service makes group travel simple & comfy. We serve
-                        areas like Frisco, Plano & Garland. Roomy SUVs & <a href="/services/luxury-van-rental-dallas-texas/" class="internal-links">luxury vans</a> are
+                        areas like Frisco, Plano & Garland. Roomy SUVs & <a
+                            href="/services/luxury-van-rental-dallas-texas/" class="internal-links">luxury vans</a> are
                         available for passengers & luggage. Experienced chauffeurs plan
                         each trip. They choose the best routes & avoid traffic delays.
                         Whether for university events, corporate visits, or family
@@ -243,13 +254,11 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-md-1"></div>
 
             <div class="col-md-10">
-                <img
-                    src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
+                <img src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
                     alt="fifa world cup 2026 car service dallas" />
 
-                <a
-                    href="/fifa-world-cup-2026-car-service-dallas/"
-                    class="bottom-cta-vtb-c">Visit our fifa world cup 2026 page</a>
+                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Visit our fifa world cup
+                    2026 page</a>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -262,9 +271,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/booking.webp"
-                            alt="Online Portal
+                        <img src="/img/booking.webp" alt="Online Portal
  " />
                     </span>
 
@@ -279,9 +286,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/conformation.webp"
-                            alt="Clear-Cut All-Inclusive Pricing
+                        <img src="/img/conformation.webp" alt="Clear-Cut All-Inclusive Pricing
  " />
                     </span>
 
@@ -296,9 +301,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/chauffeur.webp"
-                            alt="Expert Chauffeurs
+                        <img src="/img/chauffeur.webp" alt="Expert Chauffeurs
  " />
                     </span>
 
@@ -317,9 +320,7 @@ $isHourly = session('service_type') === 'hourlyHire';
         <div class="row">
             <div class="col-md-4">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/images/img/dallas-airport-transfer-service.webp"
-                        alt="concerts and sporting events" />
+                    <img src="/images/img/dallas-airport-transfer-service.webp" alt="concerts and sporting events" />
                 </div>
             </div>
 
@@ -331,7 +332,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 
                     <p>
                         Traveling between Dallas & College Station is simple &
-                        stress-free with our reliable <a href="/services/city-to-city-rides/" class="internal-links">city-to-city car service</a>. Whether
+                        stress-free with our reliable <a href="/services/city-to-city-rides/"
+                            class="internal-links">city-to-city car service</a>. Whether
                         you’re heading to Texas A&amp;M University for a campus visit,
                         attending a game at Kyle Field, or traveling for business, our
                         private rides ensure comfort & convenience every step of the
@@ -428,17 +430,12 @@ $isHourly = session('service_type') === 'hourlyHire';
                                 <span class="tns-visually-hidden">stop animation</span>stop
                             </button>
                             <div class="tns-inner" id="tns1-iw">
-                                <div
-                                    class="slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
-                                    id="tns1"
-                                    style="
+                                <div class="slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                                    id="tns1" style="
                         transform: translateX(-28%);
                         transition-duration: 0.3s;
                       ">
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 I used Black Car Service for a business trip, and it
@@ -452,10 +449,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 Black Car Service made effortless work of the
@@ -469,10 +463,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 Travelling with Black Car Service was a pleasure.
@@ -505,7 +496,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 
             <div class="col-md-10">
                 <h3><span class="main-color">Make Every Mile </span><br>First-Class</h3>
-                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car Today</a>
+                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car
+                    Today</a>
             </div>
             <div class="col-md-1">
             </div>
@@ -515,6 +507,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 @section('body-scripts')
 <script src="{{ asset('js/industrie-custom.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUqn8Dg3GICSzhyvw7DjXXHkyoGMCoTpM&libraries=places&loading=async&callback=initAutocomplete" async defer></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUqn8Dg3GICSzhyvw7DjXXHkyoGMCoTpM&libraries=places&loading=async&callback=initAutocomplete"
+    async defer></script>
 @endsection
 @endsection

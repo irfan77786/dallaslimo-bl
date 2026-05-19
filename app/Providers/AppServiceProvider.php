@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 
@@ -14,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        require_once app_path('helpers.php');
     }
 
     /**
@@ -25,9 +26,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        if(session('booking_completed')){
-            session()->flush();
-            return redirect()->route('booking');
-        }
+
+        View::share('brandLogoAsset', brand_logo_asset());
+        View::share('brandLogoUrl', brand_logo_url());
+        View::share('brandLogoAlt', config('brand.logo_alt'));
     }
 }

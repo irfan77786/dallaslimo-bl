@@ -34,7 +34,7 @@ class BookingController extends Controller
                 return redirect()->route('booking');
             }
             return $next($request);
-        })->except(['showForm', 'BookNow', 'AirportTransfer', 'ThankYou', 'handlePointToPoint', 'handleHourlyHire', 'userLogin']);
+        })->except(['showForm', 'BookNow', 'AirportTransfer', 'ThankYou', 'handlePointToPoint', 'handleHourlyHire', 'userLogin', 'showPayment']);
     }
 
     public function userLogin($id, $price){
@@ -80,6 +80,10 @@ class BookingController extends Controller
             'breakdown_data' => $result,
             'final_price' => $final,
         ]);
+
+        if (auth()->check()) {
+            return redirect()->route('submit.passenger.info');
+        }
 
         return view('booking.user_login', [
             'step' => 3,
@@ -725,6 +729,12 @@ public function handleHourlyHire(Request $request)
             'number' => $sanitizedNumber ?: $request->number,
             "bookingForSomeoneElse" => $request->bookingForSomeoneElse??false
         ]);
+        session()->put('guest', [
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'number' => $sanitizedNumber ?: $request->number,
+        ]);
 
           $vehicles_all = Vehicle::with(['carSeat'])->get();
 
@@ -775,55 +785,54 @@ public function handleHourlyHire(Request $request)
 
 public function bookRide(Request $request)
 {
+    if (! session('pickup_location') || ! session('pickup_date') || ! session('vehicle_id')) {
+        return redirect()->route('booking.form')
+            ->with('error', 'Your booking session expired. Please start again.');
+    }
 
-    $user = null;
-    $cards = [];
-    // Validate request fields
-    $validated = $request->validate([
-        'pickup_flight_details' => 'nullable|string|max:255',
-        'flight_number' => 'nullable|string|max:50',
-        'meet_option' => 'nullable|string|in:curbside,inside,none',
-        'inside_pickup_fee' => 'nullable|numeric',
-        'no_flight_info' => 'nullable',
-        'return-service' => 'nullable',
-        'note' => 'nullable|string|max:500',
-    ]);
+    if ($request->isMethod('get')) {
+        return $this->showPayment($request);
+    }
 
-    Stripe::setApiKey(config('services.stripe.secret'));
+    $meetOption = $request->input('meet_option');
+    if ($meetOption === '' || $meetOption === null) {
+        $request->merge(['meet_option' => 'none']);
+    }
 
-    if(auth()->check()){
-        $user = auth()->user();
-        $cardsList = PaymentMethod::all([
-            'customer' => $user->stripe_customer_id,
-            'type' => 'card',
+    try {
+        $validated = $request->validate([
+            'pickup_flight_details' => 'nullable|string|max:255',
+            'flight_number' => 'nullable|string|max:50',
+            'meet_option' => 'nullable|string|in:curbside,inside,none',
+            'inside_pickup_fee' => 'nullable|numeric',
+            'no_flight_info' => 'nullable',
+            'return-service' => 'nullable',
+            'note' => 'nullable|string|max:500',
         ]);
-        $cards = $cardsList->data ?? [];
+    } catch (ValidationException $e) {
+        return redirect()
+            ->route('submit.passenger.info')
+            ->withErrors($e->validator)
+            ->withInput();
     }
 
     if (isset($validated['meet_option']) && $validated['meet_option'] === 'none') {
         $validated['meet_option'] = null;
     }
 
-    // Normalize checkbox values (Laravel treats unchecked boxes as missing)
     $validated['return_service'] = $request->has('return-service');
     $validated['no_flight_info'] = $request->has('no_flight_info');
-
     $validated['meet_option'] = $validated['meet_option'] ?? null;
-    // Optional: Ensure inside_pickup_fee is accurate
     $validated['inside_pickup_fee'] = 0;
 
-    // Store data in session
     session([
-        // Original values
-        'pickup_flight_details' => $validated['pickup_flight_details']??'',
-        'flight_number' => $validated['flight_number']??'',
-        'meet_option' => $validated['meet_option']??null,
-        'inside_pickup_fee' => $validated['inside_pickup_fee']??0,
-        'no_flight_info' => $validated['no_flight_info']??1,
+        'pickup_flight_details' => $validated['pickup_flight_details'] ?? '',
+        'flight_number' => $validated['flight_number'] ?? '',
+        'meet_option' => $validated['meet_option'] ?? null,
+        'inside_pickup_fee' => $validated['inside_pickup_fee'] ?? 0,
+        'no_flight_info' => $validated['no_flight_info'] ? 1 : 0,
         'return_service' => $validated['return_service'],
-        'note' => $validated['note']??null,
-
-        // Additional return_* values from the request
+        'note' => $validated['note'] ?? null,
         'return_pickup_location' => $request->input('return_pickup_location'),
         'return_dropoff_location' => $request->input('return_dropoff_location'),
         'return_pickup_date' => $request->input('return_pickup_date'),
@@ -834,10 +843,9 @@ public function bookRide(Request $request)
         'return_vehicle_id' => $request->input('vehicle_id'),
     ]);
 
-    // Optional: recalculate total with fee
-    $basePrice = session('calculated_price', 0);
-    $returnPrice = session('return_price', 0); // Fetch return price if available
-    $insidePickupFee = $validated['inside_pickup_fee'] ?? 0;
+    $basePrice = (float) session('calculated_price', 0);
+    $returnPrice = (float) session('return_price', 0);
+    $insidePickupFee = (float) ($validated['inside_pickup_fee'] ?? 0);
 
     if ((session('round_trip') == 'on' && $returnPrice) || ($request->input('return_pickup_location') && $request->has('return-service'))) {
         $total = $basePrice + $returnPrice + $insidePickupFee;
@@ -847,7 +855,35 @@ public function bookRide(Request $request)
 
     session(['final_price' => $total]);
 
-    // Redirect to payment view (or wherever step 5 is)
+    return redirect()->route('booking.payment');
+}
+
+public function showPayment(Request $request)
+{
+    if (! session('pickup_location') || ! session('pickup_date') || ! session('vehicle_id')) {
+        return redirect()->route('booking.form')
+            ->with('error', 'Your booking session expired. Please start again.');
+    }
+
+    $cards = [];
+    $stripeSecret = config('services.stripe.secret');
+
+    if ($stripeSecret && auth()->check()) {
+        Stripe::setApiKey($stripeSecret);
+        $user = auth()->user();
+        if ($user->stripe_customer_id) {
+            try {
+                $cardsList = PaymentMethod::all([
+                    'customer' => $user->stripe_customer_id,
+                    'type' => 'card',
+                ]);
+                $cards = $cardsList->data ?? [];
+            } catch (\Exception $e) {
+                \Log::warning('Could not load saved cards: ' . $e->getMessage());
+            }
+        }
+    }
+
     return view('booking.payment', [
         'step' => 5,
         'cards' => $cards,
@@ -857,8 +893,8 @@ public function bookRide(Request $request)
             'keywords' => 'Dallas black car payment, luxury car service payment, airport transfer payment Dallas',
             'og_title' => 'Payment | Dallas Limo And Black Cars',
             'og_description' => 'Complete your payment securely for Dallas luxury car service.',
-            'og_image' => asset('new_assets/assets/black-car-service-dallas-logo.png')
-        ]
+            'og_image' => brand_logo_asset(),
+        ],
     ]);
 }
 private function generateUniqueBookingId(): string
@@ -872,8 +908,9 @@ private function generateUniqueBookingId(): string
 //
 public function completeBook(Request $request)
 {
-    if (!session('pickup_location') || !session('pickup_date')) {
-        return redirect()->route('booking');
+    if (! session('pickup_location') || ! session('pickup_date') || ! session('vehicle_id')) {
+        return redirect()->route('booking.form')
+            ->with('error', 'Your booking session expired. Please start again.');
     }
 
     $validator = Validator::make($request->all(), [
@@ -881,15 +918,20 @@ public function completeBook(Request $request)
     ]);
 
     if ($validator->fails()) {
-        return redirect()->back()->withErrors($validator)->withInput();
+        return redirect()->route('booking.payment')->withErrors($validator)->withInput();
+    }
+
+    $user = auth()->user();
+    $guest = session('guest', []);
+    $email = $user->email ?? ($guest['email'] ?? session('email'));
+    if (! $email || ! filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return redirect()->route('submit.passenger.info')
+            ->with('error', 'A valid email address is required before payment.');
     }
 
     \Stripe\Stripe::setApiKey(config('services.stripe.secret'));
 
     try {
-        $user = auth()->user();
-        $guest = session('guest', []);
-
         // Prepare booking session data
         $pickup_location     = session('pickup_location');
         $dropoff_location    = session('dropoff_location');
@@ -959,6 +1001,7 @@ public function completeBook(Request $request)
                 'currency' => 'usd',
                 'customer' => $stripeCustomerId,
                 'payment_method' => $request->payment_method_id,
+                'capture_method' => 'manual',
                 'off_session' => true,
                 'confirm' => true,
             ]);
@@ -980,11 +1023,19 @@ public function completeBook(Request $request)
 
         $transactionId = $paymentIntent->id;
 
-        if ($paymentIntent->status === 'requires_action' && $paymentIntent->next_action->type === 'use_stripe_sdk') {
+        if ($paymentIntent->status === 'requires_action' && $paymentIntent->next_action && $paymentIntent->next_action->type === 'use_stripe_sdk') {
             return redirect()->back()->with('error', 'Payment requires additional authentication.');
         }
 
-        // -------------------------
+        $authorizedStatuses = ['requires_capture', 'succeeded'];
+        if (! in_array($paymentIntent->status, $authorizedStatuses, true)) {
+            return redirect()->back()->with(
+                'error',
+                'Payment was not authorized. Status: ' . ($paymentIntent->status ?? 'unknown')
+            );
+        }
+
+        $bookingPaymentStatus = $paymentIntent->status === 'succeeded' ? 'Paid' : 'Authorized';
         // Booking ID Generation
         // -------------------------
         $latestBooking = Booking::orderBy('id', 'desc')->first();
@@ -994,12 +1045,15 @@ public function completeBook(Request $request)
             $lastNumericId = (int)$matches[1] + 1;
         }
 
-        $booker = Booker::create([
-            'first_name' => $booker_first_name,
-            'last_name'  => $booker_last_name,
-            'email'      => $booker_email,
-            'phone_number' => $booker_number,
-        ]);
+        $booker = null;
+        if ($isBookingForOthers && filled($booker_email)) {
+            $booker = Booker::create([
+                'first_name' => $booker_first_name,
+                'last_name'  => $booker_last_name,
+                'email'      => $booker_email,
+                'phone_number' => $booker_number,
+            ]);
+        }
 
         $customBookingId = 'pm_' . $lastNumericId;
 
@@ -1056,7 +1110,7 @@ public function completeBook(Request $request)
             'return_date' => $returnDateYmd,
             'return_time' => $returnTimeHis,
             'total_price' => $selected_price,
-            'payment_status' => "Paid",
+            'payment_status' => $bookingPaymentStatus,
             'return_service_id' => $returnServiceId,
             'round_trip' => session('round_trip') ? 1 : 0,
             'note' => session('note') ?? null,
@@ -1065,7 +1119,7 @@ public function completeBook(Request $request)
         // Payment record
         $booking->payments()->create([
             'payment_method' => "card",
-            'payment_status' => "Paid",
+            'payment_status' => $bookingPaymentStatus,
             'transaction_id' => $transactionId,
             'amount' => $selected_price,
         ]);
@@ -1118,7 +1172,7 @@ public function completeBook(Request $request)
             'booker_number' => $booker_number,
             'booker_email' => $booker_email,
             'passenger_name' => ($first_name . ' ' . $last_name),
-            'email' => $email,
+            'email' => $passenger->email,
             'phone' => $number,
             'pickup_location' => $pickup_location,
             'dropoff_location' => $dropoff_location,
@@ -1131,11 +1185,18 @@ public function completeBook(Request $request)
             'vehicle_type' => $vehicle_name ?? 'Standard',
             'passengers' => 1,
             'total_amount' => $selected_price,
-            'payment_status' => 'Paid',
+            'payment_status' => $bookingPaymentStatus,
             'special_instructions' => session('note') ?? null,
             'flight_details' => $flight_details,
         ];
-        CreateBookingDocs::dispatch($bookingData, $customBookingId);
+        try {
+            CreateBookingDocs::dispatchSync($bookingData, $customBookingId);
+        } catch (\Exception $e) {
+            \Log::error('Booking confirmation email failed: ' . $e->getMessage(), [
+                'booking_id' => $customBookingId,
+                'email' => $passenger->email ?? null,
+            ]);
+        }
 
         // Clear session
         session()->forget([

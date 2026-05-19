@@ -283,7 +283,19 @@
     <div class="container py-md-5">
         <div class="row">
             <div class="px-4 mb-3 col-md-8 mobile-mg-dc">
-                <form method="POST" action="{{ url('/bookRide') }}" class="d-flex flex-column loader-form" id="booking-detail-form">
+                @if ($errors->any())
+                    <div class="alert alert-danger mb-20" role="alert">
+                        <ul class="mb-0 ps-3">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger mb-20" role="alert">{{ session('error') }}</div>
+                @endif
+                <form method="POST" action="{{ route('bookRide') }}" class="d-flex flex-column loader-form" id="booking-detail-form">
                     @csrf
 
                     <input type="hidden" name="vehicle_id" id="hidden-vehicle-id" value="{{ session('vehicle_id') }}">
@@ -703,6 +715,8 @@
             </div>
         </div>
     </div>
+
+    @include('partials.booking_terms_modal')
 
     @section('scripts')
     @include('booking.return_logic')

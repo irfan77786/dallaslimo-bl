@@ -727,6 +727,18 @@ function initAutocomplete() {
         },
     );
 
+    // Get a Quote page (same Places API behavior as banner/search)
+    setupCustomAutocomplete(
+        "pickup-location_quote",
+        "pickup-suggestions_quote",
+        "is-airport_quote",
+    );
+    setupCustomAutocomplete(
+        "dropoff-location_quote",
+        "dropoff-suggestions_quote",
+        "is-airport-dropoff_quote",
+    );
+
     // Add window resize listener for map width if needed
     if (typeof updateMapWidth === "function") {
         window.addEventListener("resize", updateMapWidth);
@@ -786,7 +798,7 @@ function onLocationChanged() {
     const mapElement = document.getElementById("map");
     const pickupVal = $pickup.val() ? $pickup.val().trim() : "";
     const dropoffVal = $dropoff.val() ? $dropoff.val().trim() : "";
-    const zoomLevel = 12;
+    const zoomLevel = window.innerWidth < 768 ? 10 : 12;
     const animationDuration = 500; // ms
 
     // Clear directions if either field is empty
@@ -1048,7 +1060,7 @@ function initMap(pickupPlace, dropoffPlace) {
     if (!map) {
         map = new google.maps.Map(mapElement, {
             center: mapCenter,
-            zoom: 12,
+            zoom: window.innerWidth < 768 ? 10 : 12,
             styles: mapStyle,
             disableDefaultUI: true,
             zoomControl: true,
@@ -1180,18 +1192,37 @@ function initMap(pickupPlace, dropoffPlace) {
     if (hasPickup) bounds.extend(pickupPlace.geometry.location);
     if (hasDropoff) bounds.extend(dropoffPlace.geometry.location);
 
+    const isNarrowViewport = window.innerWidth < 768;
+
     // Only fit bounds if we have valid bounds
     if (!bounds.isEmpty()) {
-        // Add some padding around the markers
-        const padding = 100; // pixels
-        map.fitBounds(bounds, {
-            padding: {
-                top: padding,
-                right: padding,
-                bottom: padding,
-                left: padding,
-            },
-        });
+        if (hasPickup && hasDropoff) {
+            // Two points: fitBounds with padding (more padding on small screens = wider view)
+            const padding = isNarrowViewport ? 72 : 100;
+            map.fitBounds(bounds, {
+                padding: {
+                    top: padding,
+                    right: padding,
+                    bottom: padding,
+                    left: padding,
+                },
+            });
+            if (isNarrowViewport) {
+                google.maps.event.addListenerOnce(map, "idle", function () {
+                    const z = map.getZoom();
+                    if (typeof z === "number" && z > 14) {
+                        map.setZoom(14);
+                    }
+                });
+            }
+        } else {
+            // Single point: fitBounds collapses to max zoom — center and use a readable zoom
+            const center = hasPickup
+                ? pickupPlace.geometry.location
+                : dropoffPlace.geometry.location;
+            map.setCenter(center);
+            map.setZoom(isNarrowViewport ? 10 : 12);
+        }
     }
 
     if (hasPickup && hasDropoff) {
@@ -1659,6 +1690,8 @@ const inputIds = [
     "pickup-location_form",
     "pickup-location-hourly_form",
     "dropoff-location_form",
+    "pickup-location_quote",
+    "dropoff-location_quote",
 ];
 
 function positionAutocomplete(input) {

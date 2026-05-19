@@ -198,41 +198,15 @@
     <header style="width: 100%; display: table; margin-bottom: 7px;">
       <div style="display: table-row;">
         <div style="display: table-cell; vertical-align: middle; width: 62%;">
-          @php
-          $logoUrl = 'https://www.dallasblacklimoservice.com/img/dallas-black-limo-service-logo.png';
-          $logoContext = stream_context_create([
-              'ssl' => ['verify_peer' => false, 'verify_peer_name' => false],
-              'http' => ['timeout' => 10],
-          ]);
-          $logoRaw = @file_get_contents($logoUrl, false, $logoContext);
-          $logoData = ($logoRaw !== false && $logoRaw !== '') ? base64_encode($logoRaw) : null;
-          $mime = 'image/png';
-
-          if (!$logoData) {
-              $logoPath = public_path('assets/logo.jpeg');
-              if (!is_readable($logoPath)) {
-                  $logoPath = public_path('assets/img/site/black-car-service-dallas-logo.png');
-              }
-              if (is_readable($logoPath)) {
-                  $logoData = base64_encode(file_get_contents($logoPath));
-                  $mime = str_ends_with(strtolower((string) $logoPath), '.png') ? 'image/png' : 'image/jpeg';
-              }
-          }
-          @endphp
-          @if($logoData)
-          <img src="data:{{ $mime }};base64,{{ $logoData }}" alt="Dallas Black Limo Service"
-            style="max-width: 250px; max-height: 60px; height: auto;" />
-          @else
-          <div style="font-weight: bold; font-size: 18px;">Dallas Black Limo Service</div>
-          @endif
+          @include('partials.brand-logo-pdf')
         </div>
         <div style="text-align: right;">
           <div style="font-size: 12px; text-align: left;">
-            <div style="font-weight: bold; font-size: 12px;"> Dallas Black Limo Service</div>
+            <div style="font-weight: bold; font-size: 12px;"> Dallas Limos and Black Car Service</div>
             <div>100 Crescent Court, 7th Floor</div>
             <div>Dallas, TX 75201</div>
-            <div><strong>Phone:</strong>&nbsp;+1 469-961-2047</div>
-            <div><strong>Email:</strong>&nbsp;info@dallasblacklimoservice.com</div>
+            <div><strong>Phone:</strong>&nbsp;+1 214-919-5377</div>
+            <div><strong>Email:</strong>&nbsp;info@dallaslimosandblackcarservice.com</div>
           </div>
         </div>
       </div>
@@ -544,15 +518,15 @@
       <h2 class="custom-large-heading">Cancellation Policy: Cancellation, Deposit & Service Policy</h2>
       <div class="section-content">
         <p>
-          Dallas Black Limo Service strives to provide excellent service while maintaining a clear, fair, and
+          Dallas Limos and Black Car Service strives to provide excellent service while maintaining a clear, fair, and
           simple cancellation, deposit, and service policy. By booking with us, you agree to the following terms.</p>
         <div class="row">
           <div class="col-sm-3">
             <strong class="mian-cc">Contact:</strong>
           </div>
           <div class="col-sm-9">
-            Email: info@dallasblacklimoservice.com<br>
-            Phone: +1 469-961-2047
+            Email: info@dallaslimosandblackcarservice.com<br>
+            Phone: +1 214-919-5377
           </div>
         </div>
 
@@ -661,7 +635,7 @@
       <h2>7. Indemnification:</h2>
       <div class="section-content">
         <p>
-          By booking, you agree to indemnify and hold Dallas Black Limo Service harmless for any claims arising
+          By booking, you agree to indemnify and hold Dallas Limos and Black Car Service harmless for any claims arising
           from:<br>
           - Your use of services<br>
           - Policy violations<br>
@@ -720,20 +694,21 @@
     @include('pdfs.partials.fifa-2026-event-policy')
 
     <div class="sections section-light">
-      <h2>Thank you for choosing Dallas Black Limo Service.</h2>
+      <h2>Thank you for choosing Dallas Limos and Black Car Service.</h2>
       <div class="section-content">
         <p>
           We are committed to fair and professional service.<br>
-          Contact us: info@dallasblacklimoservice.com | +1 469-961-2047</p>
+          Contact us: info@dallaslimosandblackcarservice.com | +1 214-919-5377</p>
       </div>
     </div>
 
 
     <footer
       style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #666;">
-      <p>Thank you for choosing Dallas Black Limo Service. If you have any questions about your booking, please contact
+      <p>Thank you for choosing Dallas Limos and Black Car Service. If you have any questions about your booking, please
+        contact
         our customer support.</p>
-      <p>469-961-2047 | info@dallasblacklimoservice.com</p>
+      <p>214-919-5377 | info@dallaslimosandblackcarservice.com</p>
     </footer>
   </div>
 </body>

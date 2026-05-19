@@ -401,8 +401,9 @@ Route::middleware('checkBookingCompletion')->group(function () {
     Route::get('/book-now/', [BookingController::class, 'BookNow'])->name('book_now');
     Route::get('/allVehicle/', [BookingController::class, 'showAll']);
     Route::post('/submit-passengerInfo/{id}', [BookingController::class, 'submitPassengerInfo']);
-    Route::match(['get', 'post'], '/bookRide', [BookingController::class, 'bookRide']);
-    Route::post('/completeBook', [BookingController::class, 'completeBook']);
+    Route::get('/booking/payment', [BookingController::class, 'showPayment'])->name('booking.payment');
+    Route::match(['get', 'post'], '/bookRide', [BookingController::class, 'bookRide'])->name('bookRide');
+    Route::post('/completeBook', [BookingController::class, 'completeBook'])->name('completeBook');
     Route::get('/calculate-return-trip/', [BookingController::class, 'CalculateReturnTrip']);
     Route::post('/save-return-service', [BookingController::class, 'saveReturnService']);
     Route::get('/booking/', [BookingController::class, 'showForm'])->name('booking.form');  //step 1
@@ -481,6 +482,7 @@ Route::post('/corporate-support', [WebsiteController::class, 'corporateSupportPo
 Route::get('/our-fleet/', [WebsiteController::class, 'ourFleet'])->name('our_fleet');
 Route::get('/get-a-quote/', [WebsiteController::class, 'getAQuote'])->name('get_a_quote');
 Route::post('/get-a-quote', [WebsiteController::class, 'getAQuotePost'])->name('get_a_quote_post');
+Route::get('/get-a-quote/thank-you', [WebsiteController::class, 'getAQuoteThankYou'])->name('get_a_quote_thank_you');
 Route::get('/fifa-world-cup-2026-car-service-dallas/', [WebsiteController::class, 'fifaWorldCup2026CarServiceDallas'])->name('fifa_world_cup_2026_car_service_dallas');
 Route::post('/booking/point-to-point', [BookingController::class, 'handlePointToPoint'])->name('booking.pointToPoint');
 Route::post('/booking/hourly-hire', [BookingController::class, 'handleHourlyHire'])->name('booking.hourlyHire');

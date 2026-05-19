@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Convert Help pages: Contact us, FAQs, Terms, Privacy, Cancellation
  */
@@ -69,7 +70,7 @@ foreach ($pages as $htmlDir => list($bladeName, $h1, $p)) {
                             <h1 class="h1 fw-semibold text-center">{$h1}</h1>
                             <p class="font-md">{$p}</p>
                             <div class="text-center">
-                                <a href="tel:+12148978056" class="btn btn-primary text-capitalize">Call Now: +1 214-897-8056</a>
+                                <a href="tel:+12148978056" class="btn btn-primary text-capitalize">Call Now: +1 214-919-5377</a>
                             </div>
                         </header>
                     </div>

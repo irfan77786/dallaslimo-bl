@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Convert Fleet, FIFA, Get a Quote, Book Now pages to dallaslimo-bl design
  */
@@ -18,7 +19,8 @@ $urlReplacements = [
     'href="/booking/"' => 'href="/book-now/"',
 ];
 
-function processPage($htmlFile, $outPath, $bladeName, $urlReplacements, $mobileBanner = null, $desktopBanner = null) {
+function processPage($htmlFile, $outPath, $bladeName, $urlReplacements, $mobileBanner = null, $desktopBanner = null)
+{
     if (!file_exists($htmlFile)) {
         echo "Skip - file not found: $htmlFile\n";
         return false;
@@ -92,7 +94,7 @@ function processPage($htmlFile, $outPath, $bladeName, $urlReplacements, $mobileB
                             <h1 class="h1 fw-semibold text-center">{$h1}</h1>
                             <p class="font-md">{$p}</p>
                             <div class="text-center">
-                                <a href="tel:+12148978056" class="btn btn-primary text-capitalize">Call Now: +1 214-897-8056</a>
+                                <a href="tel:+12148978056" class="btn btn-primary text-capitalize">Call Now: +1 214-919-5377</a>
                             </div>
                         </header>
                     </div>

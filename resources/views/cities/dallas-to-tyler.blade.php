@@ -8,12 +8,15 @@ $isHourly = session('service_type') === 'hourlyHire';
 @if(!session('pickup_location') && !session('dropoff_location'))
 @include('partials.banner', ['title' => "Dallas to Tyler Black Car Service"])
 @endif
-<div class="bottom-banner" style="{{ session('pickup_location') && session('dropoff_location') ? 'background-image: none' : '' }}">
+<div class="bottom-banner"
+    style="{{ session('pickup_location') && session('dropoff_location') ? 'background-image: none' : '' }}">
     <div class="row">
         <div class="col-sm-12 back-container">
             <div class="container">
                 <div class="row justify-content-end">
-                    <div class="col-sm-7 bottom-banner-inside banner-hidden-mobile" bis_skin_checked="1" id="hide_on_map" style="padding-top: 65px; {{ session('pickup_location') && session('dropoff_location') ? 'display: none' : '' }}">
+                    <div class="col-sm-7 bottom-banner-inside banner-hidden-mobile" bis_skin_checked="1"
+                        id="hide_on_map"
+                        style="padding-top: 65px; {{ session('pickup_location') && session('dropoff_location') ? 'display: none' : '' }}">
                         <div class="bottom-banner-text" bis_skin_checked="1">
                             <h1>Private Car Transfers Dallas to Tyler TX</h1>
                             <p>
@@ -26,7 +29,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                             </p>
                             <p class="bt-text">24/7 Service Available, Click to Call Now!</p>
                             <div class="bottom-banner-btn" bis_skin_checked="1">
-                                <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056" bis_skin_checked="1">Call: 214-897-8056</a>
+                                <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056"
+                                    bis_skin_checked="1">Call: 214-919-5377</a>
                             </div>
                         </div>
                     </div>
@@ -39,7 +43,8 @@ $isHourly = session('service_type') === 'hourlyHire';
             </div>
         </div>
 
-        <div id="map" style="height: 100%; width: 100%; display: none; border-radius: 15px; overflow: hidden; left:0;z-index: 9 !important; top:0">
+        <div id="map"
+            style="height: 100%; width: 100%; display: none; border-radius: 15px; overflow: hidden; left:0;z-index: 9 !important; top:0">
             <div class="map-overlay"></div>
         </div>
 
@@ -76,7 +81,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </p>
                     <p class="bt-text">24/7 Service – Call Now</p>
                     <div class="bottom-banner-btn" bis_skin_checked="1">
-                        <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056" bis_skin_checked="1">Call: 214-897-8056</a>
+                        <a class="call-phonea hover-up d-inline-block mb-20" href="tel:+12148978056"
+                            bis_skin_checked="1">Call: 214-919-5377</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +98,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     <div class="btom-bottom">
                         <h2>Dallas Limo And Black Cars Service – Fleet for Dallas to Tyler Rides</h2>
                         <p>
-                            Travel in comfort on your Dallas to Tyler journey with our versatile fleet, designed for executives, families, and groups.
+                            Travel in comfort on your Dallas to Tyler journey with our versatile fleet, designed for
+                            executives, families, and groups.
                         </p>
                     </div>
 
@@ -108,7 +115,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 
                     <p>
                         <strong class="strong-c-color">Executive Sprinter Vans –</strong>
-                        Mercedes-Benz Sprinters provide group transportation for weddings, retreats, or team travel to Tyler.
+                        Mercedes-Benz Sprinters provide group transportation for weddings, retreats, or team travel to
+                        Tyler.
                     </p>
 
                     <p>
@@ -123,12 +131,11 @@ $isHourly = session('service_type') === 'hourlyHire';
 
 
 
-<p class="tagline-bottom">Our Dallas to Tyler long-distance car service guarantees professional chauffeurs and luxury comfort every mile.</p>
+                    <p class="tagline-bottom">Our Dallas to Tyler long-distance car service guarantees professional
+                        chauffeurs and luxury comfort every mile.</p>
 
 
-                    <img
-                        src="/img/dallas-black-car-service.webp"
-                        alt="Dallas to Tyler car service luxury black car" />
+                    <img src="/img/dallas-black-car-service.webp" alt="Dallas to Tyler car service luxury black car" />
                 </div>
 
                 <div class="btom-btn">
@@ -148,7 +155,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                         Comfortable Dallas to Tyler Travel
                     </h5>
                     <p class="pt-section-description">
-                        Travel from Dallas to Tyler in style with our <a href="/services/dfw-limo-service/" class="internal-links-w">Dallas–Tyler limo
+                        Travel from Dallas to Tyler in style with our <a href="/services/dfw-limo-service/"
+                            class="internal-links-w">Dallas–Tyler limo
                             service</a>. Every ride is smooth & stress-free. We serve areas like
                         Irving, Mesquite & Carrollton. Luxury sedans are for solo
                         travelers. Spacious SUVs are for groups. Our professional
@@ -164,10 +172,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             </div>
             <div class="col-md-6">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/dfw-car-service-airport-transfers.webp"
-                        width="522"
-                        height="564"
+                    <img src="/img/dfw-car-service-airport-transfers.webp" width="522" height="564"
                         alt="Private Chauffeur Car Transfer from Dallas to Tyler TX" />
                 </div>
             </div>
@@ -191,7 +196,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     districts, Legacy West, or AT&amp;T Stadium game days.
                 </p>
 
-                <a style="cursor: pointer;" class="quick-book-link bottom-cta-vtb-c" href="#">Travel in Comfort – Book Now</a>
+                <a style="cursor: pointer;" class="quick-book-link bottom-cta-vtb-c" href="#">Travel in Comfort – Book
+                    Now</a>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -203,8 +209,7 @@ $isHourly = session('service_type') === 'hourlyHire';
         <div class="row">
             <div class="col-md-4">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/luxury-car-service-dallas-to-tyler.webp"
+                    <img src="/img/luxury-car-service-dallas-to-tyler.webp"
                         alt="Chauffeured black car service in Dallas" />
                 </div>
             </div>
@@ -240,13 +245,11 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-md-1"></div>
 
             <div class="col-md-10">
-                <img
-                    src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
+                <img src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
                     alt="Dallas to Tyler Limo Service for Airport and City Rides" />
 
-                <a
-                    href="/fifa-world-cup-2026-car-service-dallas/"
-                    class="bottom-cta-vtb-c">Visit our fifa world cup 2026 page</a>
+                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Visit our fifa world cup
+                    2026 page</a>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -259,9 +262,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/booking.webp"
-                            alt="Online Portal" />
+                        <img src="/img/booking.webp" alt="Online Portal" />
                     </span>
 
                     <div class="serviceHeadings">
@@ -275,9 +276,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/conformation.webp"
-                            alt="Clear-Cut All-Inclusive Pricing" />
+                        <img src="/img/conformation.webp" alt="Clear-Cut All-Inclusive Pricing" />
                     </span>
 
                     <div class="serviceHeadings">
@@ -291,9 +290,7 @@ $isHourly = session('service_type') === 'hourlyHire';
             <div class="col-sm-4 text-center">
                 <div class="pz-bottom-servicei">
                     <span class="serviceImage1">
-                        <img
-                            src="/img/chauffeur.webp"
-                            alt="Expert Chauffeurs" />
+                        <img src="/img/chauffeur.webp" alt="Expert Chauffeurs" />
                     </span>
 
                     <div class="serviceHeadings">
@@ -311,8 +308,7 @@ $isHourly = session('service_type') === 'hourlyHire';
         <div class="row">
             <div class="col-md-4">
                 <div class="pt-chauffeur-1">
-                    <img
-                        src="/img/premium-van-rental-dallas-texas.webp"
+                    <img src="/img/premium-van-rental-dallas-texas.webp"
                         alt="Corporate Car Transfer Dallas to Tyler Texas" />
                 </div>
             </div>
@@ -327,7 +323,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                         Travel between Dallas &amp; Tyler with ease using our
                         professional city-to-city car service. Whether you’re heading
                         east for business, visiting family, or exploring the Rose
-                        Capital of America, our <a href="/services/private-car-service-in-dallas-texas/" class="internal-links">private rides</a> guarantee comfort, safety,
+                        Capital of America, our <a href="/services/private-car-service-in-dallas-texas/"
+                            class="internal-links">private rides</a> guarantee comfort, safety,
                         &amp; convenience throughout your journey.
                     </p>
 
@@ -337,7 +334,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                             extensive knowledge of the Dallas–Tyler route.
                         </li>
                         <li>
-                            <strong>Direct Transfers: </strong>Non-stop, <a href="/services/airport-transfer-dallas/" class="internal-links">door-to-door
+                            <strong>Direct Transfers: </strong>Non-stop, <a href="/services/airport-transfer-dallas/"
+                                class="internal-links">door-to-door
                                 service</a> without the hassle of shuttles or multiple stops.
                         </li>
                         <li>
@@ -421,16 +419,11 @@ $isHourly = session('service_type') === 'hourlyHire';
                                 <span class="tns-visually-hidden">stop animation</span>stop
                             </button>
                             <div class="tns-inner" id="tns1-iw">
-                                <div
-                                    class="slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
-                                    id="tns1"
-                                    style="
+                                <div class="slider tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                                    id="tns1" style="
                         transform: translateX(-28%);
                         transition-duration: 0.3s;">
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 I used Black Car Service for a business trip, and it
@@ -444,10 +437,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 Black Car Service made effortless work of the
@@ -461,10 +451,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="slide tns-item"
-                                        aria-hidden="true"
-                                        tabindex="-1">
+                                    <div class="slide tns-item" aria-hidden="true" tabindex="-1">
                                         <div class="slide__item">
                                             <p>
                                                 Travelling with Black Car Service was a pleasure.
@@ -591,7 +578,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     <div class="answercont">
                         <div class="answer">
                             <p>
-                                The drive from Dallas to Tyler typically takes around 1 hour 30 minutes, depending on traffic and pickup location.
+                                The drive from Dallas to Tyler typically takes around 1 hour 30 minutes, depending on
+                                traffic and pickup location.
                             </p>
 
                         </div>
@@ -606,7 +594,8 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </div>
                     <div class="answercont">
                         <div class="answer">
-                            Absolutely. We offer DFW and Dallas Love Field airport pickups with direct transfers to Tyler.
+                            Absolutely. We offer DFW and Dallas Love Field airport pickups with direct transfers to
+                            Tyler.
                         </div>
                     </div>
                 </div>
@@ -626,7 +615,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 
             <div class="col-md-10">
                 <h3><span class="main-color">Make Every Mile </span><br>First-Class</h3>
-                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car Today</a>
+                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car
+                    Today</a>
             </div>
             <div class="col-md-1">
             </div>
@@ -638,6 +628,8 @@ $isHourly = session('service_type') === 'hourlyHire';
 @section('body-scripts')
 <script src="{{ asset('js/industrie-custom.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.api_key') }}&libraries=places&loading=async&callback=initAutocomplete" async defer></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.api_key') }}&libraries=places&loading=async&callback=initAutocomplete"
+    async defer></script>
 @endsection
 @endsection

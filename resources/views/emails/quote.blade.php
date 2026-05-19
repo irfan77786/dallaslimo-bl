@@ -14,7 +14,7 @@
         <div class="header"
             style="padding: 20px 10px; text-align: center; border-bottom: 1px solid #eee; background-color: #ffffff;">
             <div style="background-color: #ffffff; padding: 15px; display: inline-block;">
-                <img src="https://www.dallasblacklimoservice.com/img/dallas-black-limo-service-logo.png" alt="Dallas Black Limo Service"
+                <img src="{{ $brandLogoUrl ?? brand_logo_url() }}" alt="{{ config('brand.logo_alt') }}"
                     style="max-width: 250px; margin-bottom: 10px; height: auto; display: block; background-color: #ffffff;">
             </div>
             @if($isAdmin)
@@ -121,7 +121,7 @@
                 <ul style="margin: 0; padding-left: 20px;">
                     <li style="margin: 4px 0;">Our team will review your trip details</li>
                     <li style="margin: 4px 0;">We'll send you a customized quote within 24 hours</li>
-                    <li style="margin: 4px 0;">Feel free to call us anytime: <strong>+1 469-961-2047</strong></li>
+                    <li style="margin: 4px 0;">Feel free to call us anytime: <strong>+1 214-919-5377</strong></li>
                 </ul>
             </div>
             @endif
@@ -129,11 +129,11 @@
 
         <div class="footer"
             style="text-align: center; padding: 20px 10px; font-size: 12px; color: #777; border-top: 1px solid #e1e1e1;">
-            <p style="margin: 0 0 5px;"><strong>Dallas Black Limo Service</strong></p>
+            <p style="margin: 0 0 5px;"><strong>Dallas Limos and Black Car Service</strong></p>
             <p style="margin: 0 0 8px;">Premier Black Car & Limo Service in Dallas</p>
             <p style="margin: 0 0 5px;"><a href="tel:+12148978056" style="color: #12143e; text-decoration: none;">+1
-                    469-961-2047</a> | <a href="mailto:info@dallasblacklimoservice.com"
-                    style="color: #12143e; text-decoration: none;">info@dallasblacklimoservice.com</a></p>
+                    214-919-5377</a> | <a href="mailto:info@dallaslimosandblackcarservice.com"
+                    style="color: #12143e; text-decoration: none;">info@dallaslimosandblackcarservice.com</a></p>
             <p style="margin: 0; font-size: 11px;">This is an automated message. Please do not reply to this email.</p>
         </div>
     </div>

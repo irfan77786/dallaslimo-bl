@@ -36,7 +36,7 @@
                     <div class="col-6 col-md-3">
                         <div class="logo">
                             <a href="/">
-                                <img src="{{ asset('dallaslimo-bl-design/img/black-car-service-dallas-tx.png') }}" width="200" height="72" alt="Dallas Limos and Black Car Service" class="img-fluid">
+                                @include('partials.brand-logo', ['width' => 200, 'height' => 72])
                             </a>
                         </div>
                     </div>

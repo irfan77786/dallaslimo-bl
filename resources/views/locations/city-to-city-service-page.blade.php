@@ -1,17 +1,17 @@
 @extends('master-home')
 
 @section('content')
-    @include('partials.city-to-city-banner', [
-        'bannerTitle' => $bannerTitle,
-        'bannerSubtitle' => $bannerSubtitle,
-        'callLabel' => $callLabel ?? 'Call Now: +1 214-897-8056',
-    ])
-    @include('partials.home-dallaslimo-content')
+@include('partials.city-to-city-banner', [
+'bannerTitle' => $bannerTitle,
+'bannerSubtitle' => $bannerSubtitle,
+'callLabel' => $callLabel ?? 'Call Now: +1 214-919-5377',
+])
+@include('partials.home-dallaslimo-content')
 @endsection
 
 @section('scripts')
 <script>
-@if (session('success'))
+    @if (session('success'))
     Swal.fire({
         title: 'Success!',
         text: '{{ session('success') }}',
