@@ -40,11 +40,18 @@ class RegisteredUserController extends Controller
         $sanitizedPhone = preg_replace('/[^\d+]/', '', trim($request->phone ?? ''));
 
         $user = User::create([
+            'name' => trim($request->first_name.' '.$request->last_name),
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        session([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'email' => $request->email,
-            'phone' => $sanitizedPhone ?: $request->phone,
-            'password' => Hash::make($request->password),
+            'booker_first_name' => $request->first_name,
+            'booker_last_name' => $request->last_name,
+            'booker_email' => $request->email,
+            'number' => $sanitizedPhone ?: $request->phone,
         ]);
 
         event(new Registered($user));

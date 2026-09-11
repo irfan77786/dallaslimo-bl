@@ -18,6 +18,174 @@ const options = {
 
 function geolocate() {}
 
+function formatBookingDate(d) {
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
+
+function formatBookingTime(d) {
+    const hours = String(d.getHours()).padStart(2, "0");
+    const minutes = String(d.getMinutes()).padStart(2, "0");
+    return `${hours}:${minutes}`;
+}
+
+function normalizeBookingTime(value) {
+    if (!value) return "";
+    const parts = String(value).split(":");
+    const hours = String(parseInt(parts[0], 10) || 0).padStart(2, "0");
+    const minutes = String(parseInt(parts[1], 10) || 0).padStart(2, "0");
+    return `${hours}:${minutes}`;
+}
+
+function compareBookingTime(a, b) {
+    return normalizeBookingTime(a).localeCompare(normalizeBookingTime(b));
+}
+
+function getMinBookingTimeParts() {
+    const now = new Date();
+    const minBookingTime = new Date(now.getTime() + 2 * 60 * 60 * 1000);
+    return {
+        todayStr: formatBookingDate(now),
+        minBookingDateStr: formatBookingDate(minBookingTime),
+        minTimeStr: formatBookingTime(minBookingTime),
+    };
+}
+
+/**
+ * Earliest bookable date is today. When today is selected, time must be at least 2 hours from now.
+ */
+window.enforceBookingRestrictions = function (dateId, timeId) {
+    const dateInput = document.getElementById(dateId);
+    const timeInput = document.getElementById(timeId);
+    if (!dateInput || !timeInput) return;
+    if (dateInput.dataset.bookingRestrictionsBound === "1") return;
+    dateInput.dataset.bookingRestrictionsBound = "1";
+
+    function isTodaySelected() {
+        return dateInput.value === getMinBookingTimeParts().todayStr;
+    }
+
+    function isPickupTimeValid() {
+        const { todayStr, minBookingDateStr, minTimeStr } =
+            getMinBookingTimeParts();
+        const current = normalizeBookingTime(timeInput.value);
+        if (!current) return false;
+        if (dateInput.value !== todayStr) return true;
+        if (minBookingDateStr !== todayStr) return false;
+        return compareBookingTime(current, minTimeStr) >= 0;
+    }
+
+    function enforceTimeMin() {
+        const { todayStr, minBookingDateStr, minTimeStr } =
+            getMinBookingTimeParts();
+
+        if (!isTodaySelected() || minBookingDateStr !== todayStr) {
+            timeInput.removeAttribute("min");
+            return;
+        }
+
+        timeInput.min = minTimeStr;
+        timeInput.removeAttribute("title");
+
+        const current = normalizeBookingTime(timeInput.value);
+        if (!current || compareBookingTime(current, minTimeStr) < 0) {
+            timeInput.value = minTimeStr;
+        }
+    }
+
+    function updateDateRestrictions() {
+        const { todayStr, minBookingDateStr, minTimeStr } =
+            getMinBookingTimeParts();
+
+        dateInput.min = todayStr;
+
+        if (!dateInput.value || dateInput.value < todayStr) {
+            dateInput.value =
+                minBookingDateStr > todayStr ? minBookingDateStr : todayStr;
+        }
+
+        if (isTodaySelected()) {
+            if (minBookingDateStr !== todayStr) {
+                timeInput.removeAttribute("min");
+                timeInput.title =
+                    "No pickup times available today. Please select a later date.";
+            } else {
+                enforceTimeMin();
+            }
+        } else {
+            timeInput.removeAttribute("min");
+            timeInput.removeAttribute("title");
+            if (!normalizeBookingTime(timeInput.value)) {
+                timeInput.value = "12:00";
+            }
+        }
+    }
+
+    function validateBeforeSubmit(event) {
+        updateDateRestrictions();
+        enforceTimeMin();
+
+        const { todayStr, minBookingDateStr } = getMinBookingTimeParts();
+        if (
+            isTodaySelected() &&
+            minBookingDateStr !== todayStr
+        ) {
+            event.preventDefault();
+            alert(
+                "No pickup times are available today. Please select a later date.",
+            );
+            dateInput.focus();
+            return;
+        }
+
+        if (!isPickupTimeValid()) {
+            event.preventDefault();
+            alert(
+                "Pickup time must be at least 2 hours from now when booking for today.",
+            );
+            enforceTimeMin();
+            timeInput.focus();
+        }
+    }
+
+    updateDateRestrictions();
+
+    dateInput.addEventListener("change", updateDateRestrictions);
+    timeInput.addEventListener("input", enforceTimeMin);
+    timeInput.addEventListener("change", enforceTimeMin);
+    timeInput.addEventListener("blur", enforceTimeMin);
+
+    const form = timeInput.closest("form");
+    if (form) {
+        form.addEventListener("submit", validateBeforeSubmit);
+    }
+
+    setInterval(function () {
+        updateDateRestrictions();
+        if (isTodaySelected()) {
+            enforceTimeMin();
+        }
+    }, 30000);
+};
+
+function initAllBookingDateTimeRestrictions() {
+    ["", "_mobile"].forEach(function (suffix) {
+        [
+            ["pickup-date", "pickup-time"],
+            ["pickup-date-hourly", "pickup-time-hourly"],
+            ["return-date", "return-time"],
+        ].forEach(function (pair) {
+            const dateId = pair[0] + suffix;
+            const timeId = pair[1] + suffix;
+            window.enforceBookingRestrictions(dateId, timeId);
+        });
+    });
+}
+
+window.initAllBookingDateTimeRestrictions = initAllBookingDateTimeRestrictions;
+
 function resetMap() {
     const mapElement = document.getElementById("map");
     $(window).width() < 768 ? $(".mobile-hero").show() : $(".web-hero").show();
@@ -107,6 +275,8 @@ timeInputs.forEach((input) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+    initAllBookingDateTimeRestrictions();
+
     const $pickup = $(
         "#pickup-location, #pickup-location_mobile, #pickup-location_form",
     );

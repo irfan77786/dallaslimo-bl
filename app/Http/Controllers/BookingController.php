@@ -231,6 +231,11 @@ public function handlePointToPoint(Request $request)
     $data['pickup_date'] = $pickup_date;
     $data['pickup_time'] = $pickup_time;
 
+    $pickupAdvanceError = $this->pickupAdvanceNoticeError($pickup_date, $pickup_time);
+    if ($pickupAdvanceError) {
+        return redirect()->back()->withErrors(['pickup_time' => $pickupAdvanceError])->withInput();
+    }
+
     $vehicles = Vehicle::with(['carSeat'])->get();
     $stops = $data['stops'] ?? [];
     $distance = $this->computeRouteDistance($data['pickup_location'], $data['dropoff_location'], $stops);
@@ -311,6 +316,14 @@ public function handleHourlyHire(Request $request)
 
     if (!$pickupDateTime) {
         return redirect()->back()->withErrors(['pickup_datetime_hourly' => 'Please provide a valid pickup date and time.'])->withInput();
+    }
+
+    $pickupAdvanceError = $this->pickupAdvanceNoticeError(
+        $pickupDateTime->format('Y-m-d'),
+        $pickupDateTime->format('H:i:s')
+    );
+    if ($pickupAdvanceError) {
+        return redirect()->back()->withErrors(['pickup_time' => $pickupAdvanceError])->withInput();
     }
 
     $data = $validator->validated();
@@ -1624,5 +1637,27 @@ private function getDistanceBetweenAddresses(string $origin, string $destination
             'hours'          => null,
             'type'           => 'PointToPoint'
         ];
+    }
+
+    /**
+     * Pickup must be at least 2 hours from now.
+     */
+    protected function pickupAdvanceNoticeError(?string $date, ?string $time): ?string
+    {
+        if (!$date || !$time) {
+            return null;
+        }
+
+        try {
+            $pickup = Carbon::parse($date . ' ' . $time);
+        } catch (Exception $e) {
+            return 'Please provide a valid pickup date and time.';
+        }
+
+        if ($pickup->lt(now()->addHours(2))) {
+            return 'Pickup time must be at least 2 hours from now.';
+        }
+
+        return null;
     }
 }

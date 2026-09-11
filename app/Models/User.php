@@ -18,14 +18,24 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'name',
         'email',
-        'phone',
-        'user_id',
-        'contact_type',
         'password',
     ];
+
+    public function getFirstNameAttribute(): string
+    {
+        $parts = preg_split('/\s+/', trim($this->name ?? ''), 2);
+
+        return $parts[0] ?? '';
+    }
+
+    public function getLastNameAttribute(): string
+    {
+        $parts = preg_split('/\s+/', trim($this->name ?? ''), 2);
+
+        return $parts[1] ?? '';
+    }
 
     /**
      * The attributes that should be hidden for serialization.

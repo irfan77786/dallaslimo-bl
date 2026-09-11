@@ -205,60 +205,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 </div>
 <script>
   window.addEventListener('DOMContentLoaded', function () {
-    function enforceBookingRestrictions(dateId, timeId) {
-        const dateInput = document.getElementById(dateId);
-        const timeInput = document.getElementById(timeId);
-        if (!dateInput || !timeInput) return;
-
-        function updateRestrictions() {
-            const now = new Date();
-            // Add 2 hours buffer
-            now.setHours(now.getHours() + 2);
-
-            const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const day = String(now.getDate()).padStart(2, '0');
-            const minDateStr = `${year}-${month}-${day}`;
-
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const minTimeStr = `${hours}:${minutes}`;
-
-            // Set min date
-            dateInput.min = minDateStr;
-
-            // If current date value is invalid or empty, set to min date
-            if (!dateInput.value || dateInput.value < minDateStr) {
-                dateInput.value = minDateStr;
-            }
-
-            // Time restriction logic
-            if (dateInput.value === minDateStr) {
-                timeInput.min = minTimeStr;
-                // If current time value is invalid or empty, set to min time
-                if (!timeInput.value || timeInput.value < minTimeStr) {
-                     timeInput.value = minTimeStr;
-                }
-            } else {
-                timeInput.removeAttribute('min');
-                // If empty, set a default time (e.g., 12:00)
-                if (!timeInput.value) {
-                    timeInput.value = "12:00";
-                }
-            }
-        }
-
-        // Run on load
-        updateRestrictions();
-
-        // Run on date change
-        dateInput.addEventListener('change', updateRestrictions);
-
-        // Optional: Update periodically to handle time passing while page is open
-        setInterval(updateRestrictions, 60000);
+    if (typeof window.enforceBookingRestrictions === 'function') {
+        window.enforceBookingRestrictions('pickup-date', 'pickup-time');
+        window.enforceBookingRestrictions('pickup-date-hourly', 'pickup-time-hourly');
     }
-
-    enforceBookingRestrictions('pickup-date', 'pickup-time');
-    enforceBookingRestrictions('pickup-date-hourly', 'pickup-time-hourly');
   });
 </script>
