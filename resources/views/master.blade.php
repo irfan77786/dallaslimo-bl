@@ -38,7 +38,9 @@
     <link rel="stylesheet" href="{{ asset('new_assets/css/bootstrap-min.css') }}">
     <link rel="stylesheet" href="{{ asset('new_assets/css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="icon" type="image/png" href="{{ asset('dallaslimo-bl-design/img/favicon.png') }}?v=2">
+    <link rel="shortcut icon" href="{{ asset('dallaslimo-bl-design/img/favicon.png') }}?v=2">
+    <link rel="apple-touch-icon" href="{{ asset('dallaslimo-bl-design/img/favicon.png') }}?v=2">
     <!-- Old Custom CSS (for form styles) -->
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-material-datetimepicker.css') }}">
@@ -178,11 +180,6 @@
                                     <a class="nav-link @if(request()->path() == 'our-fleet') active @endif"
                                         href="/our-fleet">Fleet
                                     </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @if(request()->path() == 'fifa-world-cup-2026-car-service-dallas') active @endif"
-                                        href="/fifa-world-cup-2026-car-service-dallas">FIFA World
-                                        Cup 26</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link @if(request()->path() == 'contact-us') active @endif"

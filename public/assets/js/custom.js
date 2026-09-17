@@ -241,9 +241,16 @@ function resetMap() {
         mapElement.style.removeProperty("display");
     }
 
+    if (typeof setBannerMapActive === "function") {
+        setBannerMapActive(false);
+    } else {
+        document.querySelector(".banner-section")?.classList.remove("map-active");
+    }
+
     // Show the header text content again
     $("#home-text-content").css("visibility", "visible");
     $("#home-text-content").css("pointer-events", "auto");
+    $("#home-text-content").css("display", "");
 
     pickupPlacePoint = null;
     dropoffPlacePoint = null;
@@ -259,6 +266,32 @@ function resetMap() {
 }
 
 window.resetMap = resetMap;
+
+function setBannerMapActive(isActive) {
+    const banner = document.querySelector(".banner-section");
+    const mapElement = document.getElementById("map");
+    if (banner) {
+        banner.classList.toggle("map-active", !!isActive);
+    }
+    if (isActive && mapElement && typeof google !== "undefined" && google.maps && map) {
+        setTimeout(function () {
+            try {
+                google.maps.event.trigger(map, "resize");
+                if (pickupPlacePoint?.geometry?.location && dropoffPlacePoint?.geometry?.location) {
+                    const bounds = new google.maps.LatLngBounds();
+                    bounds.extend(pickupPlacePoint.geometry.location);
+                    bounds.extend(dropoffPlacePoint.geometry.location);
+                    map.fitBounds(bounds);
+                } else if (map.getCenter) {
+                    const center = map.getCenter();
+                    if (center) map.setCenter(center);
+                }
+            } catch (e) {}
+        }, 120);
+    }
+}
+
+window.setBannerMapActive = setBannerMapActive;
 
 const dateInputs = document.querySelectorAll('input[type="date"]');
 dateInputs.forEach((input) => {
@@ -354,6 +387,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 mapElement.style.display = "block";
                 $("#hide_on_map").hide();
                 // Do not hide home-text-content here; let initMap handle it when place is selected
+                if (typeof setBannerMapActive === "function") {
+                    setBannerMapActive(true);
+                }
             }
         }
     });
@@ -425,6 +461,9 @@ function triggerPlaceChangedIfPrefilled() {
                 }
 
                 document.getElementById("map").style.display = "block";
+                if (typeof setBannerMapActive === "function") {
+                    setBannerMapActive(true);
+                }
                 // Hide header text when map is shown via prefill
                 if (document.getElementById("home-text-content")) {
                     document.getElementById(
@@ -767,6 +806,9 @@ let dropoffPlacePoint = null;
 function handlePointToPointUpdate() {
     if (pickupPlacePoint || dropoffPlacePoint) {
         document.getElementById("map").style.display = "block";
+        if (typeof setBannerMapActive === "function") {
+            setBannerMapActive(true);
+        }
         initMap(pickupPlacePoint, dropoffPlacePoint);
     }
 }
@@ -988,6 +1030,12 @@ function onLocationChanged() {
             // Show header text
             $("#home-text-content").css("visibility", "visible");
             $("#home-text-content").css("pointer-events", "auto");
+            $("#home-text-content").css("display", "");
+            if (typeof setBannerMapActive === "function") {
+                setBannerMapActive(false);
+            } else {
+                document.querySelector(".banner-section")?.classList.remove("map-active");
+            }
         }
     } else if (map) {
         // Ensure map is visible
@@ -998,6 +1046,11 @@ function onLocationChanged() {
             // Hide header text
             $("#home-text-content").css("visibility", "hidden");
             $("#home-text-content").css("pointer-events", "none");
+            if (typeof setBannerMapActive === "function") {
+                setBannerMapActive(true);
+            } else {
+                document.querySelector(".banner-section")?.classList.add("map-active");
+            }
         }
 
         // Animate to the appropriate marker
@@ -1155,7 +1208,13 @@ function initMap(pickupPlace, dropoffPlace) {
         mapElement.style.removeProperty("background-size");
         mapElement.style.removeProperty("background-position");
         mapElement.style.removeProperty("background-repeat");
+        mapElement.style.display = "block";
         $(".below-map").removeClass("main-hero");
+        if (typeof setBannerMapActive === "function") {
+            setBannerMapActive(true);
+        } else {
+            document.querySelector(".banner-section")?.classList.add("map-active");
+        }
     }
 
     const mapStyle = [

@@ -90,15 +90,19 @@ a.btn-button,
 .btn-primary,
 .contact-form form button,
 .btn-submit {
-  background-color: #e52c43 !important;
-  border-color: #e52c43 !important;
+  background: #171717 !important;
+  background-color: #171717 !important;
+  border-color: #171717 !important;
+  color: #fff !important;
 }
 
 a.call-action-btn:hover,
 .btn-primary:hover,
 a.btn-loadmore:hover {
-  background-color: #c41e33 !important;
-  border-color: #c41e33 !important;
+  background: #a1bd71 !important;
+  background-color: #a1bd71 !important;
+  border-color: #a1bd71 !important;
+  color: #fff !important;
 }
 
 .item-feedback li i,
@@ -153,7 +157,7 @@ button.mt-2.select_car_btn.btn.btn_dark.btn-primary.trigger-loader {
 }
 
 button.mt-2.select_car_btn.btn.btn_dark.btn-primary.trigger-loader:hover {
-  background: linear-gradient(90deg, #e52c43, #ff6c00) !important;
+  background: #171717 !important;
   color: #fff !important;
   border-radius: 5px;
 }
@@ -164,8 +168,23 @@ button.mr-3.btn.btn-outline.btn-uniform.skip-btn {
   margin-right: 30px;
 }
 
-button#final-pay-button {
+button#final-pay-button,
+button#submit-button.cta-button,
+.cta-button.btn-primary {
+  background: #171717 !important;
+  background-color: #171717 !important;
+  border-color: #171717 !important;
+  color: #fff !important;
   border-radius: 4px !important;
+}
+
+button#final-pay-button:hover,
+button#submit-button.cta-button:hover,
+.cta-button.btn-primary:hover {
+  background: #a1bd71 !important;
+  background-color: #a1bd71 !important;
+  border-color: #a1bd71 !important;
+  color: #fff !important;
 }
 
 button.btn.btn-primary.btn-sm {
@@ -211,8 +230,8 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link {
 }
 
 div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link.active,
-.nav-link.inactive-tab.active {
-  color: #e52c43 !important;
+.search-tab-wrap .nav-link.inactive-tab.active {
+  color: #a1bd71 !important;
   border-bottom-color: transparent !important;
   background-color: transparent !important;
 }
@@ -239,12 +258,18 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 4px #6e6e6e;
-  padding: 30px 50px;
+  padding: 22px 24px;
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
   margin: auto;
   position: relative;
   float: right !important;
+}
+
+@media (min-width: 768px) {
+  .distance-form-holder .search-tab-wrap {
+    padding: 18px 22px !important;
+  }
 }
 
 .search-tab-wrap > .nav-tabs {
@@ -260,7 +285,7 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
   bottom: 0;
   width: 50%;
   height: 2px;
-  background: #e52c43;
+  background: #a1bd71;
   transition: left 0.4s ease;
   z-index: 1;
 }
@@ -278,7 +303,7 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
 
 @keyframes tabActivePop {
   0% {
-    background-color: rgba(229, 44, 67, 0.2);
+    background-color: rgba(161, 189, 113, 0.25);
   }
   100% {
     background-color: transparent;
@@ -313,7 +338,7 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
 .search-form-box input:focus {
   outline: none !important;
   box-shadow: none !important;
-  border-color: #e52c43 !important;
+  border-color: #a1bd71 !important;
   color: inherit !important;
 }
 
@@ -349,6 +374,54 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
 
 .floating-bordered-input:focus-within {
   border-color: #fc731c;
+}
+
+.search-tab-wrap .floating-bordered-input:hover,
+.search-tab-wrap .floating-bordered-input:focus-within {
+  border: 1px solid #a1bd71;
+}
+
+.search-tab-wrap input[type="checkbox"] {
+  accent-color: #a1bd71;
+}
+
+.search-tab-wrap .search_btn.btn-primary,
+.distance-form-holder .search_btn.btn-primary,
+.banner-section .btn-primary {
+  background-color: #171717 !important;
+  border-color: #171717 !important;
+  color: #fff !important;
+}
+
+.search-tab-wrap .search_btn.btn-primary:hover,
+.distance-form-holder .search_btn.btn-primary:hover,
+.banner-section .btn-primary:hover {
+  background-color: #a1bd71 !important;
+  border-color: #a1bd71 !important;
+  color: #fff !important;
+}
+
+.distance-form-holder .search-tab-wrap {
+  float: none !important;
+  margin: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  padding: 16px 18px !important;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+.search-tab-wrap .search-form .row.g-2,
+.search-tab-wrap .search-form .row.g-3 {
+  --bs-gutter-x: 14px;
+  --bs-gutter-y: 0;
+}
+
+.search-tab-wrap .sformlink.active,
+.search-tab-wrap ul.nav.nav-tabs li a.active,
+.search-tab-wrap .nav-tabs .nav-link.active {
+  color: #a1bd71 !important;
 }
 
 .floating-bordered-input .floating-label {
@@ -565,6 +638,68 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+/* Mobile: map sits below the booking form (not behind it) */
+@media (max-width: 767px) {
+  .banner-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner-section > .container-fluid {
+    order: 1;
+    position: relative;
+    z-index: 3;
+  }
+
+  .banner-section > #map,
+  .banner-section > div#map {
+    order: 2;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 280px !important;
+    min-height: 280px !important;
+    max-height: 280px !important;
+    z-index: 2 !important;
+    margin: 10px 0 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+  }
+
+  .banner-section > .container {
+    order: 3;
+    position: relative;
+    z-index: 1;
+  }
+
+  .banner-section.map-active .bg-img-cover.only-m {
+    display: none !important;
+  }
+
+  .banner-section.map-active .distance-form-holder.d-md-none,
+  .banner-section.map-active .distance-form-holder {
+    margin-top: 0 !important;
+  }
+
+  .banner-section.map-active #home-text-content {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .banner-section.map-active > .container {
+    padding-top: 12px !important;
+    padding-bottom: 20px !important;
+  }
 }
 
 .info-card {
@@ -1108,13 +1243,17 @@ a.btn.btn-primary.fifa-btn {
   }
 
   .search-tab-wrap {
-    padding-top: 26px !important;
+    padding-top: 16px !important;
     float: none !important;
     margin: 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 30px 1px !important;
+    padding: 16px 18px !important;
     box-shadow: none !important;
+  }
+
+  .distance-form-holder .search-tab-wrap {
+    padding: 14px 16px !important;
   }
 
   .mb-3.floating-bordered-input.position-relative.rlx-theme {
@@ -1162,6 +1301,11 @@ a.btn.btn-primary.fifa-btn {
 
   div#map {
     border: 1px solid #c9b3b3 !important;
+  }
+
+  .banner-section > #map,
+  .banner-section > div#map {
+    border: 1px solid #e5e5e5 !important;
   }
 
   .p-3.mt-3.rounded-lg.shadow-sm.bg-light {

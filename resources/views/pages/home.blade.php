@@ -53,6 +53,12 @@
         position: relative;
         z-index: 10;
     }
+
+    @media (max-width: 767px) {
+        .banner-section.map-active #map {
+            display: block;
+        }
+    }
 </style>
 
 @include('partials.home-dallaslimo-content')

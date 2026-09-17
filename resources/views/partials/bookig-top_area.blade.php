@@ -96,7 +96,7 @@
     right: 0;
     top: 26px; /* sits between label and dots */
     height: 2px;
-    background:linear-gradient(90deg, #e52c43, #ff6c00);
+    background:#171717;
 }
  
 .step-dot{
@@ -116,11 +116,11 @@
     border: none !important;
 }
 .select_car_btn:active{
-    background: linear-gradient(90deg, #e52c43, #ff6c00) !important;
+    background: #171717 !important;
 }
 .active {
     border: none !important;
-    background: linear-gradient(90deg, #e52c43, #ff6c00) !important;
+    background: #171717 !important;
 }
 
 
@@ -142,7 +142,7 @@
 .step-label-pill.is-active{
     color: white;
     font-weight: 600;
-    background: linear-gradient(90deg, #e52c43, #ff6c00);
+    background: #171717;
     border: none;
 }
 
@@ -280,8 +280,8 @@
     .mob-step-dots{ display:flex; flex-wrap:nowrap !important; white-space:nowrap; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch; width:100%; align-items:center; }
     .mob-step-dots::-webkit-scrollbar{ display:none; }
     .mob-step-dot{ flex:0 0 auto; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; border:2px solid #e5e7eb; background:#fff; color:#6b7280; }
-    .mob-step-dot.completed{ border:none; background: linear-gradient(90deg, #e52c43, #ff6c00); color:#fff; }
-    .mob-step-dot.active{ border:none; background: linear-gradient(90deg, #e52c43, #ff6c00); color:#fff !important; }
+    .mob-step-dot.completed{ border:none; background: #171717; color:#fff; }
+    .mob-step-dot.active{ border:none; background: #171717; color:#fff !important; }
     .mob-step-dot.upcoming{ border-color:#e5e7eb; background:#fff; color:#9ca3af; }
 
     .mob_top_summary .summary-row{ flex-wrap:wrap; align-items:flex-start; gap:0; margin-bottom:10px; }

@@ -18,7 +18,7 @@
                     alt="{{ config('brand.logo_alt') }}"
                     style="max-width: 250px; margin-bottom: 10px; height: auto; display: block; background-color: #ffffff;">
             </div>
-            <h2 style="margin: 0; font-size: 22px; color: #12143e;">Booking {{ $isAdmin ? 'Notification' :
+            <h2 style="margin: 0; font-size: 22px; color: #171717;">Booking {{ $isAdmin ? 'Notification' :
                 'Confirmation' }}</h2>
             <p style="margin: 5px 0 0; font-size: 15px; color: #555;">{{ $isAdmin ? 'New booking received' : 'Your
                 reservation has been confirmed!' }}</p>
@@ -31,7 +31,7 @@
             <p style="font-size: 12px; margin: 0 0 10px;">A new booking has been received. Please find the details
                 below:</p>
             <div class="admin-note"
-                style="background-color: #baddfc; border-left: 4px solid #12143e; padding: 12px; margin: 15px 0; font-size: 15px; color: #333;">
+                style="background-color: #eef3e6; border-left: 4px solid #171717; padding: 12px; margin: 15px 0; font-size: 15px; color: #333;">
                 <strong>Action Required:</strong> Please review and confirm this booking at your earliest convenience.
             </div>
             @elseif($sendToBooker)
@@ -47,49 +47,10 @@
                 successfully confirmed. Below are your booking details:</p>
             @endif
 
-            {{-- FIFA World Cup 2026 notice (matches PDF policy; full terms in attached PDF) --}}
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
-                style="margin: 16px 0 20px; background-color: #FDFAF3; border: 1px solid #9C844C; border-radius: 12px;">
-                <tr>
-                    <td style="padding: 16px; vertical-align: top;">
-                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <td style="width: 40px; vertical-align: top; padding-top: 2px;">
-                                    <div
-                                        style="width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; background-color: #9C844C; color: #ffffff; font-size: 16px; font-weight: 700; font-family: Georgia, 'Times New Roman', serif;">
-                                        i
-                                    </div>
-                                </td>
-                                <td style="vertical-align: top; padding-left: 8px;">
-                                    <p
-                                        style="margin: 0 0 10px; font-size: 13px; color: #333; font-weight: 700; line-height: 1.45;">
-                                        Important Event Notice – FIFA World Cup 2026 (June 13 – July 15, 2026):
-                                    </p>
-                                    <p
-                                        style="margin: 0; font-size: 12px; color: #333; font-style: italic; line-height: 1.5;">
-                                        If this booking falls within the FIFA World Cup 2026 event dates, all rates, fees, and
-                                        minimums are subject to change without notice based on event demand, availability, and
-                                        operational conditions. You acknowledge and agree that these rates are not guaranteed
-                                        until final payment is made in accordance with our policy. By confirming this
-                                        reservation, you expressly authorize any rate adjustments and agree that such
-                                        changes are not a basis for refund, credit, cancellation, or chargeback.
-                                    </p>
-                                    <p style="margin: 10px 0 0; font-size: 11px; color: #555; line-height: 1.4;">
-                                        Complete FIFA 2026 (Dallas–Fort Worth) event terms are included in your attached
-                                        booking PDF.
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-
-            {{-- Booking confirmation fields (aligned with resources/views/pdfs/booking.blade.php) --}}
             <div class="booking-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #12143e; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
+                    style="background: #171717; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
                     Booking Confirmation #{{ $bookingData['booking_id'] ?? 'N/A' }}</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     <tr>
@@ -183,7 +144,7 @@
             <div class="booking-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #baddfc; margin: 0; padding: 8px 12px; font-size: 14px; color: #12143e; border-radius: 4px 4px 0 0;">
+                    style="background: #eef3e6; margin: 0; padding: 8px 12px; font-size: 14px; color: #171717; border-radius: 4px 4px 0 0;">
                     Booker Information</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     @if(!empty($bookingData['booker_first_name']) || !empty($bookingData['booker_last_name']))
@@ -210,7 +171,7 @@
             <div class="booking-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #baddfc; margin: 0; padding: 8px 12px; font-size: 14px; color: #12143e; border-radius: 4px 4px 0 0;">
+                    style="background: #eef3e6; margin: 0; padding: 8px 12px; font-size: 14px; color: #171717; border-radius: 4px 4px 0 0;">
                     Booker Information</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     <tr>
@@ -224,7 +185,7 @@
             <div class="booking-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #baddfc; margin: 0; padding: 8px 12px; font-size: 14px; color: #12143e; border-radius: 4px 4px 0 0;">
+                    style="background: #eef3e6; margin: 0; padding: 8px 12px; font-size: 14px; color: #171717; border-radius: 4px 4px 0 0;">
                     Trip Routing Information</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     @if(!empty($bookingData['pickup_location']) || !empty($bookingData['dropoff_location']) || !empty($bookingData['hours']))
@@ -264,7 +225,7 @@
             <div class="booking-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #12143e; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
+                    style="background: #171717; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
                     Flight/Airport Information</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     @if($hasFlightBlock)
@@ -296,7 +257,7 @@
             <div class="booking-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #12143e; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
+                    style="background: #171717; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
                     Notes/Comments</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     <tr>
@@ -312,7 +273,7 @@
             <div class="booking-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #baddfc; margin: 0; padding: 8px 12px; font-size: 14px; color: #12143e; border-radius: 4px 4px 0 0;">
+                    style="background: #eef3e6; margin: 0; padding: 8px 12px; font-size: 14px; color: #171717; border-radius: 4px 4px 0 0;">
                     Charges &amp; Fees</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     <tr>
@@ -337,7 +298,7 @@
             <div class="booking-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #baddfc; margin: 0; padding: 8px 12px; font-size: 14px; color: #12143e; border-radius: 4px 4px 0 0;">
+                    style="background: #eef3e6; margin: 0; padding: 8px 12px; font-size: 14px; color: #171717; border-radius: 4px 4px 0 0;">
                     Charges &amp; Fees</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     <tr>

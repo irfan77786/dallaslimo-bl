@@ -88,7 +88,7 @@ $tabSuffix = $id_suffix ?? '';
                         <div id="dropoff-suggestions{{ $tabSuffix }}" class="location-suggestions"></div>
                     </div>
 
-                    <div class="row g-2">
+                    <div class="row g-3">
                         <div class="col-6">
                             <div class="mb-1 floating-bordered-input position-relative">
                                 <span class="floating-label">Pick-up Date</span>
@@ -130,7 +130,7 @@ $tabSuffix = $id_suffix ?? '';
                         <div class="form-check me-2">
                             <input type="checkbox" name="round_trip" id="round-trip{{ $tabSuffix }}"
                                 class="form-check-input"
-                                style="height: 18px; width: 18px; cursor: pointer; margin-top: 10px; border: 0.13rem solid #6e6e6e; border-radius: 2px !important;"
+                                style="height: 18px; width: 18px; cursor: pointer; margin-top: 10px; border: 0.13rem solid #6e6e6e; border-radius: 2px !important; accent-color: #a1bd71;"
                                 @session('round_trip') checked @endsession>
                             <label for="round-trip{{ $tabSuffix }}" class="mb-2 ml-2 form-check-label ms-2"
                                 style="cursor: pointer; font-size: 14px; margin-top: 0.4rem; color: black !important; font-weight: 400">
@@ -140,7 +140,7 @@ $tabSuffix = $id_suffix ?? '';
                     </div>
 
                     <div class="return-trip" style="display: none;">
-                        <div class="row g-2">
+                        <div class="row g-3">
                             <div class="col-6">
                                 <div class="mb-1 floating-bordered-input position-relative">
                                     <span class="floating-label">Return Trip Pick-up Date</span>
@@ -273,7 +273,7 @@ $tabSuffix = $id_suffix ?? '';
                     </div>
 
 
-                    <div class="row g-2">
+                    <div class="row g-3">
                         <div class="col-6">
                             <div class="mb-1 floating-bordered-input position-relative">
                                 <span class="floating-label">Pick-up Date</span>
@@ -417,11 +417,11 @@ $tabSuffix = $id_suffix ?? '';
 
     .rlx-option:hover,
     .rlx-option[aria-selected="true"] {
-        background: #eef6fb;
+        background: #eef3e6;
     }
 
     .rlx-option.selected {
-        background: #e9f2fa;
+        background: #eef3e6;
     }
 
     /* icon alignment inside floating input */

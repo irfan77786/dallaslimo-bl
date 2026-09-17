@@ -69,8 +69,15 @@
     display: block;
     font-weight: 600;
     letter-spacing: 2px;
-    background: linear-gradient(90deg, #e52c43, #ff6c00);
+    background: #171717 !important;
+    border-color: #171717 !important;
+    color: #fff !important;
     border-radius: 4px !important;
+}
+.cta-button:hover {
+    background: #a1bd71 !important;
+    border-color: #a1bd71 !important;
+    color: #fff !important;
 }
 </style>
 <div class="mb-4 col-md-4" id="pricing-area-wrapper">
@@ -140,7 +147,7 @@
                         </div>
 
                     <div class="d-flex justify-content-between total_price_box">
-                        <span class="pricing_total_label" style="background: linear-gradient(90deg, #e52c43, #ff6c00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Total</span>
+                        <span class="pricing_total_label" style="color: #171717; display: inline-block;">Total</span>
                         @php
                             $base = session('calculated_price');
                             if ($base === null && $breakdown && isset($breakdown['hourlyFare'])) {
@@ -152,7 +159,7 @@
                             $formattedTotal = number_format($rawTotal, 2);
                             [$whole, $decimal] = explode('.', $formattedTotal);
                         @endphp
-                        <span class="pricing_total_price total-trip-price" style="background: linear-gradient(90deg, #e52c43, #ff6c00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
+                        <span class="pricing_total_price total-trip-price" style="color: #171717; display: inline-block;">
                             ${{ $whole }}<span class="price-decimal">.{{ $decimal }}</span> USD
                         </span>
                     </div>

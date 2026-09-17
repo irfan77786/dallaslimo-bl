@@ -30,18 +30,6 @@
     </section>
 </div>
 
-@section('styles')
-<style>
-    .fifa-2026-policy-web {
-        padding: 28px 24px;
-        margin-top: 32px;
-        background-color: #fafafa;
-        border: 1px solid #e8e8e8;
-        border-radius: 8px;
-    }
-</style>
-@endsection
-
 <section class="py-40">
     <div class="container">
         <div class="row justify-content-center">
@@ -229,9 +217,7 @@
                         </p>
                     </li>
                 </ul>
-
-                @include('partials.fifa-2026-event-policy-web')
-            </div>
+</div>
         </div>
     </div>
 </section>

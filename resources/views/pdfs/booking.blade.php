@@ -690,10 +690,7 @@
           - No refunds for Motor Coaches, Mini Buses, or Special Events after cancellation window closes.</p>
       </div>
     </div>
-
-    @include('pdfs.partials.fifa-2026-event-policy')
-
-    <div class="sections section-light">
+<div class="sections section-light">
       <h2>Thank you for choosing Dallas Limos and Black Car Service.</h2>
       <div class="section-content">
         <p>

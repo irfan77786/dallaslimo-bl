@@ -239,23 +239,6 @@ $isHourly = session('service_type') === 'hourlyHire';
     </div>
 </section>
 
-<div class="cta cta-ddc-nones bottom-button-vtb-c">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-
-            <div class="col-md-10">
-                <img src="/img/fifa-world-cup-2026-car-service-dallas.jpg"
-                    alt="Dallas to Tyler Limo Service for Airport and City Rides" />
-
-                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Visit our fifa world cup
-                    2026 page</a>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-</div>
-
 <div id="bottomServices-defcitiy icon-h-page">
     <div class="container">
         <div class="row">
@@ -615,7 +598,7 @@ $isHourly = session('service_type') === 'hourlyHire';
 
             <div class="col-md-10">
                 <h3><span class="main-color">Make Every Mile </span><br>First-Class</h3>
-                <a href="/fifa-world-cup-2026-car-service-dallas/" class="bottom-cta-vtb-c">Reserve Your Black Car
+                <a href="/book-now/" class="bottom-cta-vtb-c">Reserve Your Black Car
                     Today</a>
             </div>
             <div class="col-md-1">

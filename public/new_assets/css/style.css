@@ -5366,12 +5366,13 @@ li {
   z-index: 1;
   padding: 10px;
   font-weight: 600;
-  background: linear-gradient(90deg, #e52c43, #ff6c00, #e52c43);
-  background-size: 200% 100%;
-  transition: background-position 0.4s ease;
+  background: #171717;
+  background-size: auto;
+  transition: background 0.35s ease;
 }
 .btn-primary:hover {
-  background-position: 100% 0;
+  background: #a1bd71;
+  background-position: initial;
 }
 
 .custom-unorder-list {

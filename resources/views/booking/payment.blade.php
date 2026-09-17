@@ -1,12 +1,10 @@
-﻿@extends('master')
+@extends('master')
 @section('content')
 
 @section('styles')
     <style>
         .payment-card-option {
-            background: linear-gradient(90deg, #e52c43, #ff6c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #171717;
             font-weight: bold;
         }
 
@@ -244,11 +242,11 @@ a.hover-black {
     </span>
 </label>
 @empty
-<p class="text-danger">No saved cards found â€” Please enter card below</p>
+<p class="text-danger">No saved cards found — Please enter card below</p>
 @endforelse
 @endif
 
-{{-- âœ… FULL NAME + CARD NUMBER (SAME GROUP) --}}
+{{-- ✅ FULL NAME + CARD NUMBER (SAME GROUP) --}}
 <div id="new-card-fields">
 
     <!-- Full Name -->
@@ -278,7 +276,7 @@ a.hover-black {
 
 <div id="card-errors" class="mb-2 text-danger small"></div>
 
-{{-- âœ… BUTTON --}}
+{{-- ✅ BUTTON --}}
 <button type="submit" id="final-pay-button" class="mt-3 btn btn-primary w-100">
 BOOK NOW
 </button>
@@ -322,21 +320,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    // âœ… INITIAL STATE: SHOW NEW CARD FIELDS
+    // ✅ INITIAL STATE: SHOW NEW CARD FIELDS
     toggleNewCardFields(true);
 
-    // âœ… WHEN RADIO CHANGES
+    // ✅ WHEN RADIO CHANGES
     savedRadios.forEach(radio => {
         radio.addEventListener('change', function () {
             hiddenPaymentMethod.value = radio.value;
 
             if (radio.value) {
-                // saved card selected â†’ hide new card
+                // saved card selected → hide new card
                 const holderName = radio.dataset.holder || '';
                 cardNameInput.value = holderName;
                 toggleNewCardFields(false);
             } else {
-                // custom card selected â†’ show new card
+                // custom card selected → show new card
                 toggleNewCardFields(true);
             }
 
@@ -345,14 +343,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // âœ… IF USER TYPES MANUALLY â†’ SWITCH TO NEW CARD MODE
+    // ✅ IF USER TYPES MANUALLY → SWITCH TO NEW CARD MODE
     cardNameInput.addEventListener('input', function () {
         savedRadios.forEach(r => r.checked = false);
         hiddenPaymentMethod.value = '';
         toggleNewCardFields(true);
     });
 
-    // âœ… FINAL PAYMENT HANDLER
+    // ✅ FINAL PAYMENT HANDLER
 form.addEventListener('submit', async function (event) {
     event.preventDefault();
     errorDiv.innerText = '';
@@ -363,7 +361,7 @@ form.addEventListener('submit', async function (event) {
         return;
     }
 
-    // Otherwise, new card â†’ validate and create PaymentMethod
+    // Otherwise, new card → validate and create PaymentMethod
     const cardholder = cardNameInput.value.trim();
     if (!cardholder) {
         errorDiv.innerText = 'Card holder name is required.';

@@ -18,10 +18,10 @@
                     style="max-width: 250px; margin-bottom: 10px; height: auto; display: block; background-color: #ffffff;">
             </div>
             @if($isAdmin)
-            <h2 style="margin: 0; font-size: 22px; color: #12143e;">New Contact Message</h2>
+            <h2 style="margin: 0; font-size: 22px; color: #171717;">New Contact Message</h2>
             <p style="margin: 5px 0 0; font-size: 15px; color: #555;">Details of the inquiry:</p>
             @else
-            <h2 style="margin: 0; font-size: 22px; color: #12143e;">Thank You for Contacting Us</h2>
+            <h2 style="margin: 0; font-size: 22px; color: #171717;">Thank You for Contacting Us</h2>
             <p style="margin: 5px 0 0; font-size: 15px; color: #555;">We've received your message and will get back to
                 you soon</p>
             @endif
@@ -33,7 +33,7 @@
             <p style="font-size: 12px; margin: 0 0 10px;">A new contact message has been received. Please find the
                 details below:</p>
             <div class="admin-note"
-                style="background-color: #baddfc; border-left: 4px solid #12143e; padding: 12px; margin: 15px 0; font-size: 12px; color: #333;">
+                style="background-color: #eef3e6; border-left: 4px solid #171717; padding: 12px; margin: 15px 0; font-size: 12px; color: #333;">
                 <strong>New Inquiry:</strong> Please review this message and respond to the customer accordingly.
             </div>
             @else
@@ -48,7 +48,7 @@
             <div class="contact-details"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #12143e; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
+                    style="background: #171717; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
                     Contact Information</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
                     <tr>
@@ -58,12 +58,12 @@
                     <tr>
                         <td style="font-weight: bold; color: #666; padding: 4px 0;">Email:</td>
                         <td style="color: #333; padding: 4px 0;"><a href="mailto:{{ $details['email'] }}"
-                                style="color: #12143e; text-decoration: none;">{{ $details['email'] }}</a></td>
+                                style="color: #171717; text-decoration: none;">{{ $details['email'] }}</a></td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold; color: #666; padding: 4px 0;">Phone:</td>
                         <td style="color: #333; padding: 4px 0;"><a href="tel:{{ $details['phone'] }}"
-                                style="color: #12143e; text-decoration: none;">{{ $details['phone'] }}</a></td>
+                                style="color: #171717; text-decoration: none;">{{ $details['phone'] }}</a></td>
                     </tr>
                 </table>
             </div>
@@ -71,7 +71,7 @@
             <div class="message-section"
                 style="background-color: #f8f9fa; border-radius: 4px; margin: 20px 0; border: 1px solid #e0e0e0;">
                 <h3
-                    style="background: #12143e; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
+                    style="background: #171717; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
                     Message</h3>
                 <div style="padding: 10px;">
                     <p style="margin: 0; font-size: 12px; color: #333; white-space: pre-wrap; word-wrap: break-word;">{{
@@ -81,7 +81,7 @@
 
             @if(!$isAdmin)
             <div class="next-steps"
-                style="background-color: #e8f5e9; border-radius: 4px; padding: 12px; margin: 20px 0; border: 1px solid #c8e6c9; font-size: 12px; color: #333;">
+                style="background-color: #eef3e6; border-radius: 4px; padding: 12px; margin: 20px 0; border: 1px solid #a1bd71; font-size: 12px; color: #333;">
                 <p style="margin: 0 0 8px;"><strong>What happens next?</strong></p>
                 <ul style="margin: 0; padding-left: 20px;">
                     <li style="margin: 4px 0;">Our team will review your message</li>
@@ -102,9 +102,9 @@
             style="text-align: center; padding: 20px 10px; font-size: 12px; color: #777; border-top: 1px solid #e1e1e1;">
             <p style="margin: 0 0 5px;"><strong>Dallas Limos and Black Car Service</strong></p>
             <p style="margin: 0 0 8px;">Premier Black Car & Limo Service in Dallas</p>
-            <p style="margin: 0 0 5px;"><a href="tel:+12148978056" style="color: #12143e; text-decoration: none;">+1
+            <p style="margin: 0 0 5px;"><a href="tel:+12148978056" style="color: #171717; text-decoration: none;">+1
                     214-919-5377</a> | <a href="mailto:info@dallaslimosandblackcarservice.com"
-                    style="color: #12143e; text-decoration: none;">info@dallaslimosandblackcarservice.com</a></p>
+                    style="color: #171717; text-decoration: none;">info@dallaslimosandblackcarservice.com</a></p>
             <p style="margin: 0; font-size: 11px;">This is an automated message. Please do not reply to this email.</p>
         </div>
     </div>

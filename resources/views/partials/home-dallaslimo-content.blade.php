@@ -279,54 +279,6 @@
                 </div>
             </div>
         </section>
-        
-        <section class="fifa-main-banner only-d" style="
-    background: url({{ asset('dallaslimo-bl-design/img/dallas-fifa-world-cup-black-car-service.webp') }}) center center no-repeat;
-">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-              <a href="/fifa-world-cup-2026-car-service-dallas/"> </a>
-              <div class="fifa-btns">
-                 
-                 
-                </div>
-            </div>
-        </div>
-
-       
-    </div>
-</section>
-     <section class="fifa-main-banner only-m" style="
-    background: url({{ asset('dallaslimo-bl-design/img/dallas-fifa-world-cup-black-car-service-mobile.webp') }}) center top;
-">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-              <a href="/fifa-world-cup-2026-car-service-dallas/"> </a>
-              <div class="fifa-btns">
-                 
-                 
-                </div>
-            </div>
-        </div>
-
-       
-    </div>
-</section>
-
-<div class="container">
- <div class="row">
-         <div class="col-md-12">
-              <div class="fifa-btnss">  
-                    
-                   
-            <a href="/fifa-world-cup-2026-car-service-dallas/">Visit FIFA World Cup 2026 Page</a>
-            </div>
-            </div>
-            </div>
-            
-    </div>
 
         <section class="detail-content-section py-20">
             <div class="container">

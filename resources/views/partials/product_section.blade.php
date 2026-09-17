@@ -33,9 +33,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     }
 
     .feature-section {
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #171717;
         font-weight: bold;
         display: inline-flex;
         align-items: center;
@@ -45,7 +43,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     }
 
     .btn-primary {
-        background: linear-gradient(90deg, #e52c43, #ff6c00) !important;
+        background: #171717 !important;
         border: none !important;
         box-shadow: none !important;
 
@@ -64,11 +62,11 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     }
 
     .vehical-card:hover {
-        border-color: #e52c43;
+        border-color: #171717;
     }
 
     .vehical-card.selected {
-        border-color: #ff6c00 !important;
+        border-color: #a1bd71 !important;
         background-color: #fff7f2 !important;
     }
 
@@ -86,9 +84,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     }
 
     .tick-overlay i {
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #171717;
         display: inline-block;
     }
 
@@ -147,7 +143,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     }
 
     .best-value-badge i {
-        color: #e52c43;
+        color: #171717;
         font-size: 1rem;
     }
 
@@ -193,9 +189,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     .pass-luggage-info i {
         margin-right: 0.3rem;
         font-size: 1rem;
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #171717;
         display: inline-block;
     }
 
@@ -237,9 +231,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
 
     .feature-icon {
         font-size: 1rem;
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #171717;
         display: inline-block;
     }
 
@@ -347,7 +339,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
 
     .select_car_btn:hover,
     .select_car_btn:focus {
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
+        background: #171717;
         color: #fff !important;
         text-decoration: none;
     }
@@ -601,7 +593,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     }
 
     .side_section .card .card-title i {
-        background: linear-gradient(90deg, #e52c43, #ff6c00) !important;
+        background: #171717 !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
         display: inline-block;
@@ -620,9 +612,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     }
 
     .feaures_ul li i {
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #171717;
         display: inline-block;
     }
 
@@ -637,7 +627,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
 
     .side_section a.mail_side:hover,
     .side_section a.number_side:hover {
-        color: #e52c43 !important;
+        color: #171717 !important;
         text-decoration: underline;
         text-decoration-thickness: 1.5px;
     }
@@ -746,9 +736,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
 
     .mbs-meta i {
         font-size: 1.2rem;
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #171717;
     }
 
     .mbs-line {
@@ -788,9 +776,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
         margin-bottom: 8px;
         padding-left: 16px;
         padding-right: 16px;
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #171717;
     }
 
     .mbs-features-box {
@@ -910,7 +896,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
 
     .mbs-select {
         flex: 2;
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
+        background: #171717;
         border: none;
         color: #fff;
         font-weight: 700;

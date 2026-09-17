@@ -480,24 +480,6 @@
             </div>
         </div>
     </div>
-    <div class="px-15">
-        <div class="bg-gray-light py-30 d-md-none bdr-radius">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <div class="fifa-image-holder">
-                            <img loading="lazy" decoding="async"
-                                src="{{ asset('dallaslimo-bl-design/assets/fifa-image.jpg') }}" class="img-fluid"
-                                alt="FIFA Image">
-                        </div>
-                        <a href="" class="btn btn-primary w-100 fw-medium text-capitalize">Visit our FIFA World
-                            Cup 2026
-                            page</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="row align-items-center flex-row-reverse py-20 d-md-none">
             <div class="col-12 col-md-6 pr-xl">

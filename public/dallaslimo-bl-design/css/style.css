@@ -5932,13 +5932,15 @@ section.detail-content-section.py-20 li {
 }
 
 .distance-form-holder {
-  height: 280px;
+  height: auto;
+  min-height: 280px;
   max-width: 380px;
   margin: -50px auto 0;
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   position: relative;
+  padding: 4px 2px 8px;
 }
 @media (max-width: 767px) {
   .banner-section .distance-form-holder {
@@ -5952,8 +5954,12 @@ section.detail-content-section.py-20 li {
 }
 @media (min-width: 768px) {
   .distance-form-holder {
-    height: 350px;
+    height: auto;
+    min-height: 350px;
+    max-width: 480px;
+    width: 100%;
     margin: 0 0 0 auto;
+    padding: 8px 6px 12px;
   }
 }
 

@@ -7,7 +7,9 @@
     <title>{{ $seo['title'] ?? 'Black Car Service Dallas | Luxury Chauffeur & Limo Service' }}</title>
     <meta name="description" content="{{ $seo['description'] ?? 'Professional black car service in Dallas TX offering luxury chauffeur, airport transfers, and executive transportation.' }}">
     <meta name="keywords" content="{{ $seo['keywords'] ?? 'black car service dallas, chauffeur service dallas, dfw airport black car service' }}">
-    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="icon" type="image/png" href="{{ asset('dallaslimo-bl-design/img/favicon.png') }}?v=2">
+    <link rel="shortcut icon" href="{{ asset('dallaslimo-bl-design/img/favicon.png') }}?v=2">
+    <link rel="apple-touch-icon" href="{{ asset('dallaslimo-bl-design/img/favicon.png') }}?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
@@ -76,7 +78,6 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="/our-fleet/">Fleet</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/fifa-world-cup-2026-car-service-dallas/">FIFA World Cup 26</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/get-a-quote/">Get a Quote</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/book-now/">Book Now</a></li>
                                     <li class="nav-item dropdown">

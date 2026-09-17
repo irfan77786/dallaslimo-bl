@@ -109,13 +109,13 @@ $step = 3;
 
     .input-group-container input:focus {
         outline: none;
-        border-color: #e52c43;
+        border-color: #171717;
     }
 
     .continue-btn {
         width: 100%;
         padding: 11px;
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
+        background: #171717;
         border: none;
         color: #fff;
         font-size: 14px;
@@ -128,7 +128,7 @@ $step = 3;
     #continue_right {
         width: 100%;
         padding: 11px;
-        background: linear-gradient(90deg, #e52c43, #ff6c00);
+        background: #171717;
         border: none;
         color: #fff;
         font-size: 14px;
@@ -158,7 +158,7 @@ $step = 3;
     }
 
     .benefit-item i {
-        color: #e52c43;
+        color: #171717;
         margin-right: 8px;
         margin-top: 2px;
         font-size: 14px;
@@ -181,7 +181,7 @@ $step = 3;
     .login-btn {
         width: 100%;
         padding: 11px;
-        background: #e52c43;
+        background: #171717;
         border: none;
         color: #fff;
         font-size: 14px;
