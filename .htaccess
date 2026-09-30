@@ -1,0 +1,37 @@
+Options -Indexes
+
+<IfModule mod_mime.c>
+    AddType image/jpeg .jpg .jpeg .jfif .jif .jfi
+    AddType image/png .png
+    AddType image/webp .webp
+    AddType image/gif .gif
+    AddType image/svg+xml .svg
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Already inside /public — stop here
+    RewriteRule ^public/ - [L]
+
+    # Serve uploaded files from storage/app/public (no storage:link needed)
+    # URL stays /storage/vehicles/file.jfif
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{DOCUMENT_ROOT}/storage/app/public/$1 -f
+    RewriteRule ^storage/(.*)$ storage/app/public/$1 [L]
+
+    # If php artisan storage:link exists, serve from public/storage
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{DOCUMENT_ROOT}/public/storage/$1 -f
+    RewriteRule ^storage/(.*)$ public/storage/$1 [L]
+
+    # Existing static files inside /public (css, js, img, plugins)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Laravel front controller
+    # Do NOT use !-d here — "/" is a real directory and would block the homepage
+    RewriteRule ^ public/index.php [L]
+</IfModule>
