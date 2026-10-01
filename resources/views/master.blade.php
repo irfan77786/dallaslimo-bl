@@ -84,13 +84,7 @@
                     </div>
                 </div>
                 @if($hideHeaderItems)
-                <div class="col-6 col-lg-9 d-flex align-items-center justify-content-end">
-                    <a href="tel:+12148978056"
-                        class="text-dark fw-semibold text-decoration-none d-inline-flex align-items-center gap-2">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>+1 214-919-5377</span>
-                    </a>
-                </div>
+                {{-- Booking steps: logo only, no phone number --}}
                 @else
                 <div class="col-6 col-lg-9 d-flex align-items-center justify-content-end">
                     <nav class="p-0 custom-navbar navbar navbar-expand-lg position-static">

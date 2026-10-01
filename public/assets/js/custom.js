@@ -287,8 +287,20 @@ window.syncMobileMapToHeroImage = syncMobileMapToHeroImage;
 function setBannerMapActive(isActive) {
     const banner = document.querySelector(".banner-section");
     const mapElement = document.getElementById("map");
+    const homeText = document.getElementById("home-text-content");
     if (banner) {
         banner.classList.toggle("map-active", !!isActive);
+    }
+    if (homeText) {
+        if (isActive) {
+            homeText.style.setProperty("display", "none", "important");
+            homeText.style.setProperty("visibility", "hidden", "important");
+            homeText.style.pointerEvents = "none";
+        } else {
+            homeText.style.removeProperty("display");
+            homeText.style.removeProperty("visibility");
+            homeText.style.pointerEvents = "auto";
+        }
     }
     if (isActive) {
         syncMobileMapToHeroImage();

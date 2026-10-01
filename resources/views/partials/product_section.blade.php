@@ -353,7 +353,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     /* ==== Responsive adjustments ==== */
     @media (max-width: 767.98px) {
         .vehical-card {
-            padding: 0.75rem;
+            padding: 0.75rem 0.6rem !important;
             position: relative;
         }
 
@@ -362,8 +362,9 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
         }
 
         .pass-luggage-info i {
-            font-size: 13px !important;
-
+            font-size: 12px !important;
+            margin-right: 4px !important;
+            flex-shrink: 0;
         }
 
         .px-3.mob_top_summary {
@@ -375,29 +376,36 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
 
         .vehical-card .d-flex {
             flex-wrap: nowrap !important;
-            align-items: center;
+            align-items: center !important;
+            gap: 6px;
         }
 
         .vehicle-img-container {
-            width: auto;
-            flex: 0 0 auto;
+            width: 110px !important;
+            max-width: 30% !important;
+            flex: 0 0 110px !important;
         }
 
         .vehicle_img {
-            max-height: 90px;
-            width: 170px;
+            max-height: 70px !important;
+            width: 100% !important;
+            max-width: 110px !important;
+            object-fit: contain;
         }
 
         .vehicle-info {
             min-width: 0 !important;
-            margin: 0 8px !important;
-            flex: 1 1 auto;
+            margin: 0 4px !important;
+            flex: 1 1 auto !important;
         }
 
         .vehicle-info>.vehicle-name {
-            font-size: 13px;
-            margin-bottom: 5px;
+            font-size: 13px !important;
+            margin-bottom: 4px !important;
             line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .vehicle-info>.vehicle-description {
@@ -405,16 +413,28 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
         }
 
         .pass-luggage-info {
-            display: block;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
             margin-top: 0.1rem;
             margin-bottom: 0;
-            font-size: 0.8rem;
-            gap: 6px;
-            flex-wrap: nowrap;
+            font-size: 0.75rem !important;
+            gap: 2px !important;
+            flex-wrap: nowrap !important;
         }
 
         .pass-luggage-info>div {
-            margin-right: 0.75rem;
+            display: inline-flex !important;
+            align-items: center !important;
+            flex-wrap: nowrap !important;
+            white-space: nowrap !important;
+            margin-right: 0 !important;
+            gap: 0;
+        }
+
+        .pass-luggage-info>div span {
+            white-space: nowrap !important;
+            display: inline !important;
         }
 
         .car-price-container {
@@ -422,31 +442,30 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
             right: auto;
             top: auto;
             transform: none;
-            flex: 0 0 auto;
-            min-width: 88px !important;
-            max-width: 34%;
+            flex: 0 0 auto !important;
+            min-width: 78px !important;
+            max-width: none !important;
             text-align: right !important;
             margin-top: 0;
-            white-space: normal;
-            /* allow wrapping inside price container */
+            white-space: nowrap;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            /* keep wrapped lines right-aligned */
         }
 
         .car-price h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem !important;
+            font-size: 0.9rem !important;
+            margin: 0 0 0.15rem !important;
+            margin-top: 0 !important;
         }
 
         .pricing_summary_price {
-            font-size: 1.25rem;
+            font-size: 1.05rem !important;
         }
 
         .car-price .pricing_summary_price {
-            white-space: nowrap;
-            /* keep numeric part on one line; USD may wrap */
+            white-space: nowrap !important;
+            font-size: 1.05rem !important;
         }
 
         .car-price-container .btn {
@@ -458,13 +477,13 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
         }
 
         .price-gratuity {
-            font-size: 14px;
-            gap: 4px;
-            white-space: nowrap;
+            font-size: 11px !important;
+            gap: 3px;
+            white-space: nowrap !important;
         }
 
         .price-gratuity i {
-            font-size: 0.82rem;
+            font-size: 0.75rem !important;
         }
 
         .feature_items_cont {
@@ -527,12 +546,23 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
     }
 
     .side_section .card .card-body .card-title {
+        margin: 0 0 8px;
+        font-weight: 600;
         font-size: 1rem;
         display: flex;
         align-items: center;
         gap: 8px;
         line-height: 1.5;
-        margin: 0;
+    }
+
+    .side_section .secure-payments-cards,
+    .side_section .payment-methods {
+        display: block !important;
+        max-width: 180px !important;
+        width: 180px !important;
+        height: auto !important;
+        margin: 0 0 8px 0 !important;
+        padding: 0 !important;
     }
 
     .side_section .card .card-body a.mail_side {
@@ -1009,10 +1039,8 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
                                         <div class="mx-3 vehicle-info flex-grow-1">
                                             <h5 class="vehicle-name">{{ $value['vehicle_name'] }}</h5>
                                             <div class="pass-luggage-info">
-                                                <div><i class="bi bi-people-fill"></i> Max. {{
-                                                    $value['number_of_passengers'] }}</div>
-                                                <div><i class="bi bi-bag-fill"></i> Max. {{ $value['luggage_capacity']
-                                                    }}</div>
+                                                <div><i class="bi bi-people-fill"></i><span>Max. {{ $value['number_of_passengers'] }}</span></div>
+                                                <div><i class="bi bi-bag-fill"></i><span>Max. {{ $value['luggage_capacity'] }}</span></div>
                                             </div>
                                             <h6 class="vehicle-description">{{ $value['description'] ?? 'No description
                                                 available' }}</h6>
@@ -1024,7 +1052,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
                                             @if($vehicleDistance && empty($vehicleDistance['error']))
                                             <div class="car-price">
                                                 @if($requiresMoreHours)
-                                                <h4 class="mt-4 mb-1">
+                                                <h4 class="mb-1">
                                                     <span class="pricing_summary_price hourly-min">Min. {{
                                                         $requiredMinHours }} Hour</span>
                                                 </h4>
@@ -1033,7 +1061,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
                                                 $price = number_format($vehicleDistance['price'], 2);
                                                 [$whole, $decimal] = explode('.', $price);
                                                 @endphp
-                                                <h4 class="mt-4 mb-1">
+                                                <h4 class="mb-1">
                                                     <span class="pricing_summary_price">${{ $whole }}<span
                                                             class="price-decimal">.{{ $decimal }}</span></span>
                                                 </h4>
@@ -1112,7 +1140,7 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
                         <hr>
                         <h6 class="card-title">Secure payments</h6>
                         <img src="{{ asset('assets/img/credit-cards.png') }}" alt="Payment methods"
-                            class="step-tow-img img-fluid payment-methods">
+                            class="step-tow-img img-fluid payment-methods secure-payments-cards">
                         <hr>
                         <h6 class="card-title text-dark"><i class="bi bi-chat-left-text-fill"></i>Email Support</h6>
                         <p class="card-text">Reach us anytime for quick assistance.</p>

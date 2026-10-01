@@ -16,39 +16,41 @@
 @endphp
 <style>
     .pricing_summary_label {
-    margin: 0px;
+    margin: 0;
     font-weight: 400;
     line-height: 1.5;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #000;
 }
 .pricing_summary_price{
-    font-weight: 400;
-    line-height: 1.334;
-    font-size: 1.5rem;
+    font-weight: 400 !important;
+    line-height: 1.5;
+    font-size: 1rem;
     color: #000;
 }
 .pricing_total_label {
-    margin: 0px;
-    font-weight: 400;
+    margin: 0;
+    font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.334;
-    color: var(--dark-bg-btn);
+    color: #171717;
 }
 .pricing_total_price{
-    margin: 0px;
-    font-weight: 400;
+    margin: 0;
+    font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.334;
-    color: var(--dark-bg-btn);
+    color: #171717;
 }
 .total_price_box{
-    margin-top:16px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e5e5;
 }
 .price-decimal {
     font-size: 0.75em;
     vertical-align: super;
-
+    font-weight: inherit;
 }
 .payment_method_info_box {
     display: flex;

@@ -109,19 +109,25 @@
 
 .mobile-card-methods {
     display: block;
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
+    width: 100%;
 }
 
-.mobile-card-methods .payment-methods {
-    margin-left: 0 !important;
-    max-width: 220px;
+.mobile-card-methods .payment-methods,
+.mobile-card-methods .last-page-img {
+    display: block !important;
+    margin: 8px 0 0 !important;
+    max-width: 180px !important;
+    width: 180px !important;
+    height: auto !important;
 }
 
  .payment-methods {
-    display: flex !important;
-    margin-top: 1px !important;
-    max-width: 88% !important;
+    display: block !important;
+    margin-top: 6px !important;
+    max-width: 200px !important;
+    margin-left: 0 !important;
 }
 
 .container.py-md-5 {

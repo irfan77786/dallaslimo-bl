@@ -54,6 +54,13 @@
         z-index: 10;
     }
 
+    .banner-section.map-active #home-text-content,
+    .banner-section.map-active #home-text-content .btn-primary {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
     @media (max-width: 767px) {
         .banner-section.map-active #map {
             display: block;

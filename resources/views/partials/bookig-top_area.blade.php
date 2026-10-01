@@ -391,13 +391,12 @@ main {
 
 <!-- Mobile Steps: moved above summary -->
 <div class="px-3 py-2 d-md-none" style="background-color: rgb(250, 250, 250);">
-    <p class="mb-1 step-header">STEP {{ $currentStep }} OF {{ count($steps) }}</p>
-    <div class="row">
+    <div class="row align-items-center">
         <div class="col-6">
-            <h5 class="mb-2 step-title">{{ $steps[$currentStep]['label'] }}</h5>
+            <h5 class="mb-0 step-title">{{ $steps[$currentStep]['label'] }}</h5>
         </div>
         <div class="col-6">
-            <div class="mob-step-dots d-flex align-items-center">
+            <div class="mob-step-dots d-flex align-items-center justify-content-end">
                 @foreach ($steps as $index => $stepData)
                     @php
                         $isCompleted = ($index < $currentStep);
@@ -406,10 +405,10 @@ main {
                     @endphp
                     @if($stepData['route'])
                         <a href="{{ $stepData['route'] }}" class="trigger-loader">
-                            <span class="mob-step-dot {{ $cls }}">@if($isCompleted)&#10003;@else{{ $index }}@endif</span>
+                            <span class="mob-step-dot {{ $cls }}">@if($isCompleted)&#10003;@elseif($isActive){{ $index }}@endif</span>
                         </a>
                     @else
-                        <span class="mob-step-dot {{ $cls }}">@if($isCompleted)&#10003;@else{{ $index }}@endif</span>
+                        <span class="mob-step-dot {{ $cls }}">@if($isCompleted)&#10003;@elseif($isActive){{ $index }}@endif</span>
                     @endif
                 @endforeach
             </div>
