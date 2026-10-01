@@ -523,6 +523,20 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  line-height: 0;
+}
+
+.floating-bordered-input .input-icon-left svg,
+.floating-bordered-input .input-icon-right svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .floating-bordered-input .input-icon-left {
@@ -562,38 +576,64 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
   line-height: 1.2 !important;
 }
 
-/* Date & time values sit next to the left icon (like Destination) */
+/* Date & time: icon + value vertically centered, value tight after icon */
 .floating-bordered-input input[type="date"],
 .floating-bordered-input input[type="time"] {
   text-align: left;
   text-align-last: left;
   position: relative;
   direction: ltr;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 56px;
+  height: 56px;
+  line-height: 56px;
 }
 
 .floating-bordered-input input[type="date"]::-webkit-date-and-time-value,
 .floating-bordered-input input[type="time"]::-webkit-date-and-time-value {
   text-align: left !important;
   margin: 0 !important;
-  width: auto !important;
+  padding: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
 }
 
 .floating-bordered-input input[type="date"]::-webkit-datetime-edit,
 .floating-bordered-input input[type="time"]::-webkit-datetime-edit {
   text-align: left !important;
-  width: auto !important;
+  width: 100% !important;
+  max-width: 100%;
   display: inline-flex;
+  align-items: center;
   padding: 0;
   margin: 0;
+  line-height: 1.2;
+  height: 100%;
+}
+
+.floating-bordered-input input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+.floating-bordered-input input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: auto !important;
+  padding: 0 !important;
 }
 
 .floating-bordered-input input[type="date"]::-webkit-calendar-picker-indicator,
 .floating-bordered-input input[type="time"]::-webkit-calendar-picker-indicator {
   position: absolute;
+  left: 0;
   right: 0;
-  opacity: 0;
+  top: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
   cursor: pointer;
 }
 
@@ -1294,6 +1334,19 @@ a.btn.btn-primary.fifa-btn {
 }
 
 @media (max-width: 768px) {
+  /* iOS Safari zooms inputs under 16px on focus — lock font size to prevent zoom */
+  .form-control,
+  .form-select,
+  .floating-bordered-input .form-control,
+  .floating-bordered-input input,
+  .floating-bordered-input textarea,
+  .floating-bordered-input select,
+  .search-tab-wrap input,
+  .search-tab-wrap select,
+  .search-tab-wrap textarea {
+    font-size: 16px !important;
+  }
+
   .col-md-6.col-sm-6 {
     width: 50%;
   }
@@ -1521,14 +1574,45 @@ a.btn.btn-primary.fifa-btn {
   .floating-bordered-input input[type="time"] {
     text-align: left !important;
     text-align-last: left !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 56px !important;
+    height: 56px !important;
+    line-height: 56px !important;
+  }
+
+  .floating-bordered-input .input-icon-left,
+  .floating-bordered-input .input-icon-right {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
 
   .floating-bordered-input input[type="date"]::-webkit-date-and-time-value,
-  .floating-bordered-input input[type="time"]::-webkit-date-and-time-value,
+  .floating-bordered-input input[type="time"]::-webkit-date-and-time-value {
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
   .floating-bordered-input input[type="date"]::-webkit-datetime-edit,
   .floating-bordered-input input[type="time"]::-webkit-datetime-edit {
     text-align: left !important;
     margin: 0 !important;
+    width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    line-height: 1.2 !important;
+  }
+
+  .floating-bordered-input input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+  .floating-bordered-input input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
     width: auto !important;
   }
 
