@@ -244,7 +244,14 @@ $tabSuffix = $id_suffix ?? '';
                     <!-- Select Hours -->
                     <div class="floating-bordered-input position-relative rlx-theme">
                         <span class="floating-label">Select Duration</span>
-                        <span class="input-icon-left"><i class="bi bi-clock-fill"></i></span>
+                        <span class="input-icon-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </span>
 
                         <div class="rlx-select" id="rlx-hours{{ $tabSuffix }}" data-name="select_hours"
                             data-initial="{{ session('select_hours') ?? '' }}">
@@ -349,17 +356,21 @@ $tabSuffix = $id_suffix ?? '';
         margin-top: 10px;
     }
 
-    /* Keep duration trigger content vertically centered */
+    /* Left-aligned value, vertically centered in the input */
     .floating-bordered-input.rlx-theme .rlx-select .rlx-trigger {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         min-height: 46px;
         padding: 0 36px 0 0 !important;
         padding-bottom: 0 !important;
+        text-align: left;
     }
 
     .rlx-select .rlx-value {
         pointer-events: none;
+        text-align: left;
+        width: auto;
     }
 
     .rlx-select .rlx-arrow {

@@ -161,7 +161,17 @@
     color: #646e73 !important;
 }
 .mob_top_summary{
-    margin-top:12px;
+    margin-top: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #fafafa;
+}
+#mobileRideSummary {
+    background-color: #fafafa;
+}
+#mobileRideSummary .mob_top_summary .mt-2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 .summary_label{
     margin: 0;
@@ -288,6 +298,15 @@
     .mob_top_summary .summary-label-inline{ flex:0 0 100%; margin-bottom:2px; font-size:0.8rem !important; font-weight:600; color:#000 !important; }
     .mob_top_summary .summary-leader{ display:none !important; }
     .mob_top_summary .summary-value-inline{ flex:0 0 100%; white-space:normal; overflow:visible; text-overflow:clip; font-size:0.8rem !important; color:#6b7280 !important; }
+    .mob_top_summary {
+        margin-top: 0 !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        background-color: #fafafa !important;
+    }
+    #mobileRideSummary {
+        background-color: #fafafa !important;
+    }
     .summary-section-title{ font-weight:700; color:#1f2937; }
     .summary-section-divider{ height:0; border-bottom:1px solid #e5e7eb; margin:8px 0; }
 }
@@ -488,7 +507,7 @@ main {
             @endif
             @endif
 
-            <div class="mt-2">
+            <div class="mt-2 mb-0 summary-edit-wrap">
                 <a href="/booking?edit=1">
                     <button class="px-3 py-1 btn btn-primary btn-sm font-weight-bold" style="font-size: 14px;padding: 5px 8px !important;">EDIT</button>
                 </a>

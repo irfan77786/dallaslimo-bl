@@ -114,27 +114,42 @@ $step = 3;
 
     .continue-btn {
         width: 100%;
-        padding: 11px;
+        padding: 12px 24px !important;
         background: #171717;
         border: none;
         color: #fff;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        line-height: 2;
+        min-height: 48px;
         border-radius: 4px;
         cursor: pointer;
         transition: background 0.3s;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #continue_right {
         width: 100%;
-        padding: 11px;
+        padding: 12px 24px !important;
         background: #171717;
         border: none;
         color: #fff;
-        font-size: 14px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        line-height: 2;
+        min-height: 48px;
         border-radius: 4px;
         cursor: pointer;
         transition: background 0.3s;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .benefits-section {
@@ -180,27 +195,41 @@ $step = 3;
 
     .login-btn {
         width: 100%;
-        padding: 11px;
+        padding: 12px 24px !important;
         background: #171717;
         border: none;
         color: #fff;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        line-height: 2;
+        min-height: 48px;
         border-radius: 4px;
         cursor: pointer;
         transition: background 0.3s;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .login-btn:hover {
-        background: #145570;
+        background: #a1bd71;
     }
 
     .cta-button {
         width: 100%;
         margin: 12px auto 0;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-weight: 600;
         letter-spacing: 2px;
+        font-size: 0.8rem;
+        line-height: 2;
+        padding: 12px 24px !important;
+        min-height: 48px;
+        text-transform: uppercase;
     }
 
     @media (min-width: 992px) {

@@ -130,7 +130,7 @@ a.btn-loadmore:hover {
 }
 
 /* =========================
-   BUTTONS
+   BUTTONS (match Get My Prices)
 ========================= */
 
 a.btn-booking-start {
@@ -143,48 +143,109 @@ a.btn-booking-start:hover {
   color: #fff !important;
 }
 
-.btn-primary {
-  border-radius: 4px;
-}
-
-button.mt-2.select_car_btn.btn.btn_dark.btn-primary.trigger-loader {
-  min-width: 18px !important;
-  color: #000 !important;
-  background: #ebebeb !important;
-  font-weight: 400 !important;
-  letter-spacing: 1px !important;
-  font-size: 14px !important;
-}
-
-button.mt-2.select_car_btn.btn.btn_dark.btn-primary.trigger-loader:hover {
-  background: #171717 !important;
-  color: #fff !important;
-  border-radius: 5px;
-}
-
-button.mr-3.btn.btn-outline.btn-uniform.skip-btn {
-  background: #ebebeb;
-  border-radius: 4px;
-  margin-right: 30px;
-}
-
+.btn-primary,
+a.btn-primary,
+button.btn-primary,
+.search_btn,
+.cta-button,
+.btn-uniform.btn-primary,
+.continue-btn.btn-primary,
+.login-btn.btn-primary,
+.vehicle-continue-btn,
+button#submit-button,
 button#final-pay-button,
-button#submit-button.cta-button,
-.cta-button.btn-primary {
+.contact-form form button,
+.btn-submit {
   background: #171717 !important;
   background-color: #171717 !important;
   border-color: #171717 !important;
   color: #fff !important;
   border-radius: 4px !important;
+  border-width: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  line-height: 2 !important;
+  padding: 12px 24px !important;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
 }
 
+.btn-primary:hover,
+a.btn-primary:hover,
+button.btn-primary:hover,
+.search_btn:hover,
+.cta-button:hover,
+.btn-uniform.btn-primary:hover,
+.continue-btn.btn-primary:hover,
+.login-btn.btn-primary:hover,
+.vehicle-continue-btn:hover,
+button#submit-button:hover,
 button#final-pay-button:hover,
-button#submit-button.cta-button:hover,
-.cta-button.btn-primary:hover {
+.contact-form form button:hover,
+.btn-submit:hover {
   background: #a1bd71 !important;
   background-color: #a1bd71 !important;
   border-color: #a1bd71 !important;
   color: #fff !important;
+}
+
+.btn-primary.w-100,
+a.btn-primary.w-100,
+.search_btn.w-100,
+.cta-button,
+button#submit-button,
+button#final-pay-button {
+  width: 100%;
+  display: flex;
+}
+
+/* Keep vehicle SELECT action distinct (not the main CTA style) */
+button.mt-2.select_car_btn.btn.btn_dark.btn-primary.trigger-loader,
+button.select-vehicle.btn.btn-primary,
+.btn-primary.trigger-loader.select_car_btn,
+button.mt-2.select_car_btn.btn.btn_dark.btn-primary.trigger-loader {
+  min-width: 18px !important;
+  min-height: auto !important;
+  color: #000 !important;
+  background: #ebebeb !important;
+  background-color: #ebebeb !important;
+  border-color: #ebebeb !important;
+  font-weight: 400 !important;
+  letter-spacing: 1px !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  padding: 8px 14px !important;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+button.mt-2.select_car_btn.btn.btn_dark.btn-primary.trigger-loader:hover {
+  background: #171717 !important;
+  background-color: #171717 !important;
+  color: #fff !important;
+  border-radius: 5px;
+}
+
+button.mr-3.btn.btn-outline.btn-uniform.skip-btn {
+  background: #ebebeb !important;
+  background-color: #ebebeb !important;
+  border-color: #ebebeb !important;
+  color: #171717 !important;
+  border-radius: 4px;
+  margin-right: 30px;
+  min-height: 48px;
+  padding: 12px 24px !important;
+  letter-spacing: 2px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  line-height: 2 !important;
+  text-transform: uppercase;
 }
 
 button.btn.btn-primary.btn-sm {
@@ -196,7 +257,7 @@ button.btn.btn-primary.btn-sm {
 }
 
 .continue-btn {
-  padding: 9px 11px !important;
+  padding: 12px 24px !important;
 }
 
 .continue-button {
@@ -281,13 +342,19 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
 .search-tab-wrap .nav-tabs::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: var(--tab-line-left, 0%);
   bottom: 0;
   width: 50%;
   height: 2px;
   background: #a1bd71;
   transition: left 0.4s ease;
   z-index: 1;
+}
+
+/* Move underline under the active tab (Hourly = 2nd tab) */
+.search-tab-wrap .nav-tabs:has(.nav-item:nth-child(2) > .nav-link.active)::after,
+.search-tab-wrap .nav-tabs.tab-line-hourly::after {
+  left: 50%;
 }
 
 .search-tab-wrap .nav-tabs .nav-link {
@@ -471,7 +538,45 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
   min-height: 42px;
   padding-left: 0 !important;
   text-align: left;
+  justify-content: flex-start;
   padding-bottom: 10px !important;
+}
+
+.rlx-select .rlx-value {
+  text-align: left;
+  width: auto;
+}
+
+/* iPhone/Safari: center native date & time values */
+.floating-bordered-input input[type="date"],
+.floating-bordered-input input[type="time"] {
+  text-align: center;
+  text-align-last: center;
+  position: relative;
+}
+
+.floating-bordered-input input[type="date"]::-webkit-date-and-time-value,
+.floating-bordered-input input[type="time"]::-webkit-date-and-time-value {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.floating-bordered-input input[type="date"]::-webkit-datetime-edit,
+.floating-bordered-input input[type="time"]::-webkit-datetime-edit {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+
+.floating-bordered-input input[type="date"]::-webkit-calendar-picker-indicator,
+.floating-bordered-input input[type="time"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .hours-space {
@@ -640,51 +745,50 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
   z-index: 1;
 }
 
-/* Mobile: map sits below the booking form (not behind it) */
+/* Mobile: map replaces the hero image above the form */
 @media (max-width: 767px) {
-  .banner-section {
-    display: flex;
-    flex-direction: column;
+  .banner-section > .container-fluid {
+    position: relative;
   }
 
-  .banner-section > .container-fluid {
-    order: 1;
-    position: relative;
-    z-index: 3;
+  .banner-section:not(.map-active) > #map,
+  .banner-section:not(.map-active) > div#map {
+    display: none !important;
+  }
+
+  .banner-section.map-active > #map,
+  .banner-section.map-active > div#map {
+    display: block !important;
   }
 
   .banner-section > #map,
   .banner-section > div#map {
-    order: 2;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
+    position: absolute !important;
+    top: var(--mobile-map-top, 0px) !important;
+    left: var(--mobile-map-left, 0px) !important;
     right: auto !important;
     bottom: auto !important;
-    width: 100% !important;
-    height: 280px !important;
-    min-height: 280px !important;
-    max-height: 280px !important;
+    width: var(--mobile-map-w, 100%) !important;
+    height: var(--mobile-map-h, 250px) !important;
+    min-height: 0 !important;
+    max-height: none !important;
     z-index: 2 !important;
-    margin: 10px 0 0;
-    border-radius: 12px;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 20px;
     overflow: hidden;
-    border: 1px solid #e5e5e5;
-  }
-
-  .banner-section > .container {
-    order: 3;
-    position: relative;
-    z-index: 1;
   }
 
   .banner-section.map-active .bg-img-cover.only-m {
-    display: none !important;
+    visibility: hidden !important;
+    display: block !important;
+    pointer-events: none !important;
   }
 
   .banner-section.map-active .distance-form-holder.d-md-none,
   .banner-section.map-active .distance-form-holder {
-    margin-top: 0 !important;
+    position: relative;
+    z-index: 10;
   }
 
   .banner-section.map-active #home-text-content {
@@ -789,27 +893,68 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
 }
 
 .payment-methods {
-  display: flex !important;
+  display: block !important;
   margin-top: 8px !important;
   max-width: 100% !important;
-  margin-left: 15px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-.mobile-card-methods {
-  display: block !important;
-  width: 280px;
+.payment_method_info_box {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin-top: 12px !important;
 }
 
+.payment_method_info_box .secure-pay-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  width: max-content !important;
+  margin: 0 auto !important;
+}
+
+.payment_method_info_box .secure-pay-label,
 .payment_method_info_box p {
-  margin: 9px 0 0 !important;
+  display: block !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
   font-weight: 400;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #9e9e9e;
+  text-align: center !important;
 }
 
-.payment-methods {
-  max-width: 66%;
+.payment_method_info_box .powered-by-line {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  color: #bdbdbd !important;
+  white-space: nowrap !important;
+}
+
+.payment_method_info_box .stripe-logo {
+  display: block !important;
+  width: 48px !important;
+  height: 19px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.payment_method_info_box .stripe-powered-badge {
+  display: none !important;
 }
 
 input.InputElement.is-complete.Input {
@@ -1190,10 +1335,31 @@ a.btn.btn-primary.fifa-btn {
     display: none !important;
   }
 
+  .payment_method_info_box {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .payment_method_info_box .secure-pay-stack {
+    margin: 0 auto !important;
+    align-items: center !important;
+  }
+
+  .payment_method_info_box .powered-by-line {
+    justify-content: center !important;
+  }
+
+  .payment_method_info_box .stripe-logo {
+    width: 48px !important;
+    height: 19px !important;
+    margin: 0 !important;
+  }
+
   .payment-methods {
     margin-top: 1px !important;
     max-width: 88% !important;
-    margin-left: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .mobile-card-methods {
@@ -1261,7 +1427,20 @@ a.btn.btn-primary.fifa-btn {
   }
 
   .floating-bordered-input.rlx-theme .rlx-select .rlx-arrow {
-    left: 314px;
+    left: auto !important;
+    right: 8px !important;
+  }
+
+  .floating-bordered-input.rlx-theme .rlx-select .rlx-trigger {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    align-items: center !important;
+  }
+
+  .floating-bordered-input input[type="date"],
+  .floating-bordered-input input[type="time"] {
+    text-align: center !important;
+    text-align-last: center !important;
   }
 
   h5.mb-2.step-title {
@@ -1305,7 +1484,7 @@ a.btn.btn-primary.fifa-btn {
 
   .banner-section > #map,
   .banner-section > div#map {
-    border: 1px solid #e5e5e5 !important;
+    border: none !important;
   }
 
   .p-3.mt-3.rounded-lg.shadow-sm.bg-light {

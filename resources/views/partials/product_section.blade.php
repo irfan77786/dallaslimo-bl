@@ -106,9 +106,15 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
 
     .vehicle-continue-btn {
         white-space: nowrap;
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 12px 24px !important;
+        font-size: 0.8rem !important;
+        line-height: 2 !important;
+        letter-spacing: 2px !important;
         min-width: 185px;
+        min-height: 48px;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
     }
 
     .vehicle-continue-btn.disabled,
@@ -361,10 +367,10 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
         }
 
         .px-3.mob_top_summary {
-            background: #fff;
+            background: #fafafa !important;
             margin-top: 0px;
-            padding-top: 5px;
-            padding-bottom: 18px;
+            padding-top: 12px !important;
+            padding-bottom: 12px !important;
         }
 
         .vehical-card .d-flex {

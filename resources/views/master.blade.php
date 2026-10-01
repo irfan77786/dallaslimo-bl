@@ -42,7 +42,7 @@
     <link rel="shortcut icon" href="{{ asset('dallaslimo-bl-design/img/favicon.png') }}?v=2">
     <link rel="apple-touch-icon" href="{{ asset('dallaslimo-bl-design/img/favicon.png') }}?v=2">
     <!-- Old Custom CSS (for form styles) -->
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}?v={{ filemtime(public_path('assets/css/custom.css')) }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-material-datetimepicker.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">

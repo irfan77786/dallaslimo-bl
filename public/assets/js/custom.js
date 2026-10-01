@@ -267,11 +267,31 @@ function resetMap() {
 
 window.resetMap = resetMap;
 
+function syncMobileMapToHeroImage() {
+    if (window.innerWidth >= 768) return;
+    const banner = document.querySelector(".banner-section");
+    const imgWrap = document.querySelector(".banner-section .bg-img-cover.only-m img")
+        || document.querySelector(".banner-section .bg-img-cover.only-m");
+    if (!banner || !imgWrap) return;
+    const imgRect = imgWrap.getBoundingClientRect();
+    const bannerRect = banner.getBoundingClientRect();
+    if (imgRect.height < 1) return;
+    banner.style.setProperty("--mobile-map-top", imgRect.top - bannerRect.top + "px");
+    banner.style.setProperty("--mobile-map-left", imgRect.left - bannerRect.left + "px");
+    banner.style.setProperty("--mobile-map-w", imgRect.width + "px");
+    banner.style.setProperty("--mobile-map-h", imgRect.height + "px");
+}
+
+window.syncMobileMapToHeroImage = syncMobileMapToHeroImage;
+
 function setBannerMapActive(isActive) {
     const banner = document.querySelector(".banner-section");
     const mapElement = document.getElementById("map");
     if (banner) {
         banner.classList.toggle("map-active", !!isActive);
+    }
+    if (isActive) {
+        syncMobileMapToHeroImage();
     }
     if (isActive && mapElement && typeof google !== "undefined" && google.maps && map) {
         setTimeout(function () {
@@ -307,8 +327,46 @@ timeInputs.forEach((input) => {
     });
 });
 
+window.addEventListener("resize", function () {
+    if (!document.querySelector(".banner-section.map-active")) return;
+    syncMobileMapToHeroImage();
+    if (typeof map !== "undefined" && map && window.google && google.maps) {
+        google.maps.event.trigger(map, "resize");
+    }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     initAllBookingDateTimeRestrictions();
+
+    const heroImg = document.querySelector(".banner-section .bg-img-cover.only-m img");
+    if (heroImg) {
+        if (heroImg.complete) {
+            syncMobileMapToHeroImage();
+        } else {
+            heroImg.addEventListener("load", syncMobileMapToHeroImage);
+        }
+    }
+
+    // Keep booking form tab underline under the active tab
+    document.querySelectorAll(".search-tab-wrap .nav-tabs").forEach(function (nav) {
+        const syncTabLine = function () {
+            const links = nav.querySelectorAll(".nav-link");
+            let activeIndex = 0;
+            links.forEach(function (link, i) {
+                if (link.classList.contains("active")) activeIndex = i;
+            });
+            const isHourly = activeIndex > 0;
+            nav.classList.toggle("tab-line-hourly", isHourly);
+            nav.style.setProperty("--tab-line-left", isHourly ? "50%" : "0%");
+        };
+        syncTabLine();
+        nav.querySelectorAll('[data-bs-toggle="tab"]').forEach(function (tab) {
+            tab.addEventListener("shown.bs.tab", syncTabLine);
+            tab.addEventListener("click", function () {
+                setTimeout(syncTabLine, 0);
+            });
+        });
+    });
 
     const $pickup = $(
         "#pickup-location, #pickup-location_mobile, #pickup-location_form",

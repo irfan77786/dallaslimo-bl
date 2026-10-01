@@ -24,8 +24,8 @@
 }
 .pricing_summary_price{
     font-weight: 400;
-    line-height: 1.5;
-    font-size: 1.2rem;
+    line-height: 1.334;
+    font-size: 1.5rem;
     color: #000;
 }
 .pricing_total_label {
@@ -51,28 +51,67 @@
 
 }
 .payment_method_info_box {
-    display: grid;
+    display: flex;
     justify-content: center;
-    text-align: center;
-
+    width: 100%;
+    margin-top: 12px;
 }
-.payment_method_info_box p{
-    margin: 16px 0px 0px;
+.payment_method_info_box .secure-pay-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: max-content;
+    margin: 0 auto;
+}
+.payment_method_info_box .secure-pay-label {
+    margin: 0;
+    padding: 0;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.2;
     color: #9e9e9e;
+    text-align: center;
+}
+.payment_method_info_box .powered-by-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1;
+    color: #bdbdbd;
+    white-space: nowrap;
+}
+.payment_method_info_box .stripe-logo {
+    display: block;
+    width: 48px;
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    flex-shrink: 0;
 }
 .cta-button {
     width: 100%;
     margin: 12px auto 0;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 600;
     letter-spacing: 2px;
+    font-size: 0.8rem;
+    line-height: 2;
+    padding: 12px 24px !important;
+    min-height: 48px;
     background: #171717 !important;
     border-color: #171717 !important;
     color: #fff !important;
     border-radius: 4px !important;
+    text-transform: uppercase;
 }
 .cta-button:hover {
     background: #a1bd71 !important;
@@ -168,7 +207,7 @@
     <button type="submit"
             class="btn btn-primary w-100 btn-uniform cta-button"
             id="submit-button"
-            style="width: 100%; text-transform: uppercase; padding: 0.575rem .75rem !important; border-color: unset;"
+            style="width: 100%; text-transform: uppercase; border-color: unset;"
             form="{{ $targetForm }}">
         @if($currentStep == 5)
             BOOK NOW
@@ -186,9 +225,19 @@
 @endif
 
                     <div class="payment_method_info_box">
-                        <p class="mt-2 mb-0">Secure payments</p>
-                        <img src="{{ asset('assets/img/stripe-powered-light.svg') }}" alt="Payment methods" class="img-fluid payment-methods" style="margin-left: 30px;" >
-
+                        <div class="secure-pay-stack">
+                            <span class="secure-pay-label">Secure payments</span>
+                            <span class="powered-by-line">
+                                Powered by
+                                <img
+                                    src="{{ asset('assets/img/stripe-logo-gray.svg') }}"
+                                    alt="Stripe"
+                                    class="stripe-logo"
+                                    width="52"
+                                    height="21"
+                                >
+                            </span>
+                        </div>
                     </div>
                 </div>
 
