@@ -343,34 +343,38 @@ $tabSuffix = $id_suffix ?? '';
         background: transparent;
         border: none;
         border-radius: 0;
-        padding: 0 44px 0 44px;
-        margin-top: 10px;
+        padding: 0 36px 0 0;
+        margin-top: 0;
         color: #1f2937;
         font-size: 16px;
-        line-height: 1.45;
-        min-height: 42px;
+        line-height: 1.2;
+        min-height: 56px;
         text-align: left;
     }
 
     .floating-bordered-input .rlx-select .rlx-trigger {
-        margin-top: 10px;
+        margin-top: 0;
     }
 
     /* Left-aligned value, vertically centered in the input */
     .floating-bordered-input.rlx-theme .rlx-select .rlx-trigger {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        min-height: 46px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        min-height: 56px !important;
+        height: 56px !important;
+        margin: 0 !important;
         padding: 0 36px 0 0 !important;
-        padding-bottom: 0 !important;
         text-align: left;
+        line-height: 1.2 !important;
     }
 
     .rlx-select .rlx-value {
         pointer-events: none;
         text-align: left;
         width: auto;
+        line-height: 1.2;
+        display: block;
     }
 
     .rlx-select .rlx-arrow {

@@ -535,16 +535,31 @@ div.search-tab-wrap ul.nav-tabs li.nav-item a.nav-link:focus {
 
 .rlx-select .rlx-trigger {
   font-size: 15px;
-  min-height: 42px;
+  min-height: 46px;
   padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
   text-align: left;
   justify-content: flex-start;
-  padding-bottom: 10px !important;
+  align-items: center;
 }
 
 .rlx-select .rlx-value {
   text-align: left;
   width: auto;
+  line-height: 1.2;
+}
+
+.floating-bordered-input.rlx-theme .rlx-select .rlx-trigger {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  min-height: 56px !important;
+  height: 56px !important;
+  margin: 0 !important;
+  padding: 0 36px 0 0 !important;
+  line-height: 1.2 !important;
 }
 
 /* iPhone/Safari: center native date & time values */
@@ -1429,12 +1444,24 @@ a.btn.btn-primary.fifa-btn {
   .floating-bordered-input.rlx-theme .rlx-select .rlx-arrow {
     left: auto !important;
     right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
 
   .floating-bordered-input.rlx-theme .rlx-select .rlx-trigger {
+    display: flex !important;
     justify-content: flex-start !important;
     text-align: left !important;
     align-items: center !important;
+    margin: 0 !important;
+    padding: 0 36px 0 0 !important;
+    min-height: 56px !important;
+    height: 56px !important;
+    line-height: 1.2 !important;
+  }
+
+  .floating-bordered-input.rlx-theme .rlx-select.open .rlx-arrow {
+    transform: translateY(-50%) rotate(180deg) !important;
   }
 
   .floating-bordered-input input[type="date"],
