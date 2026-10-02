@@ -727,6 +727,14 @@ return !in_array($feature['text'], $desktopHiddenFeatureTexts, true);
         background: transparent;
         font-size: 30px;
         line-height: 1;
+        color: #000 !important;
+        opacity: 1;
+    }
+
+    .mbs-close:hover,
+    .mbs-close:focus {
+        color: #000 !important;
+        opacity: 1;
     }
 
     /* ================= CONTENT ================= */

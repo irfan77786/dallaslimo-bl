@@ -66,8 +66,8 @@
 
 <body>
     @php
-    $hideHeaderItems = request()->is('booking/point-to-point')
-    || request()->is('booking/point-to-point/*')
+    $hideHeaderItems = request()->is('booking')
+    || request()->is('booking/*')
     || request()->is('user-login/*/*')
     || request()->is('submit-passengerInfo')
     || request()->is('submit-passengerInfo/*')
