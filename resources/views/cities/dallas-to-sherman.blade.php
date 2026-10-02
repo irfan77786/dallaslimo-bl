@@ -158,7 +158,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </h5>
                     <p class="pt-section-description">
                         Travel from Dallas to Sherman in style & comfort with our
-                        <a href="/services/dfw-limo-service/" class="internal-links-w">Dallas–Sherman limo service</a>.
+                        <a href="/limousine-service-dallas/" class="internal-links-w">Dallas–Sherman limo service</a>.
                         We provide safe, reliable & on-time
                         rides for every occasion. We serve areas like Highland Park,
                         Farmers Branch & Coppell. Our fleet has luxury sedans for solo
@@ -349,7 +349,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                             <strong>Cities &amp; Regional Communities </strong> We proudly
                             serve major cities like Dallas and Fort Worth, along with
                             Plano,
-                            <a href="https://dallaslimoandblackcars.com/locations/black-car-service-frisco-texas/"
+                            <a href="{{ url('/texas/black-car-service-frisco-tx/') }}"
                                 class="internal-links">Frisco</a>, McKinney, and Allen. Our network also extends to
                             Southlake,
                             Keller, Flower Mound, Carrollton, Richardson, Denton, Garland,
@@ -358,7 +358,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                         <li>
                             <strong>Airports &amp; Aviation Access </strong>DFW International
                             Airport,
-                            <a href="https://dallaslimoandblackcars.com/airport/dallas-love-field-black-car-service/"
+                            <a href="{{ url('/airports/dallas-love-field-airport-car-service/') }}"
                                 class="internal-links">Dallas Love Field</a>, Addison Airport, McKinney National
                             Airport, Fort Worth
                             Alliance Airport, and VIP FBO Terminals.

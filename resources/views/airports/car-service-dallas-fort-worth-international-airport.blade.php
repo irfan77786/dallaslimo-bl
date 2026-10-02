@@ -360,7 +360,7 @@
             <div class="col-12 col-md-5 h-100 only-m">
                 <div class="img-holder ms-md-auto">
                     <img loading="lazy" decoding="async"
-                        src="{{ asset('dallaslimo-bl-design/img/dfw-car-service-mobile-mobile.webp') }}" width="407"
+                        src="{{ asset('dallaslimo-bl-design/img/dfw-car-service-mobile.webp') }}" width="407"
                         height="210" class="img-fluid"
                         alt="Luxury black car service in Dallas TX with professional chauffeur">
                 </div>

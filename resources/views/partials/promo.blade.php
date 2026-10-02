@@ -6,12 +6,12 @@
                     <h1>Areas We Serve</h1>
                     <div class="promo-content">
                             <p> Serving clients across the Dallas–Fort Worth Metroplex with direct service to:</p>
-                            <p><strong class="strong-c-color">Cities and Suburbs:</strong> Dallas, Fort Worth, Plano, <a href="/locations/black-car-service-frisco-texas/" class="internal-links">Frisco</a>, McKinney, Arlington, Addison, Irving,
+                            <p><strong class="strong-c-color">Cities and Suburbs:</strong> Dallas, Fort Worth, Plano, <a href="/texas/black-car-service-frisco-tx/" class="internal-links">Frisco</a>, McKinney, Arlington, Addison, Irving,
                             Coppell, Grapevine, Southlake, Trophy Club, University Park, Highland Park, Richardson, Las
                             Colinas.</p>
-                            <p><strong class="strong-c-color">Airports:</strong> DFW International Airport, <a href="/airport/car-service-dallas-fort-worth-international-airport/" class="internal-links">Dallas Love Field</a>, Addison Airport, McKinney National
+                            <p><strong class="strong-c-color">Airports:</strong> DFW International Airport, <a href="/airports/dallas-love-field-airport-car-service/" class="internal-links">Dallas Love Field</a>, Addison Airport, McKinney National
                             Airport, Fort Worth Alliance Airport, Private FBO Terminals.</p>
-                            <p><strong class="strong-c-color">Business and Entertainment Districts:</strong> <a href="/locations/black-car-service-plano-texas/" class="internal-links">Legacy West (Plano)</a>, The Star (Frisco), Las Colinas
+                            <p><strong class="strong-c-color">Business and Entertainment Districts:</strong> <a href="/texas/black-car-service-plano-tx/" class="internal-links">Legacy West (Plano)</a>, The Star (Frisco), Las Colinas
                             (Irving), Downtown Dallas, Dallas Arts District, Sundance Square (Fort Worth).</p>
                             <p><strong class="strong-c-color">Sporting and Event Venues:</strong> AT&amp;T Stadium, Globe Life Field, American Airlines Center, Toyota
                             Stadium, PGA Frisco, Texas Motor Speedway, Toyota Music Factory.</p>

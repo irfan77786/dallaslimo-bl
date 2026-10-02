@@ -544,14 +544,14 @@
                     <div class="col-12 col-sm-6 col-lg-4 mb-20">
                         <article class="card-01  px-15 py-20 p-sm-20 top-cities-item">
                             <div class="img-holder mb-15">
-                                <a href="/services/dallas-to-austin-car-service">
+                                <a href="/dallas-to-austin-car-service">
                                     <img loading="lazy" width="416" height="199" decoding="async"
                                         src="{{ asset('dallaslimo-bl-design/assets/austin.webp') }}" alt="Top City" class="img-fluid">
                                 </a>
                             </div>
                             <div class="px-15">
                                 <h3 class="h5 mb-1">
-                                    <a href="/services/dallas-to-austin-car-service">Dallas
+                                    <a href="/dallas-to-austin-car-service">Dallas
                                         <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
                                             focusable="false" aria-hidden="true" width="24" viewBox="0 0 24 24"
                                             data-testid="ChevronRightIcon">
@@ -569,14 +569,14 @@
                     <div class="col-12 col-sm-6 col-lg-4 mb-20">
                         <article class="card-01  px-15 py-20 p-sm-20 top-cities-item">
                             <div class="img-holder mb-15">
-                                <a href="/services/dallas-to-houston-car-service">
+                                <a href="/dallas-to-houston-car-service">
                                     <img loading="lazy" width="416" height="199" decoding="async"
                                         src="{{ asset('dallaslimo-bl-design/assets/houston.webp') }}" alt="Top City" class="img-fluid">
                                 </a>
                             </div>
                             <div class="px-15">
                                 <h3 class="h5 mb-1">
-                                    <a href="/services/dallas-to-houston-car-service">Dallas
+                                    <a href="/dallas-to-houston-car-service">Dallas
                                         <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
                                             focusable="false" aria-hidden="true" width="24" viewBox="0 0 24 24"
                                             data-testid="ChevronRightIcon">
@@ -594,14 +594,14 @@
                     <div class="col-12 col-sm-6 col-lg-4 mb-20">
                         <article class="card-01  px-15 py-20 p-sm-20 top-cities-item">
                             <div class="img-holder mb-15">
-                                <a href="/city-to-city-ride/dallas-to-college-station/">
+                                <a href="/dallas-to-college-station-car-service">
                                     <img loading="lazy" width="416" height="199" decoding="async"
                                         src="{{ asset('dallaslimo-bl-design/assets/college-station.webp') }}" alt="Top City" class="img-fluid">
                                 </a>
                             </div>
                             <div class="px-15">
                                 <h3 class="h5 mb-1">
-                                    <a href="/city-to-city-ride/dallas-to-college-station/">Dallas
+                                    <a href="/dallas-to-college-station-car-service">Dallas
                                         <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
                                             focusable="false" aria-hidden="true" width="24" viewBox="0 0 24 24"
                                             data-testid="ChevronRightIcon">
@@ -619,14 +619,14 @@
                     <div class="col-12 col-sm-6 col-lg-4 mb-20 only-d">
                         <article class="card-01  px-15 py-20 p-sm-20 top-cities-item">
                             <div class="img-holder mb-15">
-                                <a href="/services/dallas-to-oklahoma-city-ok">
+                                <a href="/dallas-to-oklahoma-city-ok">
                                     <img loading="lazy" width="416" height="199" decoding="async"
                                         src="{{ asset('dallaslimo-bl-design/assets/oklahoma-city.webp') }}" alt="Top City" class="img-fluid">
                                 </a>
                             </div>
                             <div class="px-15">
                                 <h3 class="h5 mb-1">
-                                    <a href="/services/dallas-to-oklahoma-city-ok">Dallas
+                                    <a href="/dallas-to-oklahoma-city-ok">Dallas
                                         <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
                                             focusable="false" aria-hidden="true" width="24" viewBox="0 0 24 24"
                                             data-testid="ChevronRightIcon">
@@ -645,14 +645,14 @@
                     <div class="col-12 col-sm-6 col-lg-4 mb-20 only-d">
                         <article class="card-01  px-15 py-20 p-sm-20 top-cities-item">
                             <div class="img-holder mb-15">
-                                <a href="/services/dallas-to-tyler-car-service">
+                                <a href="/dallas-to-tyler-car-service">
                                     <img loading="lazy" width="416" height="199" decoding="async"
                                         src="{{ asset('dallaslimo-bl-design/assets/tyler.webp') }}" alt="Top City" class="img-fluid">
                                 </a>
                             </div>
                             <div class="px-15">
                                 <h3 class="h5 mb-1">
-                                    <a href="/services/dallas-to-tyler-car-service">Dallas
+                                    <a href="/dallas-to-tyler-car-service">Dallas
                                         <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
                                             focusable="false" aria-hidden="true" width="24" viewBox="0 0 24 24"
                                             data-testid="ChevronRightIcon">
@@ -671,14 +671,14 @@
                     <div class="col-12 col-sm-6 col-lg-4 mb-20 only-d">
                         <article class="card-01  px-15 py-20 p-sm-20 top-cities-item">
                             <div class="img-holder mb-15">
-                                <a href="/services/dfw-to-waco-car-service">
+                                <a href="/dfw-to-waco-car-service">
                                     <img loading="lazy" width="416" height="199" decoding="async"
                                         src="{{ asset('dallaslimo-bl-design/assets/waco.webp') }}" alt="Top City" class="img-fluid">
                                 </a>
                             </div>
                             <div class="px-15">
                                 <h3 class="h5 mb-1">
-                                    <a href="/services/dfw-to-waco-car-service">DFW
+                                    <a href="/dfw-to-waco-car-service">DFW
                                         <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-style-nw1xan"
                                             focusable="false" aria-hidden="true" width="24" viewBox="0 0 24 24"
                                             data-testid="ChevronRightIcon">

@@ -94,10 +94,10 @@ $isHourly = session('service_type') === 'hourlyHire';
             <h2>Travel in Style with Our Airport Greeter's Fleet</h2>
             <p>
               Arrive and depart in style with our luxury fleet designed for seamless
-              <a href="/airport/car-service-dallas-fort-worth-international-airport/" class="internal-links">
+              <a href="/airports/dfw-car-service/" class="internal-links">
                 DFW Airport transfers
               </a>, Dallas Love Field arrivals, and private FBO transportation. Whether you’re coming from Plano,
-              <a href="/locations/black-car-service-frisco-texas/" class="internal-links">Frisco</a>, or McKinney, our
+              <a href="/texas/black-car-service-frisco-tx/" class="internal-links">Frisco</a>, or McKinney, our
               vehicles ensure every journey is first-class.
             </p>
           </div>
@@ -129,7 +129,7 @@ $isHourly = session('service_type') === 'hourlyHire';
           </p>
 
           <p>
-            Trust our <a href="/services/chauffeur-service-dallas-texas/" class="internal-links">chauffeur service
+            Trust our <a href="/services/chauffeur-service-dallas/" class="internal-links">chauffeur service
               Dallas</a> for punctual, reliable, and comfortable airport transfers. All vehicles are fully insured,
             cleaned daily, and driven by licensed professionals for a safe & stylish ride every time.
           </p>
@@ -155,7 +155,7 @@ $isHourly = session('service_type') === 'hourlyHire';
           </h5>
           <p class="pt-section-description">
             Our
-            <a href="/airport/car-service-dallas-fort-worth-international-airport/" class="internal-links-w">Dallas
+            <a href="/airports/dfw-car-service/" class="internal-links-w">Dallas
               airport greeter service</a>
             takes away the stress from the very 1st step. When you land at
             DFW Airport or Love Field Airport, a pro greeter will be waiting
@@ -222,20 +222,20 @@ $isHourly = session('service_type') === 'hourlyHire';
 
           <p class="pt-section-description">
             Travel days can feel hard, especially after a long flight. Our
-            <a href="/airport/addison-airport-car-service/" class="internal-links">Dallas airport greeters</a>
+            <a href="/airports/addison-airport-car-service/" class="internal-links">Dallas airport greeters</a>
             give comfort, ease & peace of mind. From the moment you arrive,
             your greeter helps with bags, answers your questions & takes you
             straight to your waiting car.
           </p>
           <p class="pt-section-description">
             This service works great for
-            <a href="/services/private-car-service-in-dallas-texas/" class="internal-links">international travelers</a>,
+            <a href="/services/private-car-service-in-dallas/" class="internal-links">international travelers</a>,
             seniors & business clients in Dallas. It removes waiting time
             & confusion, giving you a quick & safe move from plane to car.
             Whether you travel alone or with a group, our airport greeter
             service in Dallas makes arrivals calm, simple & welcoming. "Book
             your Dallas airport meet & greet today" at DFW or
-            <a href="/airport/dallas-love-field-black-car-service/" class="internal-links">Love Field Airport</a>
+            <a href="/airports/dallas-love-field-airport-car-service/" class="internal-links">Love Field Airport</a>
             & enjoy a smooth, stress-free arrival or departure.
           </p>
         </div>

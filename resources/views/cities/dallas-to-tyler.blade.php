@@ -155,7 +155,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                         Comfortable Dallas to Tyler Travel
                     </h5>
                     <p class="pt-section-description">
-                        Travel from Dallas to Tyler in style with our <a href="/services/dfw-limo-service/"
+                        Travel from Dallas to Tyler in style with our <a href="/limousine-service-dallas/"
                             class="internal-links-w">Dallas–Tyler limo
                             service</a>. Every ride is smooth & stress-free. We serve areas like
                         Irving, Mesquite & Carrollton. Luxury sedans are for solo
@@ -306,7 +306,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                         Travel between Dallas &amp; Tyler with ease using our
                         professional city-to-city car service. Whether you’re heading
                         east for business, visiting family, or exploring the Rose
-                        Capital of America, our <a href="/services/private-car-service-in-dallas-texas/"
+                        Capital of America, our <a href="/services/private-car-service-in-dallas/"
                             class="internal-links">private rides</a> guarantee comfort, safety,
                         &amp; convenience throughout your journey.
                     </p>
@@ -317,7 +317,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                             extensive knowledge of the Dallas–Tyler route.
                         </li>
                         <li>
-                            <strong>Direct Transfers: </strong>Non-stop, <a href="/services/airport-transfer-dallas/"
+                            <strong>Direct Transfers: </strong>Non-stop, <a href="/services/airport-transfers-dallas/"
                                 class="internal-links">door-to-door
                                 service</a> without the hassle of shuttles or multiple stops.
                         </li>

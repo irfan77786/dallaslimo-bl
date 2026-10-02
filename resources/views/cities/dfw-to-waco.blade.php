@@ -164,7 +164,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                         Travel between Dallas & Waco Regional Airport in comfort with
                         our DFW to Waco limo service. We serve areas like Coppell,
                         Farmers Branch & Plano. Choose luxury sedans for solo travelers.
-                        Spacious SUVs are for families & groups. <a href="/services/chauffeur-service-dallas-texas/"
+                        Spacious SUVs are for families & groups. <a href="/services/chauffeur-service-dallas/"
                             class="internal-links-w">Our professional
                             chauffeurs</a> handle traffic, directions & luggage. You will arrive
                         on time. Vehicles are clean, well-kept & comfy. Business,
@@ -228,7 +228,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </h5>
 
                     <p class="pt-section-description">
-                        Our Dallas to Waco <a href="/services/private-car-service-in-dallas-texas/"
+                        Our Dallas to Waco <a href="/services/private-car-service-in-dallas/"
                             class="internal-links">private car service</a> is great for families,
                         friends, or business teams. We provide roomy SUVs & luxury vans
                         for passengers & luggage. We serve areas like Highland Park,

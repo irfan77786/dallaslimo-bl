@@ -160,11 +160,11 @@ $isHourly = session('service_type') === 'hourlyHire';
                     <p class="pt-section-description">
                         Travel in style & comfort with our Dallas–College Station limo
                         service. We provide safe & reliable rides for students, parents
-                        & <a href="/services/private-car-service-in-dallas-texas/" class="internal-links-w">business
+                        & <a href="/services/private-car-service-in-dallas/" class="internal-links-w">business
                             travelers</a>. We serve neighborhoods like Addison,
                         Mesquite & Carrollton. Our fleet has luxury sedans for solo
                         travelers & spacious SUVs for families or groups. <a
-                            href="/services/chauffeur-service-dallas-texas/" class="internal-links-w">Professional
+                            href="/services/chauffeur-service-dallas/" class="internal-links-w">Professional
                             chauffeurs</a> handle navigation, traffic & luggage. You can relax &
                         enjoy your trip. Whether attending a university event, business
                         meeting, or personal visit, we ensure on-time arrivals & a
@@ -173,7 +173,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                     </p>
                     <p class="pt-section-description">
                         Book your ride today & enjoy the convenience of our
-                        <a href="/services/dfw-limo-service/" class="internal-links-w">long-distance limo service</a>.
+                        <a href="/limousine-service-dallas/" class="internal-links-w">long-distance limo service</a>.
                     </p>
                 </div>
             </div>
@@ -231,7 +231,7 @@ $isHourly = session('service_type') === 'hourlyHire';
                         Heading to College Station with friends, colleagues, or family?
                         Our limo service makes group travel simple & comfy. We serve
                         areas like Frisco, Plano & Garland. Roomy SUVs & <a
-                            href="/services/luxury-van-rental-dallas-texas/" class="internal-links">luxury vans</a> are
+                            href="/services/luxury-van-rental-dallas/" class="internal-links">luxury vans</a> are
                         available for passengers & luggage. Experienced chauffeurs plan
                         each trip. They choose the best routes & avoid traffic delays.
                         Whether for university events, corporate visits, or family
@@ -315,7 +315,7 @@ $isHourly = session('service_type') === 'hourlyHire';
 
                     <p>
                         Traveling between Dallas & College Station is simple &
-                        stress-free with our reliable <a href="/services/city-to-city-rides/"
+                        stress-free with our reliable <a href="/city-to-city-rides/"
                             class="internal-links">city-to-city car service</a>. Whether
                         you’re heading to Texas A&amp;M University for a campus visit,
                         attending a game at Kyle Field, or traveling for business, our
