@@ -374,6 +374,19 @@
         confirmButtonColor: '#d33',
         confirmButtonText: 'OK'
     });
+@elseif (session('success'))
+    Swal.fire({
+        title: 'Success!',
+        text: @json(session('success')),
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const form = document.querySelector('.get-a-quote-form');
+            if (form) form.reset();
+        }
+    });
 @endif
     </script>
     @endsection

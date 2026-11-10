@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 use App\Mail\CorporateSupportMail;
@@ -15,12 +16,7 @@ class WebsiteController extends Controller
 {
     public function aboutUs(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'About Us | Dallas Limo And Black Cars Service',
@@ -40,12 +36,7 @@ class WebsiteController extends Controller
 
     public function fifaWorldCup2026CarServiceDallas(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'FIFA 2026 Car Service Dallas | Luxury Rides to AT&T Stadium',
@@ -65,12 +56,7 @@ class WebsiteController extends Controller
 
     public function ourFleet(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'Dallas Black Car Service Fleet – Luxury Sedans, SUVs, Sprinter Vans',
@@ -90,12 +76,7 @@ class WebsiteController extends Controller
 
     public function getAQuote(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'Get a Quote – Dallas Black Car and Limousine Service',
@@ -115,12 +96,7 @@ class WebsiteController extends Controller
 
     public function contactUs(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'Contact Dallas Black Car Service – Luxury Airport & Corporate Transportation',
@@ -140,12 +116,7 @@ class WebsiteController extends Controller
 
     public function faqs(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'FAQs – Dallas Black Car Service',
@@ -186,22 +157,24 @@ class WebsiteController extends Controller
 
             Mail::to($validated['email'])->send(new ContactMail($contactData, false));
 
-            Mail::to('info@legacyonelimo.com')->send(new ContactMail($contactData, true));
+            foreach ($this->adminNotificationEmails() as $adminEmail) {
+                Mail::to($adminEmail)->send(new ContactMail($contactData, true));
+            }
 
             return redirect()->back()->with('success', 'Your message has been sent successfully!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
+            Log::error('Contact form submission failed', [
+                'error' => $e->getMessage(),
+                'email' => $validated['email'] ?? null,
+            ]);
+
+            return redirect()->back()->withInput()->with('error', 'We could not send your message. Please try again or call us at +1 214-919-5377.');
         }
     }
 
     public function CancellationPolicy(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'Cancellation Policy – Dallas Black Car Service',
@@ -221,12 +194,7 @@ class WebsiteController extends Controller
 
     public function TermsAndConditions(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'Terms and Conditions – Dallas Black Car Service',
@@ -246,12 +214,7 @@ class WebsiteController extends Controller
 
     public function PrivacyPolicy(Request $request)
     {
-        if ($request->edit) {
-            session(['edit' => 1]);
-        } else {
-            session()->flush();
-            $request->session()->regenerateToken();
-        }
+        $this->clearBookingSession($request);
 
         $seo = [
             'title' => 'Privacy Policy – Dallas Black Car Service',
@@ -290,11 +253,18 @@ class WebsiteController extends Controller
 
             Mail::to($validated['email'])->send(new CorporateSupportMail($corporateData, false));
 
-            Mail::to('info@legacyonelimo.com')->send(new CorporateSupportMail($corporateData, true));
+            foreach ($this->adminNotificationEmails() as $adminEmail) {
+                Mail::to($adminEmail)->send(new CorporateSupportMail($corporateData, true));
+            }
 
             return redirect()->back()->with('success', 'Your corporate support request has been sent successfully!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
+            Log::error('Corporate support submission failed', [
+                'error' => $e->getMessage(),
+                'email' => $validated['email'] ?? null,
+            ]);
+
+            return redirect()->back()->withInput()->with('error', 'We could not send your request. Please try again or call us at +1 214-919-5377.');
         }
     }
 
@@ -305,7 +275,7 @@ class WebsiteController extends Controller
             'trip_type' => 'required|string|max:255',
             'number_of_passengers' => 'required|string|max:50',
             'trip_date' => 'required|date',
-            'trip_time' => 'required|date_format:H:i',
+            'trip_time' => ['required', 'regex:/^\d{2}:\d{2}(:\d{2})?$/'],
             'pickup_address' => 'required|string|max:255',
             'dropoff_address' => 'required|string|max:255',
             'full_name' => 'required|string|max:255',
@@ -319,7 +289,7 @@ class WebsiteController extends Controller
                 'trip_type' => $validated['trip_type'],
                 'number_of_passengers' => $validated['number_of_passengers'],
                 'trip_date' => $validated['trip_date'],
-                'trip_time' => $validated['trip_time'],
+                'trip_time' => substr($validated['trip_time'], 0, 5),
                 'pickup_address' => $validated['pickup_address'],
                 'dropoff_address' => $validated['dropoff_address'],
                 'full_name' => $validated['full_name'],
@@ -331,12 +301,19 @@ class WebsiteController extends Controller
 
             Mail::to($validated['email'])->send(new QuoteMail($quoteData, false));
 
-            Mail::to('hafizirfan8078@gmail.com')->send(new QuoteMail($quoteData, true));
+            foreach ($this->adminNotificationEmails() as $adminEmail) {
+                Mail::to($adminEmail)->send(new QuoteMail($quoteData, true));
+            }
 
             return redirect()
                 ->route('get_a_quote_thank_you')
                 ->with('success', 'Your quote request has been sent successfully! We will send you a quote shortly.');
         } catch (\Exception $e) {
+            Log::error('Quote form submission failed', [
+                'error' => $e->getMessage(),
+                'email' => $validated['email'] ?? null,
+            ]);
+
             return redirect()
                 ->back()
                 ->withInput()
@@ -358,5 +335,35 @@ class WebsiteController extends Controller
         return view('website.quote-thank-you', [
             'seo' => $seo,
         ]);
+    }
+
+    /**
+     * Clear booking session data without wiping flash messages used by SweetAlert.
+     */
+    private function clearBookingSession(Request $request): void
+    {
+        if ($request->edit) {
+            session(['edit' => 1]);
+            return;
+        }
+
+        if (session()->has('success') || session()->has('error') || session()->has('errors')) {
+            return;
+        }
+
+        session()->flush();
+        $request->session()->regenerateToken();
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    private function adminNotificationEmails(): array
+    {
+        return array_values(array_unique(array_filter([
+            config('mail.admin_email'),
+            config('mail.secondary_email'),
+            config('mail.from.address'),
+        ])));
     }
 }

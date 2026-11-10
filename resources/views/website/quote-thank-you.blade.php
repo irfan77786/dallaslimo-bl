@@ -32,14 +32,12 @@
 
 @section('scripts')
 <script>
-    @if (session('success'))
     Swal.fire({
         title: 'Success!',
-        text: @json(session('success')),
+        text: @json(session('success', 'Your quote request has been sent successfully! We will send you a quote shortly.')),
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'OK'
     });
-@endif
 </script>
 @endsection

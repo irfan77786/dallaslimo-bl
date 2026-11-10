@@ -122,4 +122,6 @@ return [
     */
     'admin_email' => env('ADMIN_EMAIL_ADDRESS'),
 
+    'secondary_email' => env('SECONDARY_EMAIL'),
+
 ];
