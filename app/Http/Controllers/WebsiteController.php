@@ -154,22 +154,18 @@ class WebsiteController extends Controller
             ];
 
             Contact::create($contactData);
-
-            Mail::to($validated['email'])->send(new ContactMail($contactData, false));
-
-            foreach ($this->adminNotificationEmails() as $adminEmail) {
-                Mail::to($adminEmail)->send(new ContactMail($contactData, true));
-            }
-
-            return redirect()->back()->with('success', 'Your message has been sent successfully!');
         } catch (\Exception $e) {
-            Log::error('Contact form submission failed', [
+            Log::error('Contact form save failed', [
                 'error' => $e->getMessage(),
                 'email' => $validated['email'] ?? null,
             ]);
 
             return redirect()->back()->withInput()->with('error', 'We could not send your message. Please try again or call us at +1 214-919-5377.');
         }
+
+        $this->sendContactEmails($contactData);
+
+        return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 
     public function CancellationPolicy(Request $request)
@@ -283,33 +279,24 @@ class WebsiteController extends Controller
             'message' => 'nullable|string|min:5',
         ]);
 
+        $quoteData = [
+            'vehicle_type' => $validated['vehicle_type'],
+            'trip_type' => $validated['trip_type'],
+            'number_of_passengers' => $validated['number_of_passengers'],
+            'trip_date' => $validated['trip_date'],
+            'trip_time' => substr($validated['trip_time'], 0, 5),
+            'pickup_address' => $validated['pickup_address'],
+            'dropoff_address' => $validated['dropoff_address'],
+            'full_name' => $validated['full_name'],
+            'email' => $validated['email'],
+            'message' => $validated['message'] ?? null,
+        ];
+
         try {
-            $quoteData = [
-                'vehicle_type' => $validated['vehicle_type'],
-                'trip_type' => $validated['trip_type'],
-                'number_of_passengers' => $validated['number_of_passengers'],
-                'trip_date' => $validated['trip_date'],
-                'trip_time' => substr($validated['trip_time'], 0, 5),
-                'pickup_address' => $validated['pickup_address'],
-                'dropoff_address' => $validated['dropoff_address'],
-                'full_name' => $validated['full_name'],
-                'email' => $validated['email'],
-                'message' => $validated['message'] ?? null,
-            ];
-
-            Quote::create($quoteData);
-
-            Mail::to($validated['email'])->send(new QuoteMail($quoteData, false));
-
-            foreach ($this->adminNotificationEmails() as $adminEmail) {
-                Mail::to($adminEmail)->send(new QuoteMail($quoteData, true));
-            }
-
-            return redirect()
-                ->route('get_a_quote_thank_you')
-                ->with('success', 'Your quote request has been sent successfully! We will send you a quote shortly.');
+            $quote = Quote::create($quoteData);
+            $quoteData['quote_number'] = $quote->quote_number;
         } catch (\Exception $e) {
-            Log::error('Quote form submission failed', [
+            Log::error('Quote form save failed', [
                 'error' => $e->getMessage(),
                 'email' => $validated['email'] ?? null,
             ]);
@@ -319,6 +306,12 @@ class WebsiteController extends Controller
                 ->withInput()
                 ->with('error', 'We could not submit your quote request. Please try again or call us at +1 214-919-5377.');
         }
+
+        $this->sendQuoteEmails($quoteData);
+
+        return redirect()
+            ->route('get_a_quote_thank_you')
+            ->with('success', 'Your quote request has been sent successfully! We will send you a quote shortly.');
     }
 
     public function getAQuoteThankYou(Request $request)
@@ -353,6 +346,44 @@ class WebsiteController extends Controller
 
         session()->flush();
         $request->session()->regenerateToken();
+    }
+
+    /**
+     * @param  array<string, mixed>  $quoteData
+     */
+    private function sendQuoteEmails(array $quoteData): void
+    {
+        try {
+            Mail::to($quoteData['email'])->send(new QuoteMail($quoteData, false));
+
+            foreach ($this->adminNotificationEmails() as $adminEmail) {
+                Mail::to($adminEmail)->send(new QuoteMail($quoteData, true));
+            }
+        } catch (\Throwable $e) {
+            Log::error('Quote email failed after save', [
+                'error' => $e->getMessage(),
+                'email' => $quoteData['email'] ?? null,
+            ]);
+        }
+    }
+
+    /**
+     * @param  array<string, mixed>  $contactData
+     */
+    private function sendContactEmails(array $contactData): void
+    {
+        try {
+            Mail::to($contactData['email'])->send(new ContactMail($contactData, false));
+
+            foreach ($this->adminNotificationEmails() as $adminEmail) {
+                Mail::to($adminEmail)->send(new ContactMail($contactData, true));
+            }
+        } catch (\Throwable $e) {
+            Log::error('Contact email failed after save', [
+                'error' => $e->getMessage(),
+                'email' => $contactData['email'] ?? null,
+            ]);
+        }
     }
 
     /**

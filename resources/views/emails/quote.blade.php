@@ -50,6 +50,12 @@
                     style="background: #171717; margin: 0; padding: 8px 12px; font-size: 14px; color: #ffffff; border-radius: 4px 4px 0 0;">
                     Trip Details</h3>
                 <table cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px; padding: 10px;">
+                    @if(!empty($details['quote_number']))
+                    <tr>
+                        <td style="font-weight: bold; color: #666; width: 40%; padding: 4px 0;">Quote #:</td>
+                        <td style="color: #333; padding: 4px 0;">{{ $details['quote_number'] }}</td>
+                    </tr>
+                    @endif
                     <tr>
                         <td style="font-weight: bold; color: #666; width: 40%; padding: 4px 0;">Vehicle Type:</td>
                         <td style="color: #333; padding: 4px 0;">{{ $details['vehicle_type'] }}</td>
